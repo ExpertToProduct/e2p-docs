@@ -20,7 +20,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/01-prise-en-main/01-introduction">
+            to="/prise-en-main/introduction">
             Découvrir AI-Finance DAF →
           </Link>
         </div>
@@ -52,7 +52,7 @@ function ProductsSection() {
           <ProductCard
             title="AI-Finance DAF"
             description="Solution de pilotage financier pour Directeurs Administratifs et Financiers de groupes familiaux. Consolidation multi-entités, analyse des flux intragroupe, suivi des ratios de vigilance, assistant IA spécialisé finance d'entreprise."
-            link="/01-prise-en-main/01-introduction"
+            link="/prise-en-main/introduction"
             linkLabel="Documentation AI-Finance DAF"
           />
           <ProductCard

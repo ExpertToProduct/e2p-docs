@@ -76,7 +76,7 @@ const config = {
           items: [
             {
               label: 'AI-Finance DAF',
-              to: '/01-prise-en-main/01-introduction',
+              to: '/prise-en-main/introduction',
             },
           ],
         },
@@ -85,15 +85,15 @@ const config = {
           items: [
             {
               label: 'FAQ',
-              to: '/04-support/01-faq',
+              to: '/support/faq',
             },
             {
               label: 'Résolution de problèmes',
-              to: '/04-support/02-resolution-problemes',
+              to: '/support/resolution-problemes',
             },
             {
               label: 'Contact support',
-              to: '/04-support/03-contact-support',
+              to: '/support/contact-support',
             },
           ],
         },
