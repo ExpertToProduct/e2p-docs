@@ -98,6 +98,15 @@ const config = {
           ],
         },
         {
+          title: 'Légal',
+          items: [
+            {
+              label: 'Mentions légales',
+              to: '/mentions-legales',
+            },
+          ],
+        },
+        {
           title: 'Suivez-nous',
           items: [
             {
@@ -111,7 +120,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Expert To Product. Tous droits réservés.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Expert To Product · SIREN 500 279 427 · RCS Mamoudzou`,
     },
     prism: {
       theme: lightCodeTheme,

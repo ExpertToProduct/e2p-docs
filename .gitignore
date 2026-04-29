@@ -20,3 +20,9 @@ yarn-debug.log*
 yarn-error.log*
 package.json.bak
 *.bak
+
+# Backups timestampés des patches
+*.before_*
+*.tmp
+# Brouillons éditoriaux non publiés
+drafts/
