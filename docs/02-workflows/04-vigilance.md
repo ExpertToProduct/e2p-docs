@@ -1,136 +1,66 @@
 ---
 sidebar_position: 4
-title: Piloter la vigilance financière
+title: Piloter la vigilance et la file à traiter
 ---
 
-# Piloter la vigilance financière
+# Piloter la vigilance et la file à traiter
 
-La page **Vigilance** est un outil d'alerte précoce inspiré des grilles d'analyse utilisées par les assureurs-crédit tels qu'Euler Hermes ou Coface. Elle permet d'identifier rapidement les signaux faibles de fragilité financière d'une entité, avant que ceux-ci ne se traduisent en difficultés avérées.
+Deux pages se complètent : **Vigilance** présente les ratios et leurs seuils ; **À traiter** rassemble tout ce qui demande une action.
 
-## Accès à la page
+## Vigilance
 
-Cliquer sur **Vigilance** dans le menu de navigation latéral gauche.
+### Les onze ratios
 
-## Les onze ratios de vigilance
+| Famille | Ratio | Définition | Seuils par défaut (opérationnelle) |
+|---|---|---|---|
+| Rentabilité | Marge nette | Résultat net / CA | rouge sous 2 %, orange sous 5 % |
+| Rentabilité | Marge opérationnelle | Résultat d'exploitation / CA | rouge sous 3 %, orange sous 7 % |
+| Rentabilité | ROE | Résultat net / Capitaux propres | rouge sous 5 %, orange sous 10 % |
+| Rentabilité | Taux de valeur ajoutée | Valeur ajoutée / CA | rouge sous 20 %, orange sous 35 % |
+| Solvabilité | Gearing | Dettes financières / Capitaux propres | rouge au-dessus de 1,5, orange au-dessus de 0,5 |
+| Solvabilité | Autonomie financière | Capitaux propres / Total bilan | rouge sous 20 %, orange sous 35 % |
+| Solvabilité | Couverture des dettes | CAF / Dettes financières | rouge sous 0,15, orange sous 0,3 |
+| Liquidité | Liquidité générale | Actif circulant / Dettes à court terme | rouge sous 0,8, orange sous 1,2 |
+| Activité | BFR | Besoin en fonds de roulement en jours de CA | rouge au-dessus de 90 j, orange au-dessus de 30 j |
+| Activité | Délai clients | Créances clients en jours de CA | rouge au-dessus de 75 j, orange au-dessus de 45 j |
+| Activité | Délai fournisseurs | Dettes fournisseurs en jours d'achats | rouge au-dessus de 60 j, orange au-dessus de 30 j |
 
-AI-Finance DAF calcule et affiche onze ratios classés en quatre familles.
+Les montants de référence (chiffre d'affaires, résultat d'exploitation, résultat net, CAF, capitaux propres) sont affichés à côté des ratios.
 
-### Famille 1 — Ratios de solvabilité
+### Seuils par type d'activité
 
-La solvabilité mesure la capacité de l'entité à faire face à ses engagements de long terme.
+Les seuils s'adaptent au **type** de l'entité défini à la configuration :
 
-1. **Autonomie financière** : Capitaux propres / Total bilan.
-   - Seuil vert : supérieur à 30 %.
-   - Seuil orange : entre 15 % et 30 %.
-   - Seuil rouge : inférieur à 15 %.
+- **Holding** : marges, taux de valeur ajoutée, BFR et délais ne sont pas suivis (affichés en gris) ; liquidité générale avec des seuils abaissés.
+- **Immobilière** : gearing, autonomie financière et couverture des dettes avec des seuils tenant compte de l'endettement adossé aux immeubles ; cycle d'exploitation non suivi.
 
-2. **Couverture des dettes financières** : Capitaux propres / Dettes financières.
-   - Seuil vert : supérieur à 1.
-   - Seuil orange : entre 0,5 et 1.
-   - Seuil rouge : inférieur à 0,5.
+Les seuils affichés sous chaque carte indiquent leur origine (défaut, type, ajustement propre à l'entité). Un ajustement par entité ou par type se règle dans la configuration du groupe (clé `seuils`) ; le support peut accompagner ce paramétrage.
 
-3. **Endettement net / EBE** : (Dettes financières - Trésorerie) / Excédent brut d'exploitation.
-   - Seuil vert : inférieur à 3.
-   - Seuil orange : entre 3 et 5.
-   - Seuil rouge : supérieur à 5.
+### Lecture
 
-### Famille 2 — Ratios de liquidité
+Un onglet par entité et un onglet **Consolidé**. Chaque carte porte la valeur de l'exercice, le code couleur et l'évolution. Une entité sans document lu affiche « Données non disponibles » : aucun ratio n'est estimé à sa place.
 
-La liquidité mesure la capacité de l'entité à honorer ses engagements à court terme.
+### Interpréter une alerte rouge
 
-4. **Liquidité générale** : Actif circulant / Dettes à court terme.
-   - Seuil vert : supérieur à 1,5.
-   - Seuil orange : entre 1 et 1,5.
-   - Seuil rouge : inférieur à 1.
+Une alerte invite à un examen, pas à une conclusion : vérifier la source du chiffre dans la fiche de l'entité, replacer le ratio dans le contexte de l'exercice (investissement, sinistre, cession), le croiser avec les autres ratios, et au besoin poser la question à l'assistant.
 
-5. **Trésorerie nette** : Trésorerie active - Concours bancaires courants.
-   - Seuil vert : positive de plus de 60 jours d'exploitation.
-   - Seuil orange : positive mais inférieure à 60 jours.
-   - Seuil rouge : négative.
+### Rapport DAF
 
-### Famille 3 — Ratios de rentabilité
+Le bouton **Rapport PDF** en haut de la page produit le rapport complet du groupe (voir [Lire la Synthèse](./02-analyser-consolidation.md)).
 
-6. **Marge d'exploitation** : Résultat d'exploitation / Chiffre d'affaires.
-   - Seuils variables selon le secteur, paramétrables.
+## À traiter
 
-7. **Rentabilité des capitaux propres (ROE)** : Résultat net / Capitaux propres.
-   - Seuil vert : supérieur à 10 %.
-   - Seuil orange : entre 5 % et 10 %.
-   - Seuil rouge : inférieur à 5 %.
+La file réunit, pour l'exercice de référence, trois familles d'éléments avec l'entité, l'exercice et la gravité :
 
-8. **Rentabilité des capitaux engagés (ROCE)** : Résultat d'exploitation / (Capitaux propres + Dettes financières).
-   - Seuil vert : supérieur à 8 %.
-   - Seuil orange : entre 4 % et 8 %.
-   - Seuil rouge : inférieur à 4 %.
+- **Alertes de ratios** : ratios en rouge ou orange.
+- **Contrôles de cohérence** : écart entre liasse et balance, source manquante, régime fiscal incohérent, formulaire 2065 absent.
+- **Pièces manquantes** : documents juridiques et financiers prioritaires attendus et absents.
 
-### Famille 4 — Ratios d'activité
+### Traiter un élément
 
-9. **Délai de règlement clients** : (Créances clients / Chiffre d'affaires TTC) × 365.
-   - Seuils variables selon le secteur.
+- **Écart justifié : expliquer et sortir de la file** : l'écart est compris et documenté.
+- **Sans suite : ignorer et sortir de la file** : sans objet pour ce groupe.
+- **Remettre dans la file** : revenir sur un statut.
+- **Déposer** : pour une pièce manquante, ouvre le dépôt guidé.
 
-10. **Délai de règlement fournisseurs** : (Dettes fournisseurs / Achats TTC) × 365.
-    - Seuils variables selon le secteur.
-
-11. **Rotation des stocks** : Stocks moyens / (Coût des marchandises vendues / 365).
-    - Seuils variables selon le secteur.
-
-## Visualisation des ratios
-
-Chaque ratio est représenté sous la forme d'une carte affichant :
-
-- **Le nom du ratio** et sa définition courte.
-- **La valeur calculée** pour l'exercice en cours.
-- **Le code couleur** (vert, orange, rouge) correspondant au seuil dépassé.
-- **Le seuil de référence** pour le ratio.
-- **L'évolution** par rapport à l'exercice précédent (flèche haut ou bas avec variation en points).
-
-Les cartes sont organisées en une grille de quatre colonnes, regroupées par famille.
-
-## Filtrage par entité
-
-Un sélecteur en haut de page permet d'afficher :
-
-- Les ratios consolidés du groupe (par défaut).
-- Les ratios d'une entité spécifique (chaque société opérationnelle, chaque SCI, etc.).
-
-Le filtrage par entité est particulièrement utile pour :
-
-- Identifier la filiale à l'origine d'une dégradation du ratio consolidé.
-- Préparer un dossier bancaire pour une entité spécifique.
-- Analyser la situation d'une entité avant sa cession ou son intégration à un nouveau périmètre.
-
-## Paramétrage des seuils
-
-Les seuils par défaut sont ceux d'une activité commerciale généraliste. Ils peuvent ne pas être pertinents pour certains secteurs (BTP, restauration, hôtellerie, services).
-
-Pour personnaliser les seuils :
-
-1. Ouvrir la page **Administration**.
-2. Accéder à la section **Seuils de vigilance**.
-3. Modifier les valeurs pour chaque ratio concerné.
-4. Enregistrer.
-
-Le recalcul des codes couleur s'effectue automatiquement en temps réel sur la page **Vigilance**.
-
-## Interprétation des alertes rouges
-
-Une alerte rouge sur un ratio ne signifie pas nécessairement une difficulté avérée. Elle invite à un examen plus approfondi :
-
-- **Vérifier la fiabilité des données** : un ratio aberrant peut provenir d'une erreur de saisie. Revenir à la page **Documents** et vérifier le dernier chargement.
-- **Analyser le contexte** : un ratio dégradé ponctuellement sur un exercice (investissement majeur, sinistre, cession) peut être normal.
-- **Croiser avec d'autres indicateurs** : un ROE faible combiné à une autonomie financière élevée peut indiquer une sous-exploitation du levier financier, pas une fragilité.
-- **Comparer à la profession** : certains ratios n'ont de sens qu'en comparaison avec les standards sectoriels.
-
-L'assistant conversationnel de l'application (page QA) peut être sollicité pour contextualiser un ratio dégradé.
-
-## Export du rapport de vigilance
-
-Le bouton **Exporter en PDF** en haut à droite génère un rapport de vigilance complet. Le PDF comprend :
-
-- Page de garde avec identification du périmètre analysé (groupe ou entité)
-- Les onze ratios avec leurs valeurs, seuils et codes couleur
-- Un récapitulatif des alertes orange et rouge
-- Les tendances d'évolution sur trois exercices
-- Les notes méthodologiques
-
-Ce rapport peut être produit mensuellement ou trimestriellement pour le comité de direction, ou à la demande en cas de présentation à un partenaire bancaire.
+Les statuts sont conservés d'un rechargement à l'autre et propres à chaque groupe. Le compteur de la barre latérale indique ce qui reste à traiter ; la file figure aussi dans le rapport DAF.

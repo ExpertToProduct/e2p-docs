@@ -5,108 +5,69 @@ title: Premier démarrage
 
 # Premier démarrage
 
-Lors du tout premier lancement d'AI-Finance DAF sur un poste, l'application détecte l'absence de configuration et ouvre automatiquement l'**assistant de configuration initiale**. Cet assistant guide l'utilisateur à travers cinq étapes de paramétrage, à l'issue desquelles l'application est prête à fonctionner.
+Après l'installation, l'application affiche un groupe de démonstration fictif. La page **Configuration** permet de créer le groupe réel en cinq étapes : **Identité**, **Entités**, **Flux**, **Données financières**, **Validation**. Comptez 15 à 30 minutes selon le nombre d'entités.
 
-L'ensemble de l'assistant peut être complété en 15 à 30 minutes selon la complexité de la structure du groupe et la disponibilité des documents financiers.
+## Avant de commencer : le dossier de documents
 
-## Étape 1 — Identité du groupe
+AI-Finance DAF lit les documents dans un dossier de votre choix, la **data room**, organisé par entité :
 
-L'utilisateur renseigne les informations générales du groupe piloté :
+```
+<data room>/
+  HOLDING/       Bilans/   PnL/   Balances/
+  DISTRIB/       Bilans/   PnL/   Balances/   FEC/
+  SCI_IMMO/      Bilans/   PnL/   Balances/
+  juridique/     statuts, K-bis, PV d'assemblée, pactes...
+```
 
-- **Dénomination du groupe** (exemple : « Groupe HOLDCO », « Groupe Dupont »)
-- **Territoire d'implantation principal** (sélection parmi les territoires français : métropole, Mayotte, La Réunion, Guadeloupe, Martinique, Guyane, Nouvelle-Calédonie, etc.)
-- **Devise de référence** (Euro par défaut, Franc Pacifique pour la Nouvelle-Calédonie et la Polynésie française)
-- **Exercice comptable de référence** (année civile par défaut, avec possibilité de définir une clôture décalée)
+- `Bilans/` et `PnL/` : les liasses fiscales au format PDF, une par exercice (régime simplifié 2033 ou réel normal 2050, avec le formulaire 2065).
+- `Balances/` : la balance générale de chaque exercice, en PDF du cabinet ou en tableur.
+- `FEC/` : le fichier des écritures comptables, notamment celui de l'exercice en cours pour la page Pilotage.
+- `juridique/` : les pièces juridiques, rangées par entité.
 
-Ces informations peuvent être modifiées ultérieurement depuis la page **Administration**.
+Les noms de fichiers attendus dépendent du **préfixe** défini pour chaque entité à l'étape 2 ; l'application les affiche dans la fiche de chaque entité et signale ce qui manque.
 
-## Étape 2 — Périmètre des entités
+## Étape 1 — Identité
 
-L'utilisateur déclare l'ensemble des entités juridiques composant le groupe. Pour chaque entité, les champs suivants sont renseignés :
+- Dénomination du groupe
+- Devise (euro par défaut)
+- Exercice de référence (dernier exercice clos) et exercices disponibles
+- Assujettissement à la TVA (à désactiver pour Mayotte)
+- Emplacement de la data room
 
-- **Raison sociale** (exemple : « OPSCO SARL », « SCI MURS2 »)
-- **Forme juridique** (SARL, SAS, SCI, SA, EURL, SASU, etc.)
-- **Numéro SIREN**
-- **Taux de détention** par la société mère du groupe (en pourcentage)
-- **Méthode de consolidation** :
-  - **Intégration Globale (IG)** : pour les filiales détenues à plus de 50 % ou exerçant un contrôle exclusif.
-  - **Mise en Équivalence (ME)** : pour les participations comprises entre 20 % et 50 %.
-  - **Hors périmètre** : pour les entités patrimoniales exclues de la consolidation (SCI détenues personnellement par les dirigeants, par exemple).
+## Étape 2 — Entités
 
-Il est possible d'ajouter autant d'entités que nécessaire. L'ordre de saisie détermine l'ordre d'affichage dans la navigation principale de l'application.
+Pour chaque société du groupe :
+
+- Raison sociale, forme juridique, SIRET
+- **Type** : opérationnelle, holding ou immobilière. Le type détermine les seuils de vigilance appliqués.
+- Activité, capital social, effectif
+- **Détention** par la société mère (en pourcentage) et inclusion ou non dans le périmètre de consolidation
+- **Régime fiscal** : IS ou IR (transparence fiscale des SCI), taux d'IS
+- **Préfixe des fichiers** : la racine des noms de documents dans la data room (par exemple `DISTRIB` pour `DISTRIB_bilan_2025.pdf`)
+
+L'ordre de saisie est l'ordre d'affichage dans la barre latérale.
 
 ## Étape 3 — Flux intragroupe
 
-Cette étape permet de déclarer les flux financiers récurrents entre les entités du groupe. Ces flux sont utilisés pour générer le diagramme de Sankey et pour les contrôles de cohérence lors de la consolidation.
+Déclaration des flux récurrents entre entités : dividendes, convention d'assistance (management fees), loyers, compte courant, refacturation. Pour chacun : émetteur, récepteur, montant annuel, exercices concernés.
 
-Pour chaque flux, l'utilisateur renseigne :
+Ces flux servent aux éliminations de la consolidation. Dès que les balances sont déposées, l'application rapproche elle-même les comptes réciproques : un flux détecté dans les balances remplace le flux déclaré, sauf si celui-ci est verrouillé.
 
-- **Entité émettrice** (sélection dans la liste des entités déclarées à l'étape 2)
-- **Entité réceptrice** (idem)
-- **Nature du flux** :
-  - Dividendes
-  - Convention d'assistance (management fees)
-  - Loyers
-  - Prêt ou compte courant d'associé
-  - Refacturation de charges
-  - Autre
-- **Montant annuel moyen** (en euros)
-- **Années d'application** (exemple : [2023, 2024, 2025] pour un flux démarré en 2023 et toujours actif)
+## Étape 4 — Données financières
 
-Les flux peuvent être ajoutés, modifiés ou supprimés ultérieurement depuis la page **Administration**.
+Pour chaque entité, deux possibilités :
 
-## Étape 4 — Saisie financière initiale
+- **Lire une liasse** : choisir le PDF de la liasse fiscale ; l'application reconnaît le régime (2033 ou 2050) et préremplit les champs clés (chiffre d'affaires, résultat d'exploitation, résultat net, capitaux propres, trésorerie, emprunts, effectif). Chaque champ est marqué selon sa fiabilité de lecture et peut être corrigé.
+- **Saisir** les valeurs à la main.
 
-Cette étape permet de préremplir les données financières des entités à partir de leurs liasses fiscales. Pour chaque entité déclarée à l'étape 2, l'utilisateur dispose de deux modes :
+Ces saisies servent de complément ou de secours : une fois les documents déposés dans la data room, les chiffres lus dans les liasses et les balances ont priorité, et la page **Paramètres** indique pour chaque entité la source utilisée.
 
-### Mode 1 — Importation automatique depuis une liasse PDF
+## Étape 5 — Validation
 
-1. Cliquer sur **Charger une liasse** sur la carte de l'entité concernée.
-2. Sélectionner le fichier PDF de la liasse fiscale (formulaire 2065, 2033-A, 2033-B, ou assimilé).
-3. L'application analyse le document et extrait automatiquement les dix champs financiers suivants :
-   - Chiffre d'affaires
-   - Résultat d'exploitation
-   - Résultat net comptable
-   - Résultat fiscal
-   - Capitaux propres
-   - Trésorerie (disponibilités)
-   - Emprunts bancaires
-   - Dividendes reçus
-   - Dividendes versés
-   - Effectif moyen (ETP)
-4. Chaque champ extrait est accompagné d'un indicateur de confiance :
-   - **Vert** : extraction directe depuis la cellule CERFA identifiée, valeur fiable.
-   - **Orange** : extraction avec doute (cellule vide interprétée comme zéro, valeur atypique).
-   - **Rouge** : cellule non détectée, saisie manuelle requise.
-5. L'utilisateur revoit chaque champ et corrige si nécessaire.
+Récapitulatif de la configuration : identité, entités et détentions, flux, complétude des données. **Appliquer** enregistre la configuration, la charge sans redémarrer l'application et ouvre la Synthèse.
 
-### Mode 2 — Saisie manuelle
+La configuration est un fichier `config_groupe.json` dans le dossier des données ; l'ancienne version est conservée à côté à chaque modification. Il est recommandé de lancer une sauvegarde depuis **Paramètres** à l'issue de cette étape.
 
-Si l'utilisateur ne dispose pas de la liasse fiscale au format PDF, il peut saisir les valeurs directement dans le formulaire.
+## Plusieurs groupes
 
-### Contrôles de cohérence
-
-À la validation des saisies d'une entité, quatre contrôles automatiques sont exécutés :
-
-1. **Cohérence du bilan entre deux exercices** : vérifie que les capitaux propres d'une année N sont cohérents avec les capitaux propres de N-1, le résultat de N et les dividendes versés.
-2. **Écart résultat comptable / résultat fiscal** : détecte les écarts importants typiques du régime mère-fille ou d'un déficit reportable.
-3. **Plausibilité de la marge d'exploitation** : alerte sur des ratios atypiques (marge supérieure à 50 % ou négative inférieure à -50 %).
-4. **Productivité par ETP** : alerte sur des ratios CA par effectif hors fourchette raisonnable.
-
-Les alertes sont classées en deux niveaux :
-
-- **Orange** : simple signalement, la poursuite de la saisie est possible.
-- **Rouge** : signalement bloquant, une justification écrite est requise pour valider les données (exemple : « Régime mère-fille — article 145 du CGI »).
-
-## Étape 5 — Validation et lancement
-
-La dernière étape présente un récapitulatif complet de la configuration. L'utilisateur vérifie :
-
-- L'identité du groupe
-- La liste des entités et leurs taux de détention
-- Les flux intragroupe déclarés
-- Le statut de complétude des données financières par entité
-
-Si l'ensemble est satisfaisant, cliquer sur **Valider et lancer l'application**. La configuration est enregistrée dans le fichier `config_groupe.json` et l'application ouvre sa page d'accueil.
-
-Il est recommandé de procéder à une sauvegarde du fichier `config_groupe.json` à l'issue de cette étape (voir chapitre [Configuration avancée](../03-administration/02-configuration-avancee.md)).
+L'application peut héberger plusieurs groupes (par exemple pour un cabinet). Le sélecteur en haut de la barre latérale bascule de l'un à l'autre sans redémarrage ; **Configuration > Nouveau groupe** en crée un nouveau. Chaque groupe possède sa configuration, ses statuts, ses journaux et sa data room.

@@ -5,185 +5,101 @@ title: Résolution de problèmes
 
 # Résolution de problèmes
 
-Ce chapitre regroupe les incidents les plus fréquents et les procédures de résolution associées. Pour tout incident non couvert ici, contacter le support par courriel.
+Pour tout incident non couvert ici, contacter le support par courriel en joignant le journal du backend (menu **AI-Finance DAF > Afficher le journal du backend**).
 
-## Problèmes au lancement de l'application
+## Au lancement
 
-### macOS affiche « Impossible d'ouvrir AI-Finance DAF car le développeur ne peut pas être vérifié »
+### macOS refuse d'ouvrir l'application
 
-Ce message peut apparaître lors du tout premier lancement sur certaines configurations macOS.
+L'application est signée et notarisée ; ce message ne devrait pas apparaître. S'il apparaît :
 
-**Résolution :**
+1. Vérifier que le fichier `.dmg` provient bien du lien transmis par Expert To Product et le télécharger de nouveau si nécessaire.
+2. **Réglages Système > Confidentialité et sécurité**, section Sécurité : cliquer **Ouvrir quand même** si l'application y est mentionnée.
 
-1. Ouvrir **Préférences Système** (ou **Réglages Système** selon la version de macOS).
-2. Accéder à **Confidentialité et sécurité**.
-3. Faire défiler jusqu'à la section **Sécurité**.
-4. Localiser la mention « AI-Finance DAF a été bloqué ».
-5. Cliquer sur **Ouvrir quand même**.
-6. Confirmer par la saisie du mot de passe administrateur si demandé.
+### « Le backend ne répond pas sur le port 8000 »
 
-### L'application se ferme immédiatement après le lancement
+Le moteur de calcul n'a pas démarré ou n'a pas pu écouter.
 
-**Causes possibles et résolutions :**
+1. Ouvrir le journal du backend (menu) et lire les dernières lignes.
+2. **Port déjà occupé** par un autre logiciel : le fermer, ou définir `AI_FINANCE_PORT` (voir [Paramètres avancés](../03-administration/02-configuration-avancee.md)).
+3. **Dossier des données inaccessible** (disque externe absent, permissions) : le rendre accessible ou rechoisir le dossier en supprimant `~/Library/Application Support/ai-finance/donnees.txt`.
+4. Relancer l'application.
 
-1. **Port 8000 déjà occupé** :
-   - Ouvrir le Terminal.
-   - Exécuter la commande : `lsof -i :8000`
-   - Identifier le processus utilisant le port et le fermer.
-   - Relancer AI-Finance DAF.
+### La fenêtre reste vide ou affiche une erreur de connexion
 
-2. **Fichier `config_groupe.json` corrompu** :
-   - Restaurer la dernière sauvegarde depuis la page **Administration > Sauvegardes**.
-   - Si l'application ne se lance pas du tout, remplacer manuellement le fichier par une sauvegarde via le Finder.
+Le moteur démarre encore. Attendre quelques secondes ; l'interface se reconnecte d'elle-même. Sinon Commande + R.
 
-3. **Dossier de données inaccessible** :
-   - Vérifier les permissions du dossier `~/Library/Application Support/AI-Finance-DAF/`.
-   - Réinitialiser les permissions si nécessaire.
+### Écran de connexion inattendu
 
-### Écran blanc après le démarrage
+Un mot de passe a été défini dans **Paramètres > Accès**. En cas d'oubli : quitter l'application, supprimer `acces.json` dans le dossier des données, relancer.
 
-Un écran blanc persistant au-delà de 30 secondes indique un problème de chargement de l'interface.
+## Documents
 
-**Résolution :**
+### Un fichier déposé n'apparaît pas
 
-1. Quitter complètement l'application.
-2. Rouvrir AI-Finance DAF.
-3. Si le problème persiste, utiliser le raccourci **Commande + Majuscule + R** pour forcer un rechargement complet avec vidage du cache.
-4. En dernier recours, réinitialiser l'application en supprimant le dossier `~/Library/Caches/com.experttoproduct.ai-finance-daf/`.
+1. Vérifier le sous-dossier (`Bilans/`, `PnL/`, `Balances/`, `FEC/`, `juridique/`) et le nom attendu, affiché dans la section Documents de la fiche de l'entité.
+2. Cliquer **Recharger les données**.
 
-## Problèmes de chargement des liasses
+### La liasse est lue mais des chiffres manquent
 
-### L'importation d'une liasse PDF échoue avec un message d'erreur
+- Un PDF scanné n'a pas de couche texte : demander le PDF d'origine au cabinet.
+- Une liasse d'un format inhabituel peut ne pas être reconnue : la balance générale du même exercice apporte les mêmes chiffres, et l'étape Données financières de la Configuration permet une saisie de secours.
 
-**Causes possibles :**
+### Écart entre liasse et balance dans la file à traiter
 
-1. **Le fichier n'est pas un PDF valide** : vérifier l'extension `.pdf` et l'intégrité du fichier en l'ouvrant dans l'aperçu macOS.
-2. **Le fichier dépasse 10 Mo** : la taille maximale supportée est de 10 Mo. Réduire la taille du PDF par compression si nécessaire.
-3. **Le fichier est protégé par un mot de passe** : supprimer la protection avant importation.
+L'écart est calculé compte par compte. Les causes fréquentes sont une balance avant écritures d'inventaire ou une liasse provisoire. Déposer la version définitive puis recharger ; si l'écart est expliqué, le marquer **Écart justifié**.
 
-### Les champs sont mal extraits après importation
+### Le FEC est refusé ou incohérent avec la balance
 
-**Résolution :**
+Vérifier qu'il s'agit du FEC de la bonne entité et du bon exercice (`FEC_<préfixe>_<exercice>.txt`), au format réglementaire. Un FEC partiel de l'exercice en cours est normal pour la page Pilotage.
 
-1. Vérifier que la liasse est bien au format CERFA standard (formulaires 2033, 2050, 2058).
-2. Si le PDF est un scan, l'extraction automatique ne peut pas fonctionner. Procéder à la saisie manuelle.
-3. Pour les liasses atypiques (logiciels d'expertise comptable spécifiques), la saisie manuelle des champs non détectés reste toujours possible.
-
-### Une entité est marquée comme incomplète dans la page Administration
-
-Une entité est considérée incomplète lorsqu'un ou plusieurs champs financiers critiques sont vides.
-
-**Résolution :**
-
-1. Ouvrir la page de l'entité concernée.
-2. Cliquer sur **Modifier les données**.
-3. Compléter les champs manquants.
-4. Enregistrer.
-
-L'indicateur de couverture passe au vert une fois tous les champs renseignés.
-
-## Problèmes de consolidation
+## Consolidation
 
 ### Les chiffres consolidés ne correspondent pas aux attendus
 
-Plusieurs causes possibles :
+1. Vérifier les **sources** de chaque entité (Paramètres > Couverture des données) : une entité sans source compte pour zéro.
+2. Vérifier les **détentions** et l'inclusion dans le périmètre (Configuration).
+3. Consulter le **journal des éliminations** de la Synthèse et les **positions intragroupe** de la page Groupe : un écart entre deux entités s'y lit directement.
+4. Vérifier le régime fiscal (IS ou IR) de chaque entité, qui conditionne l'IS consolidé.
 
-1. **Méthode de consolidation incorrecte** : vérifier que chaque entité est bien paramétrée avec la méthode appropriée (IG, ME, Hors périmètre).
-2. **Taux de détention erroné** : vérifier les taux saisis à la configuration.
-3. **Flux intragroupe non déclarés** : les flux non saisis ne sont pas neutralisés, ce qui peut gonfler artificiellement les chiffres consolidés.
-4. **Données d'un exercice non chargées** : s'assurer que toutes les entités disposent de données pour l'exercice consolidé.
+### Le bandeau MODE DÉMO reste affiché
 
-Un contrôle manuel de cohérence peut être effectué en comparant les chiffres consolidés aux chiffres individuels des entités, en tenant compte des neutralisations attendues.
+Le groupe est en mode démonstration : la Configuration doit être appliquée avec des documents réels, et le mode réel activé dans la configuration (`groupe.mode`). Le support accompagne cette bascule.
 
-### Un flux intragroupe apparaît en double dans le diagramme de Sankey
+## Assistant
 
-**Cause :** le même flux a été déclaré deux fois lors de la configuration (avec des libellés légèrement différents, par exemple).
+### L'assistant répond « Erreur LM Studio »
 
-**Résolution :**
+1. LM Studio est-il lancé, avec un modèle chargé et le serveur démarré sur le port 1234 ?
+2. Un modèle de 7 milliards de paramètres demande environ 8 Go de mémoire libre.
+3. Sur un grand dossier, réduire les sections envoyées avec les pastilles ou passer en mode Claude.
 
-1. Ouvrir la page **Administration**.
-2. Accéder à la section **Flux intragroupe**.
-3. Identifier et supprimer la ligne en doublon.
-4. Enregistrer.
+### L'assistant répond « Erreur Claude »
 
-## Problèmes de l'assistant IA
+Clé absente ou invalide dans le fichier `.env` du dossier des données, crédits Anthropic épuisés, ou pas de connexion Internet. Relancer l'application après toute modification du fichier.
 
-### L'assistant en mode local ne répond pas
+### Les réponses sont lentes
 
-**Vérifications à effectuer :**
+En mode local, la vitesse dépend du Mac : 10 à 30 secondes pour un modèle 7B sur un Mac récent. Préférer Qwen 2.5 7B aux modèles plus grands.
 
-1. **LM Studio est-il lancé** ? Ouvrir LM Studio et vérifier que le serveur local est démarré (icône verte dans le panneau).
-2. **Un modèle est-il chargé** ? LM Studio requiert qu'un modèle soit explicitement chargé avant utilisation.
-3. **Le port 1234 est-il bien celui configuré** ? Vérifier la correspondance entre les préférences d'AI-Finance DAF et de LM Studio.
+## Mises à jour
 
-### L'assistant en mode distant retourne une erreur de clé
+### « Impossible de vérifier les mises à jour »
 
-**Causes possibles :**
+Pas de connexion Internet, ou accès aux versions publiées non autorisé pour ce poste. Le menu propose d'ouvrir la page des versions ; le support transmet l'image disque sur demande.
 
-1. **Clé d'API invalide ou expirée** : régénérer une nouvelle clé depuis la console Anthropic et la saisir à nouveau.
-2. **Crédits Claude épuisés** : vérifier le solde du compte Anthropic.
-3. **Limites de débit atteintes** : attendre quelques minutes avant une nouvelle tentative.
+## Performance
 
-Le bouton **Tester la clé** dans les préférences permet de diagnostiquer rapidement ce type d'incident.
+### Le rechargement est long
 
-### Les réponses de l'assistant sont lentes ou incomplètes
-
-**En mode local :**
-
-- La vitesse dépend de la puissance du Mac. Les modèles trop volumineux (plus de 13 milliards de paramètres) peuvent être lents sur des Mac M1.
-- Privilégier un modèle plus petit (Qwen2.5-7B ou Llama-3.1-8B) pour une meilleure réactivité.
-
-**En mode distant :**
-
-- Les temps de réponse longs peuvent indiquer une période de forte charge chez Anthropic. Réessayer quelques minutes plus tard.
-- Vérifier la qualité de la connexion internet.
-
-## Problèmes de mise à jour
-
-### La mise à jour automatique échoue
-
-**Résolution :**
-
-1. Vérifier la connexion internet.
-2. Redémarrer l'application.
-3. Réessayer depuis **Préférences > Mises à jour > Rechercher maintenant**.
-4. Si l'échec persiste, procéder à une mise à jour manuelle depuis le site d'Expert To Product.
-
-### Après une mise à jour, certaines fonctionnalités ne répondent plus
-
-**Résolution :**
-
-1. Quitter complètement l'application.
-2. Relancer AI-Finance DAF.
-3. Si le problème persiste, procéder à un rollback vers la version antérieure en suivant la procédure décrite dans le chapitre [Mises à jour du logiciel](../03-administration/03-mises-a-jour.md).
-
-## Problèmes de performance
-
-### L'application devient lente avec le temps
-
-**Causes possibles :**
-
-1. **Trop de sauvegardes accumulées** : purger les sauvegardes anciennes depuis la page **Administration**.
-2. **Journal d'activité volumineux** : exporter le journal en CSV puis le purger.
-3. **Cache Electron saturé** : utiliser le raccourci **Commande + Majuscule + R** pour vider le cache.
-
-### Le calcul des ratios de vigilance prend plusieurs secondes
-
-Le calcul des onze ratios sur l'ensemble du périmètre consolidé est optimisé mais peut nécessiter quelques secondes pour les groupes comportant de nombreuses entités.
-
-**Optimisation possible :**
-
-- Privilégier l'affichage entité par entité plutôt que le mode consolidé lors des consultations fréquentes.
-- Rafraîchir uniquement après modification effective des données.
+Un rechargement complet prend une quinzaine de secondes pour un groupe de cinq entités sur trois exercices. Les balances volumineuses et les FEC de plusieurs centaines de milliers de lignes allongent ce délai. Le rechargement se fait en arrière-plan ; la navigation reste possible.
 
 ## Contacter le support
 
-Si l'incident rencontré n'est pas résolu par les procédures ci-dessus, contacter le support par courriel en joignant :
+Joindre à la demande :
 
-- Une description détaillée du problème.
-- La version de l'application (affichée dans le pied de page).
-- La version de macOS utilisée.
-- Une copie du journal d'activité si pertinent (section Administration).
-- Une capture d'écran de l'erreur si possible.
+- Une description du problème et les étapes pour le reproduire.
+- La version de l'application (menu **À propos**) et la version de macOS.
+- Le journal du backend et, si pertinent, une capture d'écran.
 
-Les coordonnées du support sont indiquées au chapitre [Contact et support](./03-contact-support.md).
+Les coordonnées figurent au chapitre [Contact et support](./03-contact-support.md).

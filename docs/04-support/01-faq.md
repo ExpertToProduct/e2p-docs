@@ -7,142 +7,109 @@ title: Foire aux questions
 
 ## Questions générales
 
-### Où sont stockées les données financières du groupe ?
+### Où sont stockées les données du groupe ?
 
-L'ensemble des données est stocké localement sur le poste de l'utilisateur, dans le dossier `~/Library/Application Support/AI-Finance-DAF/data/`. Le fichier principal est `config_groupe.json`. Aucune donnée n'est transmise vers un serveur distant. Pour accéder au dossier, ouvrir le Finder et utiliser le raccourci **Commande + Majuscule + G**, puis coller le chemin.
+Sur le poste, à deux endroits : le **dossier des données** choisi au premier lancement (configuration, statuts, journaux ; menu **AI-Finance DAF > Ouvrir le dossier des données**) et la **data room**, le dossier de documents que vous désignez dans la configuration. Rien n'est transmis à un serveur distant, à l'exception du dossier structuré envoyé à Anthropic lorsque vous interrogez l'assistant en mode Claude.
 
-### Les données sont-elles chiffrées au repos ?
+### Les données sont-elles chiffrées ?
 
-Le fichier `config_groupe.json` n'est pas chiffré par AI-Finance DAF. Il repose sur la protection offerte par macOS :
+Pas par l'application. Elles reposent sur le chiffrement du disque par **FileVault** (recommandé sur tout Mac professionnel) et sur les permissions du compte utilisateur. La clé d'API Claude, si vous en utilisez une, est un fichier texte du dossier des données soumis aux mêmes protections.
 
-- Le chiffrement complet du disque via **FileVault** (fortement recommandé pour tout Mac professionnel).
-- Les permissions du compte utilisateur qui empêchent un autre utilisateur du même Mac d'accéder aux données.
+### Comment sauvegarder ?
 
-La clé d'API Claude, lorsqu'elle est saisie dans les préférences, est stockée de manière chiffrée dans le trousseau macOS (Keychain).
+**Paramètres > Sauvegarde** produit une archive datée (configuration, statuts, journaux), **Sauvegarde complète** y ajoute la data room. Destination par défaut : iCloud Drive s'il est actif. Time Machine complète le dispositif. Voir [Administration des données](../03-administration/01-administration-donnees.md).
 
-### Comment sauvegarder mes données ?
+### L'application fonctionne-t-elle hors connexion ?
 
-Trois niveaux de sauvegarde sont disponibles :
-
-1. **Automatique** : des sauvegardes horodatées sont générées à chaque modification majeure, dans le dossier de données de l'application.
-2. **Manuelle** : le bouton **Sauvegarder maintenant** de la page **Administration > Sauvegardes** crée une sauvegarde à la demande.
-3. **Externe** : Time Machine, iCloud Drive ou tout outil de sauvegarde tiers peut être utilisé pour dupliquer le dossier de données vers un support externe.
-
-Il est recommandé de combiner les trois niveaux pour une sécurité optimale.
-
-### L'application fonctionne-t-elle hors connexion internet ?
-
-La quasi-totalité des fonctionnalités fonctionne hors connexion :
-
-- Chargement des liasses fiscales PDF
-- Analyse de la consolidation
-- Calcul des ratios de vigilance
-- Génération des rapports PDF
-- Assistant IA en mode local (LM Studio)
-
-La connexion internet est nécessaire uniquement pour :
-
-- L'assistant IA en mode distant (Claude API)
-- La vérification des mises à jour
-- Le téléchargement d'une nouvelle version
+Oui, entièrement : lecture des documents, consolidation, vigilance, file à traiter, rapport PDF, assistant en mode local. Internet n'est nécessaire que pour la vérification des mises à jour et l'assistant en mode Claude.
 
 ### Puis-je installer AI-Finance DAF sur plusieurs Mac ?
 
-Une licence AI-Finance DAF couvre l'installation sur jusqu'à trois Mac appartenant au même utilisateur ou à la même entreprise. Pour activer la licence sur un second poste, utiliser la clé de licence reçue lors de l'achat initial.
+Une licence couvre jusqu'à trois Mac appartenant au même utilisateur ou à la même entreprise : installer l'image disque sur chaque poste. Pour partager un même dossier de données et une même data room entre postes, les placer dans un dossier synchronisé (iCloud Drive) et ne les ouvrir que depuis un poste à la fois. Au-delà de trois postes, un tarif entreprise est disponible sur demande.
 
-Pour les entreprises nécessitant plus de trois postes (cabinet d'expertise comptable, groupe avec plusieurs DAF), un tarif entreprise est disponible sur demande.
+### Plusieurs groupes sur le même poste ?
+
+Oui. **Configuration > Nouveau groupe** crée un groupe avec sa configuration, ses statuts et sa data room ; le sélecteur de la barre latérale bascule de l'un à l'autre.
 
 ## Questions sur les données
 
-### Comment ajouter une nouvelle entité au groupe ?
+### Comment ajouter une entité ?
 
-1. Ouvrir la page **Administration**.
-2. Dans la section **Périmètre des entités**, cliquer sur **Ajouter une entité**.
-3. Remplir les champs requis (raison sociale, forme juridique, SIREN, taux de détention, méthode de consolidation).
-4. Enregistrer. La nouvelle entité apparaît immédiatement dans le menu de navigation.
-5. Charger les liasses fiscales de la nouvelle entité depuis la page **Documents**.
+1. Page **Configuration**, étape **Entités** : ajouter la société (type, régime fiscal, détention, préfixe de fichiers).
+2. **Appliquer**.
+3. Créer son dossier dans la data room (`Bilans/`, `PnL/`, `Balances/`, `FEC/`) et y déposer ses documents.
+4. **Recharger les données**.
 
-### Comment supprimer une entité ?
+### Comment retirer une entité ?
 
-La suppression d'une entité est irréversible et entraîne la perte de toutes ses données financières historiques. Il est recommandé de créer une sauvegarde manuelle au préalable.
+La retirer de la liste dans **Configuration**, puis appliquer. Ses documents restent dans la data room. Pour conserver son historique tout en la sortant du consolidé (cession, liquidation), préférer la décocher du périmètre de consolidation.
 
-1. Ouvrir la page **Administration**.
-2. Dans la section **Périmètre des entités**, cliquer sur le bouton **Supprimer** associé à l'entité.
-3. Confirmer la suppression.
+### Un chiffre me semble faux, que vérifier ?
 
-Si l'entité n'est plus active mais doit conserver son historique (cession, liquidation), il est préférable de la marquer comme **Hors périmètre de consolidation** plutôt que de la supprimer.
+1. La **source** du chiffre dans la fiche de l'entité (liasse, balance, saisie, aucune).
+2. Les **écarts liasse / balance** dans la file **À traiter**.
+3. Le **document** lui-même, ouvert depuis la section Documents de la fiche.
+4. Le tableau **Couverture des données** de la page Paramètres.
 
-### Puis-je modifier les exercices historiques déjà chargés ?
+### Puis-je saisir des chiffres sans documents ?
 
-Oui, les données de tout exercice peuvent être modifiées à tout moment. Pour éviter les écrasements accidentels, une sauvegarde automatique est créée à chaque modification.
+Oui, à l'étape **Données financières** de la Configuration. Ces saisies servent tant que les documents ne sont pas déposés ; ensuite les documents ont priorité.
 
-La modification rétroactive des données d'un exercice clos peut nécessiter un ajustement de cohérence sur l'exercice suivant (notamment les capitaux propres). Les contrôles de cohérence intégrés à l'application détectent automatiquement ces désalignements.
+### Comment sont détectés les flux intragroupe ?
 
-### Comment gérer un changement de méthode de consolidation ?
+À partir des balances : les comptes réciproques entre deux entités (comptes courants, créances et dettes croisées) sont rapprochés automatiquement. Les flux déclarés dans la Configuration servent de complément ou de repli, et peuvent être verrouillés pour garder la main.
 
-Un changement de méthode (par exemple passage d'IG à ME suite à une cession partielle) doit être documenté :
+### Que signifie « projet » sur une pièce juridique ?
 
-1. Modifier la méthode depuis la page **Administration**.
-2. Ajouter une note explicative dans la zone **Notes DAF** de l'entité concernée.
-3. Conserver la sauvegarde antérieure pour trace historique.
+Le document est présent mais n'est pas signé (version de travail). « Périmé » signale une pièce datée hors délai (K-bis de plus de trois mois, par exemple).
 
-Le changement de méthode s'applique automatiquement à l'ensemble des calculs consolidés. Les exercices antérieurs peuvent être recalculés ou conservés selon la méthode en vigueur à l'époque (option paramétrable).
+## Questions sur l'assistant
+
+### L'assistant peut-il se tromper ?
+
+Oui. Il reçoit un dossier structuré exact, mais un modèle de langage peut confondre deux exercices ou interpréter un chiffre de travers. Les chiffres font foi dans la Synthèse et les fiches.
+
+### Quel modèle local choisir ?
+
+Qwen 2.5 7B Instruct dans LM Studio, qui obtient le meilleur score sur le jeu de questions de référence de l'application. Prévoir 16 Go de mémoire.
+
+### Mes données partent-elles chez Anthropic ?
+
+Uniquement si vous choisissez le mode **CLAUDE**, ou le mode **AUTO** alors que LM Studio est éteint et qu'une clé est configurée. Dans ce cas, le dossier structuré de la question (chiffres, structure, alertes) est transmis à Anthropic pour cette réponse. En mode **LOCAL**, rien ne quitte le poste.
 
 ## Questions techniques
 
 ### L'application ne s'ouvre pas, que faire ?
 
-Se reporter au chapitre [Résolution de problèmes](./02-resolution-problemes.md). Les causes les plus fréquentes sont :
+Voir [Résolution de problèmes](./02-resolution-problemes.md). Causes fréquentes : port 8000 déjà pris par un autre logiciel, dossier des données inaccessible (disque externe débranché), moteur qui ne démarre pas (journal du backend).
 
-- Blocage initial de macOS lors du premier lancement (autoriser l'ouverture dans les préférences Sécurité et confidentialité).
-- Port 8000 déjà occupé par une autre application.
-- Fichier `config_groupe.json` corrompu (restaurer une sauvegarde).
-
-### Comment réinitialiser complètement l'application ?
+### Comment réinitialiser l'application ?
 
 1. Quitter AI-Finance DAF.
-2. Ouvrir le Finder, se rendre dans `~/Library/Application Support/`.
-3. Renommer ou supprimer le dossier `AI-Finance-DAF`.
-4. Relancer l'application. L'assistant de configuration initiale s'ouvre comme lors de la première utilisation.
+2. Sauvegarder puis renommer le dossier des données.
+3. Supprimer `~/Library/Application Support/ai-finance/donnees.txt`.
+4. Relancer : la question du dossier est posée de nouveau et un groupe de démonstration est créé.
 
-Cette opération efface l'ensemble des données. Une sauvegarde préalable est fortement recommandée.
+La data room n'est pas touchée.
 
-### L'extraction automatique d'une liasse PDF ne fonctionne pas correctement, pourquoi ?
+### Une liasse n'est pas lue, pourquoi ?
 
-Plusieurs causes possibles :
-
-- **Le PDF est un scan** sans couche texte : l'extraction automatique ne peut pas fonctionner, une saisie manuelle est requise.
-- **Le format de la liasse est atypique** : certains logiciels d'expertise comptable génèrent des liasses dont la structure diffère légèrement du standard CERFA.
-- **Les codes cellule sont absents** : certaines liasses allégées ne comportent pas les codes standards (FL, HN, etc.) utilisés par l'extraction.
-
-Dans tous les cas, la saisie manuelle reste possible depuis la page de l'entité concernée.
+Le PDF est un scan sans couche texte, ou le fichier ne porte pas le nom attendu (préfixe de l'entité et exercice), ou il est rangé dans le mauvais sous-dossier. La section Documents de la fiche indique le nom attendu. Les liasses des logiciels de cabinet courants (régime 2033 et 2050) sont reconnues ; pour un format inhabituel, transmettre un exemple au support.
 
 ## Questions commerciales
 
 ### Quelle est la durée de la maintenance incluse à l'achat ?
 
-La maintenance est incluse pendant les 12 premiers mois suivant l'acquisition de la licence. Au-delà, une maintenance annuelle peut être souscrite pour bénéficier des mises à jour et du support.
-
-Le prix de la maintenance annuelle est de 15 % à 20 % du prix de la licence initiale.
+Douze mois. Au-delà, une maintenance annuelle peut être souscrite pour bénéficier des mises à jour et du support. Son prix est de 15 % à 20 % du prix de la licence initiale.
 
 ### Puis-je essayer AI-Finance DAF avant achat ?
 
-Une version d'évaluation limitée est disponible sur demande. Elle permet de tester l'ensemble des fonctionnalités pendant 30 jours sur les données d'un groupe fictif.
-
-Une démonstration personnalisée de 45 minutes en visioconférence est également proposée gratuitement. Réservation depuis le site d'Expert To Product.
+Une version d'évaluation limitée est disponible sur demande, pour tester l'ensemble des fonctionnalités pendant 30 jours sur un groupe fictif. Une démonstration personnalisée de 45 minutes en visioconférence est également proposée gratuitement.
 
 ### Que se passe-t-il en cas de rupture de la maintenance annuelle ?
 
-À l'expiration de la maintenance annuelle :
-
-- La version en cours continue de fonctionner sans limitation.
-- Les mises à jour ne sont plus reçues.
-- Le support par courriel n'est plus accessible.
-
-La maintenance peut être réactivée à tout moment. Un rattrapage des années non souscrites peut être exigé selon les conditions en vigueur au moment de la réactivation.
+La version en cours continue de fonctionner sans limitation ; les mises à jour et le support ne sont plus fournis. La maintenance peut être réactivée à tout moment, un rattrapage des années non souscrites pouvant être exigé.
 
 ### Peut-on obtenir un développement sur mesure ?
 
-Oui. Les demandes de développement spécifiques (fonctionnalité absente du produit standard, intégration avec un SI existant, adaptation à un secteur particulier) font l'objet d'un devis séparé.
-
-Les demandes peuvent être adressées par courriel à l'adresse de contact support.
+Oui, sur devis : fonctionnalité absente du produit standard, intégration avec un système existant, adaptation à un secteur. Les demandes sont adressées au support.

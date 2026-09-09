@@ -5,90 +5,33 @@ title: Mises à jour du logiciel
 
 # Mises à jour du logiciel
 
-Les mises à jour d'AI-Finance DAF permettent de bénéficier des améliorations fonctionnelles, des correctifs de sécurité et de la compatibilité avec les nouvelles versions de macOS.
+## Numérotation
 
-## Cycle de versions
+AI-Finance DAF suit une numérotation **X.Y.Z** : X pour un changement majeur, Y pour des fonctionnalités nouvelles, Z pour des correctifs. Les versions Y et Z sont incluses dans la maintenance de l'année en cours.
 
-AI-Finance DAF suit une numérotation sémantique de type **X.Y.Z** :
+## Vérification
 
-- **X** (version majeure) : changement d'architecture ou rupture de compatibilité. Mise à jour payante possible.
-- **Y** (version mineure) : ajout de fonctionnalités, améliorations significatives. Incluse dans la maintenance annuelle.
-- **Z** (correctif) : corrections de bugs, ajustements mineurs. Toujours gratuite.
+L'application vérifie au démarrage, silencieusement, si une version plus récente est publiée. Le menu **AI-Finance DAF > Rechercher des mises à jour…** lance la vérification à la demande et indique si la version installée est à jour.
 
-La fréquence typique de publication est :
+Si une version plus récente existe, une fenêtre présente le numéro, les notes de version et un bouton **Télécharger**.
 
-- Versions correctives : toutes les 2 à 4 semaines selon les besoins.
-- Versions mineures : 3 à 4 fois par an.
-- Versions majeures : une fois par an en moyenne.
+## Installer une mise à jour
 
-## Notification des mises à jour
+1. Télécharger l'image disque proposée.
+2. Quitter AI-Finance DAF.
+3. Ouvrir l'image disque et glisser l'application sur **Applications**, en acceptant le remplacement.
+4. Relancer l'application.
 
-L'application vérifie automatiquement la disponibilité d'une nouvelle version au démarrage. Cette vérification s'effectue en arrière-plan et ne ralentit pas le lancement.
+Le dossier des données, la data room et le choix du dossier ne sont pas touchés. Une sauvegarde préalable depuis **Paramètres** reste une bonne pratique avant une version majeure.
 
-Si une nouvelle version est détectée, une notification discrète apparaît dans la barre d'état inférieure : **« Une mise à jour est disponible ».**
+## Si la vérification échoue
 
-Un clic sur la notification ouvre une fenêtre de dialogue présentant :
+Sans connexion Internet, ou si l'accès aux versions publiées n'est pas autorisé pour ce poste, le menu propose d'ouvrir la page des versions ; le support transmet l'image disque sur demande.
 
-- Le numéro de la nouvelle version
-- La date de publication
-- Les notes de version (nouveautés, corrections, compatibilité)
-- Deux boutons : **Installer maintenant** ou **Reporter**.
+## Revenir à une version antérieure
 
-## Procédure de mise à jour
+Réinstaller l'image disque de la version précédente de la même manière. Les données restent lisibles d'une version à l'autre ; en cas de doute, restaurer la sauvegarde faite avant la mise à jour (voir [Administration des données](./01-administration-donnees.md)).
 
-### Mise à jour automatique (recommandée)
+## LM Studio
 
-Pour les versions correctives et mineures, la mise à jour s'effectue automatiquement dans l'application après acceptation de l'utilisateur :
-
-1. Cliquer sur **Installer maintenant** dans la notification.
-2. L'application télécharge la nouvelle version en arrière-plan (généralement 50 à 150 Mo).
-3. À la fin du téléchargement, un message invite à redémarrer l'application.
-4. Cliquer sur **Redémarrer et installer**.
-5. L'application se ferme, installe la mise à jour et se rouvre automatiquement.
-
-La durée totale est comprise entre 30 secondes et 2 minutes selon la qualité de la connexion.
-
-### Mise à jour manuelle
-
-Pour les versions majeures ou en cas d'échec de la mise à jour automatique, la procédure manuelle est la suivante :
-
-1. Se rendre sur le site d'Expert To Product à la page **Téléchargements**.
-2. Se connecter avec les identifiants de la licence.
-3. Télécharger le nouveau fichier `.dmg`.
-4. Ouvrir le `.dmg` et glisser l'icône dans le dossier **Applications**, en remplaçant l'ancienne version.
-5. Lancer la nouvelle version depuis le dossier **Applications**.
-
-Le fichier `config_groupe.json` et l'ensemble des données ne sont pas affectés par cette opération.
-
-## Préparation avant mise à jour
-
-Avant toute mise à jour majeure (changement de X), il est recommandé de :
-
-1. **Générer une sauvegarde manuelle** depuis la page **Administration > Sauvegardes**.
-2. **Exporter les rapports importants** en PDF (consolidation, vigilance) au cas où un problème de compatibilité nécessiterait un retour à la version précédente.
-3. **Consulter les notes de version** pour identifier d'éventuels changements impactants (suppression de fonctionnalités, modification de comportements).
-
-Les versions mineures et correctives ne nécessitent pas de préparation particulière, mais une sauvegarde manuelle reste une bonne pratique.
-
-## Rollback vers une version antérieure
-
-En cas de dysfonctionnement constaté après une mise à jour, il est possible de revenir à la version précédente :
-
-1. Quitter complètement AI-Finance DAF.
-2. Télécharger la version antérieure depuis le site d'Expert To Product (section **Archives** de la page **Téléchargements**).
-3. Ouvrir le `.dmg` et installer l'ancienne version (remplacement).
-4. Si la version précédente ne parvient pas à lire le fichier `config_groupe.json` (cas de migration de schéma), restaurer la dernière sauvegarde antérieure à la mise à jour depuis la page **Administration**.
-
-Les versions N-1 et N-2 sont archivées pendant 12 mois minimum.
-
-## Mises à jour du moteur d'inférence LM Studio
-
-LM Studio est un logiciel tiers qui dispose de son propre cycle de mises à jour, indépendant d'AI-Finance DAF.
-
-Il est recommandé de maintenir LM Studio à jour en suivant les notifications de l'application elle-même. Les modèles de langage peuvent également être mis à jour depuis LM Studio, pour bénéficier des dernières versions des modèles disponibles.
-
-## Notification de fin de maintenance
-
-Lorsqu'une version mineure n'est plus supportée (absence de correctifs depuis plus de 12 mois), une notification s'affiche à l'ouverture de l'application pour inciter à la mise à jour.
-
-Le support par courriel reste disponible pour toutes les versions sous maintenance annuelle active, quelle que soit la version utilisée, dans la limite des possibilités techniques.
+LM Studio et ses modèles ont leur propre cycle de mise à jour, indépendant d'AI-Finance DAF. Après une mise à jour de LM Studio, vérifier que le serveur local est toujours démarré sur le port 1234 avec un modèle chargé.

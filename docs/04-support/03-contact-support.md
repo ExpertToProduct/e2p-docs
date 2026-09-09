@@ -42,14 +42,14 @@ Les utilisateurs bénéficiant d'une maintenance annuelle active disposent d'un 
 
 Pour faciliter le traitement de la demande, il est recommandé d'inclure dans le courriel :
 
-1. **Identification de la licence** : clé de licence ou adresse courriel associée à l'achat.
+1. **Identification** : adresse courriel associée à l'achat.
 2. **Description précise du problème** : que vouliez-vous faire ? que s'est-il passé ? quel message d'erreur ?
 3. **Contexte technique** :
-   - Version d'AI-Finance DAF (visible dans le pied de page)
+   - Version d'AI-Finance DAF (menu AI-Finance DAF > À propos)
    - Version de macOS (Pomme > À propos de ce Mac)
    - Modèle de Mac (M1, M2, M3, M4, etc.)
 4. **Captures d'écran** : au moins une capture de l'erreur ou de l'écran concerné.
-5. **Journal d'activité** : extrait du journal d'activité sur la période de l'incident (exportable depuis la page Administration).
+5. **Journal du backend** : fichier ouvert par le menu AI-Finance DAF > Afficher le journal du backend.
 
 ## Types de demandes et délais indicatifs
 
