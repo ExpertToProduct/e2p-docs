@@ -54,7 +54,7 @@ La file réunit, pour l'exercice de référence, trois familles d'éléments ave
 
 - **Alertes de ratios** : ratios en rouge ou orange.
 - **Contrôles de cohérence** : écart entre liasse et balance, source manquante, régime fiscal incohérent, formulaire 2065 absent.
-- **Pièces manquantes** : documents juridiques et financiers prioritaires attendus et absents.
+- **Pièces manquantes** : documents juridiques et financiers prioritaires attendus et absents. Une pièce dont le délai légal est dépassé apparaît **en rouge** avec son retard en jours et sa date limite ; une pièce dont le délai court encore apparaît avec sa date limite.
 
 ### Traiter un élément
 

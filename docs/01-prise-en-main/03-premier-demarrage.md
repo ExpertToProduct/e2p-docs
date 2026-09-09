@@ -44,6 +44,8 @@ Pour chaque société du groupe :
 - **Détention** par la société mère (en pourcentage) et inclusion ou non dans le périmètre de consolidation
 - **Régime fiscal** : IS ou IR (transparence fiscale des SCI), taux d'IS
 - **Préfixe des fichiers** : la racine des noms de documents dans la data room (par exemple `DISTRIB` pour `DISTRIB_bilan_2025.pdf`)
+- **Clôture de l'exercice** (31 décembre par défaut) : sert au calcul des délais légaux de l'échéancier
+- **Alias** : variantes d'écriture de la société dans les intitulés de comptes, pour le rapprochement intragroupe
 
 L'ordre de saisie est l'ordre d'affichage dans la barre latérale.
 
@@ -51,7 +53,7 @@ L'ordre de saisie est l'ordre d'affichage dans la barre latérale.
 
 Déclaration des flux récurrents entre entités : dividendes, convention d'assistance (management fees), loyers, compte courant, refacturation. Pour chacun : émetteur, récepteur, montant annuel, exercices concernés.
 
-Ces flux servent aux éliminations de la consolidation. Dès que les balances sont déposées, l'application rapproche elle-même les comptes réciproques : un flux détecté dans les balances remplace le flux déclaré, sauf si celui-ci est verrouillé.
+Ces flux servent aux éliminations de la consolidation. Dès que les balances sont déposées, l'application rapproche elle-même les comptes réciproques : un flux détecté dans les balances remplace le flux déclaré, sauf si celui-ci est verrouillé. Cette étape indique aussi quelles sociétés ont signé la convention de trésorerie du groupe et quels tiers homonymes ne doivent jamais être pris pour une société du groupe.
 
 ## Étape 4 — Données financières
 

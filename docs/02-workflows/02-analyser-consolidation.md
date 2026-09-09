@@ -40,7 +40,7 @@ Chaque écriture d'élimination (titres, comptes réciproques, dividendes intrag
 
 - **Structure capitalistique** : pour chaque entité, détention, chiffre d'affaires N et N-1, résultat, trésorerie, effectif, inclusion dans le périmètre.
 - **Positions intragroupe** : comptes réciproques rapprochés à partir des balances (comptes courants, créances et dettes croisées), avec les écarts entre les deux entités.
-- **Pièces juridiques** : référentiel des documents attendus par entité et pour le groupe, statut de chacun (présent, projet, périmé, manquant, sans objet) et dépôt (voir [Déposer les documents](./01-charger-reporting.md)).
+- **Pièces juridiques** : référentiel des documents attendus par entité et pour le groupe, statut de chacun (présent, projet, périmé, manquant, sans objet) et dépôt (voir [Déposer les documents](./01-charger-reporting.md)). Les pièces soumises à un délai légal portent leur date limite : **en retard** avec le nombre de jours, ou **à venir**. Délais retenus : approbation des comptes dans les six mois de la clôture, dépôt des comptes au greffe dans les deux mois de l'assemblée (huit mois de la clôture si la date de l'assemblée n'est pas connue), liasse fiscale dans les trois mois de la clôture ou début mai pour une clôture au 31 décembre, K-bis de moins de trois mois. La date de clôture de chaque société se règle dans la Configuration.
 
 ## Méthodes de consolidation
 
