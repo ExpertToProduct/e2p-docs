@@ -64,3 +64,7 @@ La file réunit, pour l'exercice de référence, trois familles d'éléments ave
 - **Déposer** : pour une pièce manquante, ouvre le dépôt guidé.
 
 Les statuts sont conservés d'un rechargement à l'autre et propres à chaque groupe. Le compteur de la barre latérale indique ce qui reste à traiter ; la file figure aussi dans le rapport DAF.
+
+## Échéancier
+
+La page **Échéancier** reprend les obligations datées de chaque société avec trois compteurs fondés sur le temps qui reste : **en retard**, **dans les 30 jours**, **dans l'année civile**, chacun détaillé par société. Les obligations sont ensuite listées par mois avec la date limite, le retard ou les jours restants, et un bouton **Déposer** quand une pièce est attendue. Un élément expliqué ou ignoré dans la file À traiter sort des compteurs. Le bouton **Calendrier (.ics)** exporte les obligations à venir avec un rappel sept jours avant, pour l'agenda du DAF ; le rapport DAF reprend l'échéancier en tableau.

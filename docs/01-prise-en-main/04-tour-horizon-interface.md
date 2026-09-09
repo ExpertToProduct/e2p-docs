@@ -17,6 +17,7 @@ L'interface est composée d'une **barre latérale gauche** (navigation, sélecte
 | **Groupe** | Structure capitalistique, positions intragroupe rapprochées, pièces juridiques et dépôt d'une pièce. |
 | **Pilotage** | Exercice en cours, suivi à partir des FEC partiels. |
 | **À traiter** | File unique des alertes de ratios, contrôles de cohérence et pièces manquantes, avec statuts. |
+| **Échéancier** | Obligations légales datées par société (approbation, dépôt au greffe, liasse, rapports) : en retard, dans les 30 jours, dans l'année ; frise par mois, dépôt guidé, export calendrier. |
 | **Entités** | Une fiche par société : chiffres clés, bilan, résultat, emprunts, positions intragroupe, sources, documents, pièces à obtenir. |
 | **Paramètres** | Couverture des données, rechargement, sauvegardes, apparence, accès, journal d'activité. |
 | **Assistant IA** | Questions en langage naturel sur le dossier. |
@@ -27,7 +28,7 @@ L'interface est composée d'une **barre latérale gauche** (navigation, sélecte
 
 - **Sélecteur de groupe** (en haut) : présent dès qu'un second groupe existe.
 - **Recharger les données** : relit les documents de la data room et recalcule tout. Une barre de progression suit les six étapes (moteur, intragroupe, historique, vigilance, alertes, identité). Le rechargement complet prend une quinzaine de secondes.
-- **À traiter** porte le nombre d'éléments restant à traiter.
+- **À traiter** porte le nombre d'éléments restant à traiter ; **Échéancier** porte le nombre d'obligations en retard, ou à échéance dans les 30 jours.
 
 ## Le menu AI-Finance DAF
 
