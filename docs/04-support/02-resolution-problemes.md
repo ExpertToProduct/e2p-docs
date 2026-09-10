@@ -40,9 +40,22 @@ Un mot de passe a été défini dans **Paramètres > Accès**. En cas d'oubli : 
 1. Vérifier le sous-dossier (`Bilans/`, `PnL/`, `Balances/`, `FEC/`, `juridique/`) et le nom attendu, affiché dans la section Documents de la fiche de l'entité.
 2. Cliquer **Recharger les données**.
 
+### La liasse est marquée « scanné, non lu »
+
+Le PDF n'a pas de couche texte : aucun chiffre ne peut en être lu. Deux solutions :
+
+1. Demander au cabinet l'export PDF de son logiciel (pas un scan). C'est la voie sûre.
+2. Installer la reconnaissance de texte sur le poste, une fois pour toutes, dans le Terminal :
+
+```bash
+brew install ocrmypdf tesseract-lang
+```
+
+Au rechargement suivant, l'application reconnaît le texte des liasses scannées et lit le fichier reconnu, conservé à côté de l'original. Cet outil n'est pas embarqué dans l'application : il pèse plus de 250 Mo. Un scan de mauvaise qualité peut rester partiellement illisible ; les champs non reconnus apparaissent alors comme absents.
+
 ### La liasse est lue mais des chiffres manquent
 
-- Un PDF scanné n'a pas de couche texte : demander le PDF d'origine au cabinet.
+- Un PDF scanné n'a pas de couche texte : voir ci-dessus.
 - Une liasse d'un format inhabituel peut ne pas être reconnue : la balance générale du même exercice apporte les mêmes chiffres, et l'étape Données financières de la Configuration permet une saisie de secours.
 
 ### Écart entre liasse et balance dans la file à traiter

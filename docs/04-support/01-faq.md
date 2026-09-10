@@ -94,7 +94,7 @@ La data room n'est pas touchée.
 
 ### Une liasse n'est pas lue, pourquoi ?
 
-Le PDF est un scan sans couche texte, ou le fichier ne porte pas le nom attendu (préfixe de l'entité et exercice), ou il est rangé dans le mauvais sous-dossier. La section Documents de la fiche indique le nom attendu. Les liasses des logiciels de cabinet courants (régime 2033 et 2050) sont reconnues ; pour un format inhabituel, transmettre un exemple au support.
+Trois causes. Le fichier ne porte pas le nom attendu (préfixe de l'entité et exercice) ou n'est pas dans le bon sous-dossier : la section Documents de la fiche indique le nom attendu. Le PDF est un **scan sans couche texte** : la fiche l'indique par la mention « scanné, non lu », la couverture des données le compte et la file À traiter porte un contrôle ; demander au cabinet l'export de son logiciel plutôt qu'un scan, ou installer l'outil de reconnaissance de texte sur le poste (voir Résolution de problèmes). Le format est inhabituel : les liasses des logiciels de cabinet courants (régime 2033 et 2050) sont reconnues ; pour un autre format, transmettre un exemple au support.
 
 ## Questions commerciales
 
