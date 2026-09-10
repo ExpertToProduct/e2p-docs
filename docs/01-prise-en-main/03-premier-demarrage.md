@@ -48,6 +48,7 @@ Pour chaque société du groupe :
 - **Alias** : variantes d'écriture de la société dans les intitulés de comptes, pour le rapprochement intragroupe
 - **Commissaire aux comptes** : nom, premier exercice du mandat, date de nomination. Laissé vide, l'application vérifie chaque exercice si la nomination est devenue obligatoire (deux critères sur trois : total bilan, chiffre d'affaires, effectif, seuils du décret de 2024 ; cumul pour la société qui contrôle le groupe et ses filiales significatives)
 - **Dirigeants** : fonction, nom, date de nomination et durée du mandat quand elle est déterminée, pour être prévenu de l'échéance
+- **Obligations de publicité** : dépôt des comptes sous confidentialité (la pièce attendue devient la déclaration de confidentialité) et prorogation du délai d'approbation accordée par le tribunal pour un exercice (l'échéancier se décale)
 
 L'ordre de saisie est l'ordre d'affichage dans la barre latérale.
 
@@ -55,7 +56,7 @@ L'ordre de saisie est l'ordre d'affichage dans la barre latérale.
 
 Déclaration des flux récurrents entre entités : dividendes, convention d'assistance (management fees), loyers, compte courant, refacturation. Pour chacun : émetteur, récepteur, montant annuel, exercices concernés.
 
-Ces flux servent aux éliminations de la consolidation. Dès que les balances sont déposées, l'application rapproche elle-même les comptes réciproques : un flux détecté dans les balances remplace le flux déclaré, sauf si celui-ci est verrouillé. Cette étape indique aussi quelles sociétés ont signé la convention de trésorerie du groupe et quels tiers homonymes ne doivent jamais être pris pour une société du groupe.
+Ces flux servent aux éliminations de la consolidation. Dès que les balances sont déposées, l'application rapproche elle-même les comptes réciproques : un flux détecté dans les balances remplace le flux déclaré, sauf si celui-ci est verrouillé. Cette étape indique aussi quelles sociétés ont signé la convention de trésorerie du groupe, quels tiers homonymes ne doivent jamais être pris pour une société du groupe, et la liste des **conventions réglementées** (parties, objet, date d'autorisation) : dès qu'elle est renseignée, un rapport spécial est attendu chaque exercice pour ses parties, et tout flux entre deux sociétés hors de la liste est signalé.
 
 ## Étape 4 — Données financières
 

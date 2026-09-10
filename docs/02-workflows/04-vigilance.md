@@ -53,7 +53,7 @@ Le bouton **Rapport PDF** en haut de la page produit le rapport complet du group
 La file réunit, pour l'exercice de référence, trois familles d'éléments avec l'entité, l'exercice et la gravité :
 
 - **Alertes de ratios** : ratios en rouge ou orange.
-- **Contrôles de cohérence** : écart entre liasse et balance, source manquante, régime fiscal incohérent, formulaire 2065 absent, commissaire aux comptes obligatoire mais non renseigné, mandat du commissaire aux comptes ou d'un dirigeant expiré ou à renouveler dans l'année.
+- **Contrôles de cohérence** : écart entre liasse et balance, source manquante, régime fiscal incohérent, formulaire 2065 absent, commissaire aux comptes obligatoire mais non renseigné, mandat du commissaire aux comptes ou d'un dirigeant expiré ou à renouveler dans l'année, dividende reçu contredit par le PV d'approbation de l'émetteur (ou différent du montant voté), convention entre deux sociétés absente de la liste des conventions réglementées. Le contenu des PV d'approbation est lu quand le PDF a une couche texte ; un dividende confirmé par le PV ne génère plus de contrôle.
 - **Pièces manquantes** : documents juridiques et financiers prioritaires attendus et absents. Une pièce dont le délai légal est dépassé apparaît **en rouge** avec son retard en jours et sa date limite ; une pièce dont le délai court encore apparaît avec sa date limite.
 
 ### Traiter un élément
