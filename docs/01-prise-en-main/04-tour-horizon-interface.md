@@ -15,7 +15,7 @@ L'interface est composée d'une **barre latérale gauche** (navigation, sélecte
 |---|---|
 | **Synthèse** | Comptes consolidés de l'exercice de référence, historique, éliminations, fiscalité, flux de trésorerie. |
 | **Groupe** | Structure capitalistique, positions intragroupe rapprochées, pièces juridiques et dépôt d'une pièce. |
-| **Pilotage** | Exercice en cours, suivi à partir des FEC partiels. |
+| **Pilotage** | Exercice en cours, suivi à partir des FEC partiels ou, à défaut, d'une balance arrêtée en cours d'exercice. |
 | **À traiter** | File unique des alertes de ratios, contrôles de cohérence et pièces manquantes, avec statuts. |
 | **Échéancier** | Obligations légales datées par société (approbation, dépôt au greffe, liasse, rapports) : en retard, dans les 30 jours, dans l'année ; frise par mois, dépôt guidé, export calendrier. |
 | **Entités** | Une fiche par société : chiffres clés, bilan, résultat, emprunts, positions intragroupe, sources, documents, pièces à obtenir. |

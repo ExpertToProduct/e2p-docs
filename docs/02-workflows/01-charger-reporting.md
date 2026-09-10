@@ -21,6 +21,7 @@ La mise à jour des données ne passe pas par un formulaire d'import : les docum
 | Liasse fiscale | PDF (2033 simplifié ou 2050 réel normal, avec le 2065) | `Bilans/`, `PnL/` | Bilan, compte de résultat, régime fiscal, effectif |
 | Balance générale | PDF du cabinet ou tableur | `Balances/` | Détail par compte, positions intragroupe, tableau de flux de trésorerie, contrôle de la liasse |
 | FEC | Fichier texte | `FEC/` | Contrôle de la balance, lettrage, âge des créances, exercice en cours |
+| Balance intermédiaire | PDF ou tableur, `<préfixe>_<exercice>_<MM>` (MM = dernier mois couvert) | `Balances/` | Situation de l'exercice en cours sans FEC : cumuls à date, comparatif N-1, atterrissage |
 | Pièces juridiques | PDF | `juridique/` | Statuts, K-bis, PV, rapports, registre des titres, conventions |
 
 Les liasses scannées sans couche texte ne peuvent pas être lues ; demander au cabinet le PDF d'origine.
