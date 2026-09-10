@@ -31,7 +31,7 @@ Le moteur démarre encore. Attendre quelques secondes ; l'interface se reconnect
 
 ### Écran de connexion inattendu
 
-Un mot de passe a été défini dans **Paramètres > Accès**. En cas d'oubli : quitter l'application, supprimer `acces.json` dans le dossier des données, relancer.
+Des comptes ont été créés dans **Paramètres > Accès**. Un administrateur réinitialise le mot de passe d'un autre compte depuis cette page. Si le dernier mot de passe administrateur est oublié : quitter l'application, supprimer `acces.json` dans le dossier des données, relancer, puis recréer les comptes.
 
 ## Documents
 

@@ -45,7 +45,16 @@ Rechargements, dépôts, changements de statut, connexions. **Effacer** vide le 
 
 ## Accès protégé
 
-**Paramètres > Accès** permet de définir un mot de passe local. Une fois actif, l'application demande une connexion à chaque ouverture ; cinq échecs consécutifs verrouillent l'accès quelques minutes. Le mot de passe est stocké haché dans le dossier des données. Pour le retirer, saisir un mot de passe vide après connexion ; en cas d'oubli, supprimer le fichier `acces.json` du dossier des données, application fermée.
+**Paramètres > Accès** permet de créer des comptes nominatifs. Le premier compte, administrateur, active la protection : l'application demande ensuite un identifiant et un mot de passe à chaque ouverture ; cinq échecs consécutifs verrouillent l'accès une minute. Les mots de passe sont stockés hachés dans le dossier des données.
+
+Deux rôles :
+
+- **Administrateur** : tout, y compris la gestion des comptes (création, rôle, désactivation, réinitialisation du mot de passe) et le journal des accès.
+- **Lecteur** : consultation seule. Les dépôts de pièces, changements de statut, rechargements, sauvegardes et la configuration disparaissent de l'interface et sont refusés par le moteur.
+
+Le journal des accès (Paramètres > Accès) conserve les connexions et les actions d'écriture (dépôt, statut, configuration, rechargement, groupes, comptes) avec l'identifiant de leur auteur. Un mot de passe unique défini avec une version antérieure devient automatiquement le compte administrateur « admin », avec le même mot de passe.
+
+Pour retirer la protection : un administrateur utilise « Retirer la protection » avec son mot de passe. En cas d'oubli du dernier mot de passe administrateur, supprimer le fichier `acces.json` du dossier des données, application fermée.
 
 ## Plusieurs groupes
 
