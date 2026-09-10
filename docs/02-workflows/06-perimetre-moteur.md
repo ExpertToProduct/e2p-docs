@@ -31,7 +31,9 @@ Cette page est écrite pour un expert-comptable, un commissaire aux comptes ou u
 
 ## Devises
 
-Mono-devise. Une société tenant ses comptes dans une autre devise que celle du groupe n'est pas convertie.
+Une société tenant ses comptes dans une autre devise est convertie selon IAS 21 dans sa version de base : bilan au **cours de clôture**, compte de résultat au **cours moyen**, capitaux propres d'ouverture au cours historique (cours de clôture de l'exercice précédent), et l'**écart de conversion** porté en capitaux propres, visible dans le bilan, l'état de variation et l'annexe. Les cours se saisissent par exercice et par devise dans la Configuration ; sans cours, la société reste non convertie et un bandeau le signale. Le tableau de flux passe alors en méthode indirecte avec une ligne d'effet de change.
+
+**Non couvert** : recyclage de l'écart lors d'une cession, investissement net en devise, hyperinflation, rapprochement intragroupe entre deux sociétés de devises différentes.
 
 ## États produits et réconciliation croisée
 
