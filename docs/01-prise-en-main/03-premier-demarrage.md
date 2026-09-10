@@ -46,6 +46,8 @@ Pour chaque société du groupe :
 - **Préfixe des fichiers** : la racine des noms de documents dans la data room (par exemple `DISTRIB` pour `DISTRIB_bilan_2025.pdf`)
 - **Clôture de l'exercice** (31 décembre par défaut) : sert au calcul des délais légaux de l'échéancier
 - **Devise des comptes** (celle du groupe par défaut) ; les cours de change par exercice se saisissent à l'étape Identité
+- **Méthode de consolidation** : déduite du type et de la détention par défaut, ou choisie (globale, proportionnelle, équivalence, hors périmètre)
+- **Entrée ou sortie du périmètre** en cours d'exercice, et **contrats de crédit-bail** à retraiter
 - **Alias** : variantes d'écriture de la société dans les intitulés de comptes, pour le rapprochement intragroupe
 - **Commissaire aux comptes** : nom, premier exercice du mandat, date de nomination. Laissé vide, l'application vérifie chaque exercice si la nomination est devenue obligatoire (deux critères sur trois : total bilan, chiffre d'affaires, effectif, seuils du décret de 2024 ; cumul pour la société qui contrôle le groupe et ses filiales significatives)
 - **Dirigeants** : fonction, nom, date de nomination et durée du mandat quand elle est déterminée, pour être prévenu de l'échéance

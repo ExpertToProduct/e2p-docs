@@ -9,10 +9,16 @@ Cette page est écrite pour un expert-comptable, un commissaire aux comptes ou u
 
 ## Périmètre et méthodes
 
-- **Intégration globale** des sociétés opérationnelles et de la holding incluses dans le périmètre, quelle que soit la détention, avec **intérêts non contrôlants** sur le résultat et les capitaux propres pour la part non détenue.
-- **Mise en équivalence simple** des sociétés immobilières : quote-part du résultat de l'exercice, dividendes reçus déduits, titres portés à la valeur d'équivalence à l'actif et en capitaux propres.
+La méthode de chaque société se choisit dans la Configuration (intégration globale, proportionnelle, mise en équivalence, hors périmètre). Sans choix explicite, elle est **déduite** du type et de la détention : holding de tête et détention supérieure à 50 % en intégration globale, 50 % en intégration proportionnelle, 20 à 50 % en mise en équivalence, moins de 20 % hors périmètre ; les sociétés immobilières restent en mise en équivalence. La Synthèse et l'annexe Excel affichent la méthode retenue, sa source et la détention du groupe.
+
+- **Intégration globale** : comptes repris à 100 %, **intérêts non contrôlants** sur le résultat et les capitaux propres pour la part non détenue.
+- **Intégration proportionnelle** : comptes repris à la quote-part détenue, éliminations réciproques et profits internes à la même quote-part, pas d'intérêts non contrôlants. Le tableau de flux passe en méthode indirecte.
+- **Mise en équivalence simple** : quote-part du résultat de l'exercice, dividendes reçus déduits, titres portés à la valeur d'équivalence.
+- **Paliers** : une holding détenue par une autre société forme un sous-groupe avec ses filiales directes. L'écart d'acquisition est calculé à chaque niveau sur les titres de la société qui détient ; la détention du groupe est le produit de la chaîne de détention ; les intérêts non contrôlants sont calculés en chaîne, corrigés de la quote-part de capitaux propres éliminée dans le sous-groupe.
+- **Variation de périmètre** : dates d'entrée et de sortie par société. Le compte de résultat est repris au prorata des mois de présence ; les capitaux propres à la date d'entrée servent au calcul de l'écart d'acquisition (saisis, sinon reconstitués) ; le bilan d'une société sortie avant la clôture n'est pas repris. L'annexe liste chaque variation.
+- **Crédit-bail** : contrats saisis par société (valeur, durée, taux, loyer, début). Le bien est immobilisé et amorti, une dette financière est constatée et remboursée par la part en capital des loyers, les loyers sont remplacés par l'amortissement et les intérêts, avec impôt différé au taux de la société.
 - Les capitaux propres de chaque société sont ceux de sa liasse, résultat de l'exercice inclus.
-- **Non couvert** : intégration proportionnelle, contrôle de fait sans majorité, paliers de consolidation (sous-groupes), entrées et sorties de périmètre en cours d'exercice.
+- **Non couvert** : contrôle de fait sans majorité, résultat de cession à la sortie, valeur résiduelle et option d'achat des crédits-bails, détentions croisées ou circulaires.
 
 ## Éliminations
 
@@ -50,4 +56,4 @@ Une égalité en défaut apparaît en rouge dans la Synthèse et dans la file À
 
 ## Ce qui est testé
 
-Un groupe synthétique de quatre sociétés (holding, filiale à 100 %, filiale à 70 %, SCI mise en équivalence) avec dividende interne, prestations, cession interne de stock, déficit et taux d'impôt différenciés fait partie de la suite de tests automatisés : chaque valeur consolidée y est comparée à un calcul manuel, et les quatre égalités doivent être vérifiées, à chaque modification du code.
+Un groupe synthétique de quatre sociétés (holding, filiale à 100 %, filiale à 70 %, SCI mise en équivalence) avec dividende interne, prestations, cession interne de stock, déficit et taux d'impôt différenciés fait partie de la suite de tests automatisés : chaque valeur consolidée y est comparée à un calcul manuel, et les égalités croisées doivent être vérifiées, à chaque modification du code. Le même groupe est décliné avec une filiale en devise étrangère, en intégration proportionnelle, avec un palier (sous-holding à 80 %), avec une entrée et une sortie en cours d'exercice et avec un contrat de crédit-bail.
