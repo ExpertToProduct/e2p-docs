@@ -58,6 +58,8 @@ Les dividendes reçus des filiales apparaissent en produits financiers de la soc
 - Un chiffre à zéro sur une entité signalée « sans source » n'est pas un résultat : c'est un document manquant.
 - Un écart entre liasse et balance apparaît dans la file **À traiter** avec son montant.
 
-## Rapport DAF en PDF
+## Rapport DAF en PDF et classeur Excel
 
 Le bouton **Rapport PDF** en haut de la page **Vigilance** produit un rapport complet : ratios et alertes, historique, journal des éliminations, fiscalité et réconciliation de l'IS, écart d'acquisition, mise en équivalence, profits internes, contrôles, tableau de flux, file à traiter et pilotage de l'exercice en cours.
+
+Le bouton **Classeur Excel**, sur les pages Vigilance et Synthèse, livre les chiffres en tableur pour le cabinet, le commissaire aux comptes ou la banque : une feuille par état (compte de résultat, bilan, variation des capitaux propres, flux de trésorerie, journal des éliminations, fiscalité), la vigilance, l'échéancier et une **annexe** (périmètre et méthodes par société, sources des chiffres, hypothèses et limites du moteur, réconciliation croisée des états). Les montants sont des nombres, pas du texte.
