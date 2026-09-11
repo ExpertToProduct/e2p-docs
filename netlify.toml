@@ -1,0 +1,7 @@
+# Netlify : ne construire le site que si un commit touche ce qui est publié
+# (documentation, fichiers statiques, configuration Docusaurus). Les autres
+# commits, README ou outillage, ne consomment pas de crédit de build.
+[build]
+  command = "npm run build"
+  publish = "build"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- docs static src docusaurus.config.js sidebars.js package.json package-lock.json"
