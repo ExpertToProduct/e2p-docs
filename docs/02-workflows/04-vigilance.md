@@ -9,7 +9,7 @@ Deux pages se complètent : **Vigilance** présente les ratios et leurs seuils ;
 
 ## Vigilance
 
-### Les onze ratios
+### Les douze ratios
 
 | Famille | Ratio | Définition | Seuils par défaut (opérationnelle) |
 |---|---|---|---|
@@ -24,14 +24,17 @@ Deux pages se complètent : **Vigilance** présente les ratios et leurs seuils ;
 | Activité | BFR | Besoin en fonds de roulement en jours de CA | rouge au-dessus de 90 j, orange au-dessus de 30 j |
 | Activité | Délai clients | Créances clients en jours de CA | rouge au-dessus de 75 j, orange au-dessus de 45 j |
 | Activité | Délai fournisseurs | Dettes fournisseurs en jours d'achats | rouge au-dessus de 60 j, orange au-dessus de 30 j |
+| Qualité du résultat | Produits non récurrents | Reprises sur amortissements et provisions et transferts de charges / Produits d'exploitation | rouge au-dessus de 6 %, orange au-dessus de 3 % |
 
 Les montants de référence (chiffre d'affaires, résultat d'exploitation, résultat net, CAF, capitaux propres) sont affichés à côté des ratios.
+
+La carte **Résultat net retraité** présente le résultat hors reprises et transferts de charges : ces produits comptables n'apportent pas de trésorerie et peuvent soutenir un résultat publié. Ils sont lus sur la liasse complète (ligne FP du 2052) ou sur la balance (comptes 781 et 791) ; sur une liasse simplifiée 2033 sans balance, le ratio reste gris.
 
 ### Seuils par type d'activité
 
 Les seuils s'adaptent au **type** de l'entité défini à la configuration :
 
-- **Holding** : marges, taux de valeur ajoutée, BFR et délais ne sont pas suivis (affichés en gris) ; liquidité générale avec des seuils abaissés.
+- **Holding** : marges, taux de valeur ajoutée, produits non récurrents, BFR et délais ne sont pas suivis (affichés en gris) ; liquidité générale avec des seuils abaissés.
 - **Immobilière** : gearing, autonomie financière et couverture des dettes avec des seuils tenant compte de l'endettement adossé aux immeubles ; cycle d'exploitation non suivi.
 
 Les seuils affichés sous chaque carte indiquent leur origine (défaut, type, ajustement propre à l'entité). Un ajustement par entité ou par type se règle dans la configuration du groupe (clé `seuils`) ; le support peut accompagner ce paramétrage.
