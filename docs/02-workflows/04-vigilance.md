@@ -68,3 +68,25 @@ Les statuts sont conservés d'un rechargement à l'autre et propres à chaque gr
 ## Échéancier
 
 La page **Échéancier** reprend les obligations datées de chaque société avec trois compteurs fondés sur le temps qui reste : **en retard**, **dans les 30 jours**, **dans l'année civile**, chacun détaillé par société. Les obligations sont ensuite listées par mois avec la date limite, le retard ou les jours restants, et un bouton **Déposer** quand une pièce est attendue. Un élément expliqué ou ignoré dans la file À traiter sort des compteurs. Le bouton **Calendrier (.ics)** exporte les obligations à venir avec un rappel sept jours avant, pour l'agenda du DAF ; le rapport DAF reprend l'échéancier en tableau.
+
+### D'où vient chaque date limite
+
+Un clic sur une obligation déplie sa **source** : la règle appliquée avec sa référence, le point de départ retenu et sa provenance, le calcul en clair. Trois points de départ sont possibles :
+
+- la **clôture de l'exercice**, telle que renseignée dans la Configuration pour la société ; si elle ne l'est pas, le 31 décembre est supposé et la ligne porte un ⚠ « clôture par défaut » ;
+- l'**assemblée d'approbation**, lue dans le PV déposé (date du nom de fichier, sinon lue dans le document), avec un lien vers ce PV ; sans PV daté, le délai de dépôt au greffe court depuis la date limite d'approbation et la ligne porte un ⚠ « assemblée inconnue » ;
+- une **prorogation** du délai d'approbation saisie dans la Configuration.
+
+Le même calcul figure dans l'info-bulle de l'onglet Pièces manquantes, sous l'obligation dans le rapport DAF, et dans la description des événements du calendrier.
+
+### Règles appliquées
+
+| Obligation | Sociétés | Point de départ | Délai | Référence |
+|---|---|---|---|---|
+| PV d'approbation des comptes | toutes | clôture | 6 mois | C. com. L. 223-26 (SARL), L. 225-100 (SA), statuts (SAS), C. civ. 1856 (SCI) ; prorogation possible sur ordonnance |
+| Rapport de gestion | sociétés commerciales | clôture | 6 mois (avant l'assemblée) | C. com. L. 232-1 |
+| Rapport du commissaire aux comptes | sociétés commerciales avec CAC | clôture | 6 mois (avant l'assemblée) | C. com. L. 823-9, R. 225-89 |
+| Dépôt des comptes au greffe | sociétés commerciales | assemblée (sinon clôture + 6 mois) | 2 mois en dépôt électronique | C. com. L. 232-21 à L. 232-23, R. 123-111 |
+| Liasse fiscale | toutes | clôture | 3 mois, ou début mai pour une clôture au 31 décembre | CGI 223 et 53 A |
+
+Le bouton **Règles et références** de la page reprend ce tableau. Ce sont les références du régime général ; les statuts, un pacte d'associés ou une décision de justice peuvent prévoir d'autres délais, et l'application ne s'y substitue pas.
