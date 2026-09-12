@@ -47,16 +47,19 @@ Des comptes ont été créés dans **Paramètres > Accès**. Un administrateur r
 
 ### La liasse est marquée « scanné, non lu »
 
-Le PDF n'a pas de couche texte : aucun chiffre ne peut en être lu. Deux solutions :
+Le PDF n'a pas de couche texte. Depuis la version 2.4.0, l'application reconnaît elle-même le texte des liasses scannées au rechargement, avec la reconnaissance de texte du système (macOS ou Windows), sans rien installer et sans que la liasse quitte le poste. Le fichier reconnu est conservé à côté de l'original, avec le suffixe `_ocr`, et la fiche affiche « scan reconnu · OCR ».
 
-1. Demander au cabinet l'export PDF de son logiciel (pas un scan). C'est la voie sûre.
-2. Installer la reconnaissance de texte sur le poste, une fois pour toutes, dans le Terminal :
+Si la mention « scanné, non lu » persiste après un rechargement :
 
-```bash
-brew install ocrmypdf tesseract-lang
-```
+1. Lire le journal du moteur (menu **Afficher le journal du backend**) : la ligne « OCR » indique la cause.
+2. Sur Windows, vérifier qu'une langue de reconnaissance est installée (**Paramètres > Heure et langue > Langue et région**, français avec la reconnaissance optique de caractères).
+3. Demander au cabinet l'export PDF de son logiciel, qui reste la voie sûre.
 
-Au rechargement suivant, l'application reconnaît le texte des liasses scannées et lit le fichier reconnu, conservé à côté de l'original. Cet outil n'est pas embarqué dans l'application : il pèse plus de 250 Mo. Un scan de mauvaise qualité peut rester partiellement illisible ; les champs non reconnus apparaissent alors comme absents.
+Un scan de mauvaise qualité peut rester partiellement illisible ; les champs non reconnus apparaissent alors comme absents.
+
+### Les chiffres d'une liasse reconnue sont-ils fiables ?
+
+Pas sans relecture. Un chiffre mal reconnu ressemble à un vrai chiffre : c'est pourquoi l'application ne les affiche jamais en vert, indique « OCR (scan reconnu, à relire) » dans l'étape Données financières, et signale dans À traiter toute liasse reconnue sans balance générale. Déposer la balance du même exercice permet le contrôle croisé automatique.
 
 ### La liasse est lue mais des chiffres manquent
 

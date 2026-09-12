@@ -68,7 +68,7 @@ Le menu **AI-Finance DAF** de macOS s'appelle **Fichier** sur Windows ; on y tro
 
 Ce qui diffère de macOS :
 
-- **Liasses scannées** : la reconnaissance de texte n'est disponible que si `ocrmypdf`, Tesseract et Ghostscript sont installés sur le poste et accessibles dans le `PATH`. Sans eux, une liasse scannée est signalée et il faut demander le PDF texte au cabinet.
+- **Liasses scannées** : la reconnaissance de texte utilise celle de Windows ; installer la langue française avec sa reconnaissance optique de caractères dans **Paramètres > Heure et langue** si elle manque.
 - **Assistant local** : LM Studio existe pour Windows et fonctionne de la même façon ; un processeur graphique récent ou 16 Go de mémoire sont recommandés.
 - **Sauvegardes** : destination par défaut `OneDrive/AI-Finance/sauvegardes` si OneDrive est présent, sinon un dossier à côté de la data room.
 

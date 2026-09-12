@@ -24,7 +24,7 @@ La mise à jour des données ne passe pas par un formulaire d'import : les docum
 | Balance intermédiaire | PDF ou tableur, `<préfixe>_<exercice>_<MM>` (MM = dernier mois couvert) | `Balances/` | Situation de l'exercice en cours sans FEC : cumuls à date, comparatif N-1, atterrissage |
 | Pièces juridiques | PDF | `juridique/` | Statuts, K-bis, PV, rapports, registre des titres, conventions |
 
-Les liasses scannées sans couche texte ne peuvent pas être lues ; demander au cabinet le PDF d'origine.
+Les liasses scannées sans couche texte sont reconnues au rechargement par la reconnaissance de texte du système ; les chiffres ainsi lus sont marqués à relire. L'export PDF du logiciel du cabinet reste préférable à un scan.
 
 ## Nommer les fichiers
 
