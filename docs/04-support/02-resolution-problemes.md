@@ -52,8 +52,7 @@ Le PDF n'a pas de couche texte. Depuis la version 2.4.0, l'application reconnaî
 Si la mention « scanné, non lu » persiste après un rechargement :
 
 1. Lire le journal du moteur (menu **Afficher le journal du backend**) : la ligne « OCR » indique la cause.
-2. Sur Windows, vérifier qu'une langue de reconnaissance est installée (**Paramètres > Heure et langue > Langue et région**, français avec la reconnaissance optique de caractères).
-3. Demander au cabinet l'export PDF de son logiciel, qui reste la voie sûre.
+2. Demander au cabinet l'export PDF de son logiciel, qui reste la voie sûre.
 
 Un scan de mauvaise qualité peut rester partiellement illisible ; les champs non reconnus apparaissent alors comme absents.
 

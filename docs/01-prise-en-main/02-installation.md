@@ -68,7 +68,7 @@ Le menu **AI-Finance DAF** de macOS s'appelle **Fichier** sur Windows ; on y tro
 
 Ce qui diffère de macOS :
 
-- **Liasses scannées** : la reconnaissance de texte utilise celle de Windows ; installer la langue française avec sa reconnaissance optique de caractères dans **Paramètres > Heure et langue** si elle manque.
+- **Liasses scannées** : la reconnaissance de texte est intégrée à l'installeur, rien à installer.
 - **Assistant local** : LM Studio existe pour Windows et fonctionne de la même façon ; un processeur graphique récent ou 16 Go de mémoire sont recommandés.
 - **Sauvegardes** : destination par défaut `OneDrive/AI-Finance/sauvegardes` si OneDrive est présent, sinon un dossier à côté de la data room.
 
