@@ -38,7 +38,7 @@ Au premier lancement, l'application demande **où ranger ses données** (configu
 
 Ce choix est mémorisé. Le dossier reste accessible à tout moment par le menu **AI-Finance DAF > Ouvrir le dossier des données**.
 
-L'application démarre ensuite son moteur (une dizaine de secondes la première fois) et ouvre sa fenêtre sur un groupe de démonstration fictif. La configuration du groupe réel se fait dans la page **Configuration** (voir [Premier démarrage](./03-premier-demarrage.md)).
+L'application démarre ensuite son moteur (une dizaine de secondes la première fois) et ouvre sa fenêtre sur un groupe de démonstration fictif, le groupe REUNION : quatre sociétés dont l'application a généré les liasses, balances, écritures et pièces juridiques dans son dossier de données, et qu'elle lit comme un dossier réel. La configuration du groupe réel se fait dans la page **Configuration** (voir [Premier démarrage](./03-premier-demarrage.md)).
 
 Les documents financiers eux-mêmes (liasses, balances, FEC, pièces juridiques) ne sont pas copiés dans le dossier des données : ils restent dans le dossier de votre choix, appelé « data room », que la configuration désigne.
 

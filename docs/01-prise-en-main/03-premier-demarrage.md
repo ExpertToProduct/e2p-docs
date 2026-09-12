@@ -5,7 +5,7 @@ title: Premier démarrage
 
 # Premier démarrage
 
-Après l'installation, l'application affiche un groupe de démonstration fictif. La page **Configuration** permet de créer le groupe réel en cinq étapes : **Identité**, **Entités**, **Flux**, **Données financières**, **Validation**. Comptez 15 à 30 minutes selon le nombre d'entités.
+Après l'installation, l'application affiche un groupe de démonstration fictif, le groupe REUNION (une holding, deux sociétés opérationnelles, une SCI), avec de vrais documents générés par l'application : liasses fiscales, balances, fichiers des écritures comptables, statuts, PV d'assemblée, dépôts au greffe. Chaque page montre ainsi ce qu'elle fait sur un dossier complet, y compris ce que l'application signale (un registre absent, un K-bis périmé, un PV en projet, un dépôt en retard). Ces documents sont fictifs et régénérés à chaque version : ne pas y ranger de documents réels. La page **Configuration** permet de créer le groupe réel en cinq étapes : **Identité**, **Entités**, **Flux**, **Données financières**, **Validation**. Comptez 15 à 30 minutes selon le nombre d'entités.
 
 ## Avant de commencer : le dossier de documents
 
