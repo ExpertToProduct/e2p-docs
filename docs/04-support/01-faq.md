@@ -23,9 +23,9 @@ Pas par l'application. Elles reposent sur le chiffrement du disque par **FileVau
 
 Oui, entièrement : lecture des documents, consolidation, vigilance, file à traiter, rapport PDF, assistant en mode local. Internet n'est nécessaire que pour la vérification des mises à jour et l'assistant en mode Claude.
 
-### Puis-je installer AI-Finance DAF sur plusieurs Mac ?
+### Puis-je installer AI-Finance DAF sur plusieurs postes ?
 
-Une licence couvre jusqu'à trois Mac appartenant au même utilisateur ou à la même entreprise : installer l'image disque sur chaque poste. Pour partager un même dossier de données et une même data room entre postes, les placer dans un dossier synchronisé (iCloud Drive) et ne les ouvrir que depuis un poste à la fois. Au-delà de trois postes, un tarif entreprise est disponible sur demande.
+Une licence couvre jusqu'à trois postes, Mac ou Windows, appartenant au même utilisateur ou à la même entreprise : installer l'image disque ou l'installeur sur chaque poste. Pour partager un même dossier de données et une même data room entre postes, les placer dans un dossier synchronisé (iCloud Drive, OneDrive) et ne les ouvrir que depuis un poste à la fois. Au-delà de trois postes, un tarif entreprise est disponible sur demande.
 
 ### Plusieurs groupes sur le même poste ?
 

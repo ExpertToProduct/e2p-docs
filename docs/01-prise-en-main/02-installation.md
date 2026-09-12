@@ -7,7 +7,9 @@ title: Installation
 
 ## Réception de l'application
 
-À la finalisation de la commande, un courriel d'Expert To Product transmet le lien de téléchargement de l'installeur (image disque au format `.dmg`) et un lien de prise de rendez-vous pour l'accompagnement d'installation inclus. Il est recommandé de conserver ce courriel.
+À la finalisation de la commande, un courriel d'Expert To Product transmet le lien de téléchargement de l'installeur (image disque `.dmg` sur macOS, installeur `.exe` sur Windows) et un lien de prise de rendez-vous pour l'accompagnement d'installation inclus. Il est recommandé de conserver ce courriel.
+
+Cette page décrit l'installation sur macOS ; la section [Windows](#windows) en bas de page indique ce qui diffère.
 
 ## Téléchargement
 
@@ -51,6 +53,24 @@ Les documents financiers eux-mêmes (liasses, balances, FEC, pièces juridiques)
 1. Ouvrir AI-Finance DAF depuis **Applications**.
 2. La fenêtre s'ouvre sur la page **Synthèse** du groupe de démonstration.
 3. Le menu **AI-Finance DAF > À propos** affiche le numéro de version.
+
+## Windows
+
+Disponible à partir de la version 2.3.0, pour Windows 11 en 64 bits.
+
+1. Télécharger `AI-Finance DAF-x.y.z-x64.exe` (environ 200 Mo) et l'ouvrir.
+2. **Windows SmartScreen** affiche « Windows a protégé votre ordinateur » : l'installeur n'est pas encore signé par un certificat d'éditeur. Cliquer **Informations complémentaires**, puis **Exécuter quand même**, après avoir vérifié que le fichier provient du lien transmis par Expert To Product (son empreinte SHA-256 figure sur la page des versions).
+3. L'installeur propose le dossier d'installation (par défaut dans le profil de l'utilisateur, sans droits d'administration) et crée un raccourci dans le menu Démarrer.
+4. Au premier lancement, l'application demande où ranger ses données. Dossier par défaut : `%APPDATA%\AI-Finance DAF\donnees`. Un dossier OneDrive convient pour retrouver la configuration sur un autre poste.
+5. Le **pare-feu Windows** peut demander d'autoriser l'application sur les réseaux privés : c'est le serveur interne du moteur ; accepter. Aucune donnée ne quitte le poste.
+
+Le menu **AI-Finance DAF** de macOS s'appelle **Fichier** sur Windows ; on y trouve les mêmes commandes (mises à jour, dossier des données, journal, À propos).
+
+Ce qui diffère de macOS :
+
+- **Liasses scannées** : la reconnaissance de texte n'est disponible que si `ocrmypdf`, Tesseract et Ghostscript sont installés sur le poste et accessibles dans le `PATH`. Sans eux, une liasse scannée est signalée et il faut demander le PDF texte au cabinet.
+- **Assistant local** : LM Studio existe pour Windows et fonctionne de la même façon ; un processeur graphique récent ou 16 Go de mémoire sont recommandés.
+- **Sauvegardes** : destination par défaut `OneDrive/AI-Finance/sauvegardes` si OneDrive est présent, sinon un dossier à côté de la data room.
 
 ## Rendez-vous d'accompagnement
 

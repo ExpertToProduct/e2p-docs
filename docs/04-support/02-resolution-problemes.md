@@ -16,18 +16,23 @@ L'application est signée et notarisée ; ce message ne devrait pas apparaître.
 1. Vérifier que le fichier `.dmg` provient bien du lien transmis par Expert To Product et le télécharger de nouveau si nécessaire.
 2. **Réglages Système > Confidentialité et sécurité**, section Sécurité : cliquer **Ouvrir quand même** si l'application y est mentionnée.
 
+### Windows SmartScreen bloque l'installeur
+
+« Windows a protégé votre ordinateur » : l'installeur Windows n'est pas encore signé par un certificat d'éditeur. Vérifier que le fichier provient du lien transmis par Expert To Product, puis **Informations complémentaires > Exécuter quand même**. Un antivirus d'entreprise peut demander une exception pour `AI-Finance DAF.exe` et `ai-finance-backend.exe`.
+
 ### « Le backend ne répond pas sur le port 8000 »
 
 Le moteur de calcul n'a pas démarré ou n'a pas pu écouter.
 
 1. Ouvrir le journal du backend (menu) et lire les dernières lignes.
 2. **Port déjà occupé** par un autre logiciel : le fermer, ou définir `AI_FINANCE_PORT` (voir [Paramètres avancés](../03-administration/02-configuration-avancee.md)).
-3. **Dossier des données inaccessible** (disque externe absent, permissions) : le rendre accessible ou rechoisir le dossier en supprimant `~/Library/Application Support/ai-finance/donnees.txt`.
+3. **Dossier des données inaccessible** (disque externe absent, permissions) : le rendre accessible ou rechoisir le dossier en supprimant `~/Library/Application Support/ai-finance/donnees.txt` (Windows : `%APPDATA%\ai-finance\donnees.txt`).
+4. **Windows** : si le pare-feu ou l'antivirus a refusé `ai-finance-backend.exe`, l'autoriser sur les réseaux privés.
 4. Relancer l'application.
 
 ### La fenêtre reste vide ou affiche une erreur de connexion
 
-Le moteur démarre encore. Attendre quelques secondes ; l'interface se reconnecte d'elle-même. Sinon Commande + R.
+Le moteur démarre encore. Attendre quelques secondes ; l'interface se reconnecte d'elle-même. Sinon Commande + R (Ctrl + R sur Windows).
 
 ### Écran de connexion inattendu
 
@@ -112,7 +117,7 @@ Un rechargement complet prend une quinzaine de secondes pour un groupe de cinq e
 Joindre à la demande :
 
 - Une description du problème et les étapes pour le reproduire.
-- La version de l'application (menu **À propos**) et la version de macOS.
+- La version de l'application (menu **À propos**) et la version de macOS ou de Windows.
 - Le journal du backend et, si pertinent, une capture d'écran.
 
 Les coordonnées figurent au chapitre [Contact et support](./03-contact-support.md).

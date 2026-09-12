@@ -5,13 +5,13 @@ title: Accès depuis plusieurs postes
 
 # Accès depuis plusieurs postes
 
-Par défaut, AI-Finance DAF n'est joignable que depuis le Mac qui l'héberge. **Paramètres > Accès réseau local** ouvre l'application aux autres postes du réseau local (cabinet, lecteur, second administrateur), dans un simple navigateur, sans rien installer.
+Par défaut, AI-Finance DAF n'est joignable que depuis le poste qui l'héberge. **Paramètres > Accès réseau local** ouvre l'application aux autres postes du réseau local (cabinet, lecteur, second administrateur), dans un simple navigateur, sans rien installer.
 
 ## Prérequis
 
 - Des **comptes nominatifs** (Paramètres > Accès) : l'accès réseau refuse de s'ouvrir sans compte administrateur, et toute requête venant d'un autre poste est rejetée tant qu'aucun compte n'existe.
 - Les postes sont sur le **même réseau local** (Wi-Fi ou câble du bureau). L'accès depuis Internet, un VPN ou un réseau distant n'est pas couvert : il relève de l'infrastructure du client.
-- Le Mac hôte reste allumé et l'application ouverte.
+- Le poste hôte reste allumé et l'application ouverte.
 
 ## Ouvrir l'accès
 
@@ -23,12 +23,12 @@ Le réglage est mémorisé : l'accès se rouvre à chaque lancement tant qu'il n
 
 ## Certificat et avertissement du navigateur
 
-La liaison est chiffrée en HTTPS avec un **certificat auto-signé** généré sur le Mac hôte (valable dix ans). Comme aucune autorité ne le connaît, le navigateur affiche un avertissement la première fois. Deux options :
+La liaison est chiffrée en HTTPS avec un **certificat auto-signé** généré sur le poste hôte (valable dix ans). Comme aucune autorité ne le connaît, le navigateur affiche un avertissement la première fois. Deux options :
 
 - accepter l'avertissement après avoir comparé l'**empreinte** affichée dans Paramètres avec celle que montre le navigateur ;
 - télécharger le certificat depuis Paramètres et l'installer comme certificat de confiance sur le poste (Trousseau d'accès sur Mac, magasin de certificats sur Windows), ce qui supprime l'avertissement.
 
-Si macOS demande d'autoriser les connexions entrantes pour AI-Finance DAF, accepter : c'est le pare-feu du Mac hôte.
+Si macOS demande d'autoriser les connexions entrantes pour AI-Finance DAF, accepter : c'est le pare-feu du poste hôte. Sur Windows, autoriser `ai-finance-backend.exe` sur les réseaux privés quand le pare-feu le demande.
 
 ## Travailler à plusieurs
 
@@ -39,4 +39,4 @@ Si macOS demande d'autoriser les connexions entrantes pour AI-Finance DAF, accep
 
 ## Fermer l'accès
 
-**Fermer l'accès réseau** dans Paramètres coupe immédiatement le point d'écoute ; les sessions distantes sont perdues. Le Mac hôte continue de fonctionner normalement.
+**Fermer l'accès réseau** dans Paramètres coupe immédiatement le point d'écoute ; les sessions distantes sont perdues. Le poste hôte continue de fonctionner normalement.

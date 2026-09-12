@@ -9,7 +9,7 @@ title: Introduction
 
 AI-Finance DAF est une application de bureau destinée aux Directeurs Administratifs et Financiers (DAF) de groupes d'entreprises familiaux. À partir des documents que le cabinet produit déjà (liasses fiscales, balances générales, fichiers des écritures comptables), elle établit les comptes consolidés du groupe, rapproche les positions intragroupe, suit les ratios de vigilance, tient la liste de ce qui reste à traiter (écarts, contrôles, pièces manquantes), suit l'exercice en cours et répond aux questions en langage naturel.
 
-L'application fonctionne **intégralement en local sur le poste de l'utilisateur**. Le moteur de calcul, l'interface et les données restent sur le Mac. Aucune donnée financière n'est transmise vers un serveur distant, sauf si l'utilisateur choisit explicitement d'interroger l'assistant via l'API Claude (voir le chapitre dédié).
+L'application fonctionne **intégralement en local sur le poste de l'utilisateur**. Le moteur de calcul, l'interface et les données restent sur le poste. Aucune donnée financière n'est transmise vers un serveur distant, sauf si l'utilisateur choisit explicitement d'interroger l'assistant via l'API Claude (voir le chapitre dédié).
 
 ## À qui s'adresse AI-Finance DAF
 
@@ -36,7 +36,7 @@ AI-Finance DAF est particulièrement adapté aux structures implantées dans les
 
 L'acquisition d'une licence AI-Finance DAF comprend :
 
-- L'installeur de l'application pour macOS (Apple Silicon)
+- L'installeur de l'application pour macOS (Apple Silicon) et, à partir de la version 2.3.0, pour Windows 11 (x64)
 - L'assistance à l'installation initiale (30 minutes de visioconférence avec un membre de l'équipe)
 - L'accompagnement à la configuration du groupe et à l'organisation du dossier de documents
 - Les mises à jour de l'année en cours
@@ -54,8 +54,8 @@ La maintenance annuelle, souscrite au-delà de la première année, permet de co
 
 ### Système d'exploitation
 
-- macOS 13 Ventura ou version ultérieure
-- Architecture Apple Silicon (processeurs M1, M2, M3, M4 ou ultérieurs)
+- macOS 13 Ventura ou version ultérieure, architecture Apple Silicon (processeurs M1, M2, M3, M4 ou ultérieurs)
+- ou Windows 11 (64 bits), à partir de la version 2.3.0 ; voir les [limites propres à Windows](./02-installation.md#windows)
 
 ### Matériel
 
