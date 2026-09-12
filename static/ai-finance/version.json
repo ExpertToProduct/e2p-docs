@@ -1,9 +1,14 @@
 {
- "version": "2.2.0",
- "date": "2026-09-11",
- "dmg": "https://github.com/ExpertToProduct/ai-finance-releases/releases/download/v2.2.0/AI-Finance.DAF-2.2.0-arm64.dmg",
- "sha256": "4c3df2894e1027b0ad530bae50ceac3215da3def3eb29fe44e4075979b87d2ec",
- "taille": 194797588,
- "notes": "### Vigilance et échéancier\n- **Qualité du résultat** : douzième ratio, part des reprises sur amortissements et provisions et des transferts de charges dans les produits d'exploitation (orange au-delà de 3 %, rouge au-delà de 6 %), résultat net retraité affiché à côté du résultat publié, dans la fiche société et l'annexe Excel.\n- **Source de chaque date limite** : un clic sur une obligation de l'échéancier montre la règle et sa référence légale, le point de départ retenu et sa provenance (clôture configurée ou par défaut, assemblée lue dans le PV, prorogation), le calcul ; un ⚠ signale un point de départ fragile ; table des règles en bas de page, calcul repris dans le PDF et le calendrier.\n- Pièces manquantes : statut et échéance sur une ligne, bouton Déposer aligné, table élargie.\n\n### Mises à jour et identité\n- **Mises à jour sans compte GitHub** : l'application lit une fiche de version publique sur docs.experttoproduct.com, télécharge l'image disque et vérifie son empreinte SHA-256 avant de l'ouvrir. Les postes en 2.1.0 doivent installer cette version à la main une fois.\n- **Identité de l'application** au nom d'Expert To Product (boîte À propos, identifiant `com.experttoproduct.ai-finance-daf`). macOS redemandera une fois l'accès aux dossiers de données après l'installation.\n- Le dépôt du code ne contient plus aucun nom de client ni identifiant réel ; un test le garantit à chaque modification.\n\n### Limites connues\n- Le résultat net retraité soustrait toutes les reprises : c'est une vue de stress, pas un résultat d'exploitation corrigé.\n- Sur une liasse simplifiée 2033 sans balance, le ratio de qualité du résultat reste gris.",
- "page": "https://docs.experttoproduct.com/docs/03-administration/03-mises-a-jour"
+ "version": "2.3.0",
+ "date": "2026-09-12",
+ "dmg": "https://github.com/ExpertToProduct/ai-finance-releases/releases/download/v2.3.0/AI-Finance.DAF-2.3.0-arm64.dmg",
+ "sha256": "77283ebac57b31fcb2211289c2f6224c9ec2a085674389dfbf5678dee76d0b64",
+ "taille": 194800984,
+ "notes": "### Windows\n- **Application Windows 11 x64** (installeur `AI-Finance DAF-<version>-x64.exe`) : mêmes fonctions que sur macOS. Données sous `%APPDATA%\\AI-Finance DAF\\donnees`, sauvegarde vers OneDrive s'il est présent, accès réseau local avec un certificat généré par l'application, menu Fichier. Testée sur un poste Windows 11 : installation, rapport PDF, classeur Excel, sauvegarde, accès réseau, mises à jour.\n- **Installeur non signé** pour l'instant : Windows SmartScreen demande confirmation (« Informations complémentaires », puis « Exécuter quand même »). Vérifier l'empreinte publiée avant d'accepter.\n- **Mises à jour par plateforme** : la fiche de version porte une entrée macOS et une entrée Windows ; chaque poste télécharge l'installeur qui le concerne et vérifie son empreinte SHA-256. Les postes macOS en 2.1 et 2.2 continuent de lire la fiche.\n\n### Corrections\n- Groupe de démonstration : la file À traiter ne signale plus les entités « sans source de données » alors que leurs chiffres sont générés ; un poste neuf n'affiche plus 48 critiques fictives.\n- Barres de défilement fines et sombres sur toutes les pages (visibles en permanence sur Windows).\n\n### Limites connues\n- Windows : pas de reconnaissance de texte des liasses scannées sans `ocrmypdf`, Tesseract et Ghostscript installés ; l'assistant local passe par LM Studio pour Windows.\n- L'installeur Windows n'est pas signé : à réserver aux tests internes jusqu'au certificat Authenticode.",
+ "page": "https://docs.experttoproduct.com/docs/03-administration/03-mises-a-jour",
+ "windows": {
+  "exe": "https://github.com/ExpertToProduct/ai-finance-releases/releases/download/v2.3.0/AI-Finance.DAF-2.3.0-x64.exe",
+  "sha256": "a8d6a0a89aed92de232ecdb4b0aae2ba56ce283c1f14c2ac660b1d2b5d1c3025",
+  "taille": 158207948
+ }
 }
