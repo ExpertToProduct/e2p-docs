@@ -13,6 +13,12 @@ title: Contact et support
 
 **Horaires de traitement** : du lundi au vendredi, 8h-18h (heure de Mayotte, UTC+3).
 
+## Joindre un diagnostic
+
+Depuis la version 2.4.0, le bouton **Diagnostic** de la page Paramètres télécharge une archive à joindre au courriel. Elle contient ce dont le support a besoin pour comprendre un incident au premier échange : version de l'application et du système, moteur de reconnaissance de texte, configuration du groupe expurgée (structure, types de sociétés, exercices, préfixes de fichiers), état du dossier (documents trouvés, lus, scannés, écarts en nombre), alertes en codes, journaux techniques.
+
+Elle ne contient **aucun document, aucune écriture, aucun montant**. Les noms des sociétés, leurs alias et leurs SIREN sont remplacés par E1, E2… et SIREN1…, y compris dans les noms de fichiers et les journaux. L'archive pèse quelques dizaines de kilo-octets et se lit avec n'importe quel éditeur de texte : vérifiez-la avant de l'envoyer si vous le souhaitez.
+
 ## Périmètre du support
 
 Le support par courriel couvre les prestations suivantes :

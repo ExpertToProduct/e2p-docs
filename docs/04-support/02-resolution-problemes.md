@@ -5,7 +5,7 @@ title: Résolution de problèmes
 
 # Résolution de problèmes
 
-Pour tout incident non couvert ici, contacter le support par courriel en joignant le journal du backend (menu **AI-Finance DAF > Afficher le journal du backend**).
+Pour tout incident non couvert ici, contacter le support par courriel en joignant l'archive du bouton **Diagnostic** de Paramètres (voir [Contacter le support](./03-contact-support.md)) ; elle contient le journal du backend et l'état du dossier, sans aucune donnée.
 
 ## Au lancement
 
@@ -119,7 +119,7 @@ Un rechargement complet prend une quinzaine de secondes pour un groupe de cinq e
 Joindre à la demande :
 
 - Une description du problème et les étapes pour le reproduire.
-- La version de l'application (menu **À propos**) et la version de macOS ou de Windows.
+- L'archive du bouton **Diagnostic** de Paramètres, qui contient la version de l'application et du système.
 - Le journal du backend et, si pertinent, une capture d'écran.
 
 Les coordonnées figurent au chapitre [Contact et support](./03-contact-support.md).
