@@ -51,6 +51,14 @@ Une alerte invite à un examen, pas à une conclusion : vérifier la source du c
 
 Le bouton **Rapport PDF** en haut de la page produit le rapport complet du groupe (voir [Lire la Synthèse](./02-analyser-consolidation.md)).
 
+### Repères sectoriels
+
+Depuis la version 2.5.0, quand le code NAF d'une société est renseigné dans Configuration, un bloc **Repères sectoriels Insee** s'affiche sous les ratios : pour l'activité de la société et sa catégorie de taille (microentreprise, PME, ETI, grande entreprise), les moyennes nationales de sept ratios, valeur ajoutée, excédent brut d'exploitation, résultat courant, résultat net, frais de personnel sur valeur ajoutée, capacité d'autofinancement, chiffre d'affaires par salarié, à côté des valeurs de la société et de l'écart. Le rapport PDF et le classeur Excel les reprennent.
+
+Trois précautions. Ce sont des **moyennes nationales** de l'Insee (enquête Ésane, millésime indiqué, deux ans de retard sur l'exercice), des rapports de sommes dominés par les plus grandes entreprises du secteur, sans déclinaison régionale : un repère, pas une norme. Quand la catégorie de taille n'est pas publiée pour l'activité (secret statistique), l'application indique la référence retenue, plus large ou toutes tailles. Enfin, ces repères **ne déclenchent aucune alerte** : les seuils de vigilance restent la seule règle. Les holdings et les activités financières sont hors champ.
+
+Le référentiel est livré avec l'application ; aucune donnée de la société n'est envoyée nulle part.
+
 ## À traiter
 
 La file réunit, pour l'exercice de référence, trois familles d'éléments avec l'entité, l'exercice et la gravité :

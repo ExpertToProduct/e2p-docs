@@ -43,6 +43,7 @@ Pour chaque société du groupe :
 - Activité, capital social, effectif
 - **Détention** par la société mère (en pourcentage) et inclusion ou non dans le périmètre de consolidation
 - **Régime fiscal** : IS ou IR (transparence fiscale des SCI), taux d'IS
+- **Code NAF** (sur le K-bis) : sert aux repères sectoriels de la page Vigilance ; il n'est jamais recherché en ligne
 - **Préfixe des fichiers** : la racine des noms de documents dans la data room (par exemple `DISTRIB` pour `DISTRIB_bilan_2025.pdf`)
 - **Clôture de l'exercice** (31 décembre par défaut) : sert au calcul des délais légaux de l'échéancier
 - **Devise des comptes** (celle du groupe par défaut) ; les cours de change par exercice se saisissent à l'étape Identité
