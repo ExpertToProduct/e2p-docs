@@ -18,7 +18,7 @@ L'application est signée et notarisée ; ce message ne devrait pas apparaître.
 
 ### Windows SmartScreen bloque l'installeur
 
-« Windows a protégé votre ordinateur » : l'installeur Windows n'est pas encore signé par un certificat d'éditeur. Vérifier que le fichier provient du lien transmis par Expert To Product, puis **Informations complémentaires > Exécuter quand même**. Un antivirus d'entreprise peut demander une exception pour `AI-Finance DAF.exe` et `ai-finance-backend.exe`.
+« Windows a protégé votre ordinateur » : l'installeur Windows n'est pas encore signé par un certificat d'éditeur. Vérifier que le fichier provient du lien transmis par Expert To Product, puis **Informations complémentaires > Exécuter quand même**. Un antivirus d'entreprise peut demander une exception pour `E2P Finance.exe` et `ai-finance-backend.exe`.
 
 ### « Le backend ne répond pas sur le port 8000 »
 

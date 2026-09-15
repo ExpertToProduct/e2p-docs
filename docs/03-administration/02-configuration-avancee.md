@@ -30,7 +30,7 @@ ANTHROPIC_API_KEY=
 CLAUDE_MODEL=claude-sonnet-5
 
 # Dossier des sauvegardes (optionnel)
-# AI_FINANCE_SAUVEGARDES=/Volumes/Disque/AI-Finance/sauvegardes
+# AI_FINANCE_SAUVEGARDES=/Volumes/Disque/E2P Finance/sauvegardes
 ```
 
 Relancer l'application après modification.

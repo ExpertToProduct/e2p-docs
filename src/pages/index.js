@@ -21,7 +21,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/prise-en-main/introduction">
-            Découvrir AI-Finance DAF →
+            Découvrir E2P Finance →
           </Link>
         </div>
       </div>
@@ -50,10 +50,10 @@ function ProductsSection() {
         <h2 className={styles.sectionTitle}>Nos produits</h2>
         <div className="row">
           <ProductCard
-            title="AI-Finance DAF"
+            title="E2P Finance"
             description="Solution de pilotage financier pour Directeurs Administratifs et Financiers de groupes familiaux. Consolidation multi-entités, analyse des flux intragroupe, suivi des ratios de vigilance, assistant IA spécialisé finance d'entreprise."
             link="/prise-en-main/introduction"
-            linkLabel="Documentation AI-Finance DAF"
+            linkLabel="Documentation E2P Finance"
           />
           <ProductCard
             title="Bientôt disponible"

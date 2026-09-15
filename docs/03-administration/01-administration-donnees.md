@@ -9,7 +9,7 @@ La page **Paramètres** rassemble les opérations de maintenance. Ce chapitre d�
 
 ## Où sont les données
 
-- **Dossier des données** (choisi au premier lancement, menu **AI-Finance DAF > Ouvrir le dossier des données**) : configuration du groupe `config_groupe.json` et ses versions précédentes, registre des groupes, statuts de la file à traiter, journaux d'activité et de l'assistant, réglage d'accès, fichier `.env`.
+- **Dossier des données** (choisi au premier lancement, menu **E2P Finance > Ouvrir le dossier des données**) : configuration du groupe `config_groupe.json` et ses versions précédentes, registre des groupes, statuts de la file à traiter, journaux d'activité et de l'assistant, réglage d'accès, fichier `.env`.
 - **Data room** (désignée dans la configuration) : liasses, balances, FEC, pièces juridiques. L'application y lit et, lors d'un dépôt guidé, y copie un fichier ; elle n'y supprime rien.
 - **Journal technique** : `~/Library/Logs/ai-finance/backend.log` sur macOS, `%APPDATA%\ai-finance\logs\backend.log` sur Windows (menu **Afficher le journal du backend**).
 
@@ -27,7 +27,7 @@ En haut de **Paramètres**, un tableau indique pour chaque entité et chaque exe
 
 **Paramètres > Sauvegarde** crée une archive `.zip` datée contenant la configuration et ses versions, les statuts, les journaux et les évaluations de l'assistant, avec un manifeste. **Sauvegarde complète** y ajoute la data room entière (plusieurs centaines de Mo).
 
-Destination, dans l'ordre : le dossier indiqué dans la configuration, sinon `iCloud Drive/AI-Finance/sauvegardes` si iCloud Drive est actif (`OneDrive/AI-Finance/sauvegardes` sur Windows), sinon un dossier `sauvegardes` à côté de la data room. Les trente dernières archives sont conservées. La page liste les archives existantes.
+Destination, dans l'ordre : le dossier indiqué dans la configuration, sinon `iCloud Drive/E2P Finance/sauvegardes` si iCloud Drive est actif (`OneDrive/E2P Finance/sauvegardes` sur Windows), sinon un dossier `sauvegardes` à côté de la data room. Les trente dernières archives sont conservées. La page liste les archives existantes.
 
 ### Restaurer
 

@@ -51,11 +51,11 @@ Pour faciliter le traitement de la demande, il est recommandé d'inclure dans le
 1. **Identification** : adresse courriel associée à l'achat.
 2. **Description précise du problème** : que vouliez-vous faire ? que s'est-il passé ? quel message d'erreur ?
 3. **Contexte technique** :
-   - Version d'AI-Finance DAF (menu AI-Finance DAF > À propos)
+   - Version d'E2P Finance (menu E2P Finance > À propos)
    - Version de macOS (Pomme > À propos de ce Mac)
    - Modèle de Mac (M1, M2, M3, M4, etc.)
 4. **Captures d'écran** : au moins une capture de l'erreur ou de l'écran concerné.
-5. **Journal du backend** : fichier ouvert par le menu AI-Finance DAF > Afficher le journal du backend.
+5. **Journal du backend** : fichier ouvert par le menu E2P Finance > Afficher le journal du backend.
 
 ## Types de demandes et délais indicatifs
 
@@ -89,20 +89,20 @@ Pour faciliter le traitement de la demande, il est recommandé d'inclure dans le
 
 ### Communauté Expert To Product
 
-Les utilisateurs d'AI-Finance DAF peuvent rejoindre la communauté Expert To Product pour :
+Les utilisateurs d'E2P Finance peuvent rejoindre la communauté Expert To Product pour :
 
 - Échanger avec d'autres DAF utilisateurs du produit.
 - Partager des bonnes pratiques d'usage.
 - Être informés des nouveautés et évolutions du produit.
 - Contribuer à l'orientation des futures versions.
 
-L'adhésion à la communauté est facultative et indépendante de la licence AI-Finance DAF.
+L'adhésion à la communauté est facultative et indépendante de la licence E2P Finance.
 
 ### Tutoriels vidéo
 
 Une chaîne de tutoriels vidéo est progressivement enrichie sur la plateforme YouTube, sous le nom **Expert To Product**. Les tutoriels couvrent :
 
-- Prise en main d'AI-Finance DAF
+- Prise en main d'E2P Finance
 - Cas d'usage concrets par type de groupe
 - Approfondissements sur les ratios de vigilance
 - Bonnes pratiques de pilotage DAF
@@ -138,10 +138,10 @@ Le traitement des données à caractère personnel est encadré par la politique
 
 ## Conclusion de la documentation
 
-La présente documentation couvre l'usage courant d'AI-Finance DAF. Elle est régulièrement enrichie en fonction des retours des utilisateurs et de l'évolution du produit.
+La présente documentation couvre l'usage courant d'E2P Finance. Elle est régulièrement enrichie en fonction des retours des utilisateurs et de l'évolution du produit.
 
 Pour toute suggestion d'amélioration de la documentation elle-même, un courriel à l'adresse de contact est le bienvenu. Les remarques constructives permettent d'améliorer la clarté et l'exhaustivité du contenu au fil du temps.
 
 ---
 
-*Documentation AI-Finance DAF, éditée par Expert To Product. Version actuelle : 1.0.0. Dernière révision : 17 avril 2026.*
+*Documentation E2P Finance, éditée par Expert To Product. Version actuelle : 1.0.0. Dernière révision : 17 avril 2026.*

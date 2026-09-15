@@ -16,7 +16,7 @@ Cette page décrit l'installation sur macOS ; la section [Windows](#windows) en 
 Le fichier se nomme par convention :
 
 ```
-AI-Finance DAF-x.y.z-arm64.dmg
+E2P Finance-x.y.z-arm64.dmg
 ```
 
 où `x.y.z` est le numéro de version. Sa taille est d'environ 200 Mo : l'image contient l'interface, le moteur de calcul et tout ce dont il a besoin. Aucun autre logiciel n'est à installer.
@@ -24,7 +24,7 @@ où `x.y.z` est le numéro de version. Sa taille est d'environ 200 Mo : l'image 
 ## Installation
 
 1. Ouvrir le fichier `.dmg` téléchargé (dossier **Téléchargements**).
-2. Glisser l'icône **AI-Finance DAF** sur le dossier **Applications** représenté dans la fenêtre.
+2. Glisser l'icône **E2P Finance** sur le dossier **Applications** représenté dans la fenêtre.
 3. Fermer la fenêtre et éjecter l'image disque (clic droit sur le disque monté, puis **Éjecter**).
 
 L'application est signée et notarisée par Apple : macOS l'ouvre sans avertissement. Si un message de sécurité apparaît malgré tout, se reporter au chapitre [Résolution de problèmes](../04-support/02-resolution-problemes.md).
@@ -34,9 +34,10 @@ L'application est signée et notarisée par Apple : macOS l'ouvre sans avertisse
 Au premier lancement, l'application demande **où ranger ses données** (configuration du groupe, statuts, journaux, réglages) :
 
 - **Dossier par défaut** : `~/Library/Application Support/AI-Finance DAF/donnees`, invisible au quotidien et inclus dans les sauvegardes Time Machine.
+- **Vous aviez « AI-Finance DAF »** : E2P Finance est la même application sous son nouveau nom (version 2.6.0). Elle retrouve vos données et vos réglages ; l'ancienne application peut être glissée à la corbeille depuis le dossier Applications.
 - **Choisir un dossier** : tout autre emplacement, par exemple un dossier synchronisé avec iCloud Drive.
 
-Ce choix est mémorisé. Le dossier reste accessible à tout moment par le menu **AI-Finance DAF > Ouvrir le dossier des données**.
+Ce choix est mémorisé. Le dossier reste accessible à tout moment par le menu **E2P Finance > Ouvrir le dossier des données**.
 
 L'application démarre ensuite son moteur (une dizaine de secondes la première fois) et ouvre sa fenêtre sur un groupe de démonstration fictif, le groupe REUNION : quatre sociétés dont l'application a généré les liasses, balances, écritures et pièces juridiques dans son dossier de données, et qu'elle lit comme un dossier réel. La configuration du groupe réel se fait dans la page **Configuration** (voir [Premier démarrage](./03-premier-demarrage.md)).
 
@@ -50,27 +51,28 @@ Les documents financiers eux-mêmes (liasses, balances, FEC, pièces juridiques)
 
 ## Vérification
 
-1. Ouvrir AI-Finance DAF depuis **Applications**.
+1. Ouvrir E2P Finance depuis **Applications**.
 2. La fenêtre s'ouvre sur la page **Synthèse** du groupe de démonstration.
-3. Le menu **AI-Finance DAF > À propos** affiche le numéro de version.
+3. Le menu **E2P Finance > À propos** affiche le numéro de version.
 
 ## Windows
 
 Disponible à partir de la version 2.3.0, pour Windows 11 en 64 bits.
 
-1. Télécharger `AI-Finance DAF-x.y.z-x64.exe` (environ 200 Mo) et l'ouvrir.
+1. Télécharger `E2P Finance-x.y.z-x64.exe` (environ 200 Mo) et l'ouvrir.
 2. **Windows SmartScreen** affiche « Windows a protégé votre ordinateur » : l'installeur n'est pas encore signé par un certificat d'éditeur. Cliquer **Informations complémentaires**, puis **Exécuter quand même**, après avoir vérifié que le fichier provient du lien transmis par Expert To Product (son empreinte SHA-256 figure sur la page des versions).
 3. L'installeur propose le dossier d'installation (par défaut dans le profil de l'utilisateur, sans droits d'administration) et crée un raccourci dans le menu Démarrer.
 4. Au premier lancement, l'application demande où ranger ses données. Dossier par défaut : `%APPDATA%\AI-Finance DAF\donnees`. Un dossier OneDrive convient pour retrouver la configuration sur un autre poste.
-5. Le **pare-feu Windows** peut demander d'autoriser l'application sur les réseaux privés : c'est le serveur interne du moteur ; accepter. Aucune donnée ne quitte le poste.
+6. Vous aviez « AI-Finance DAF » : l'installeur d'E2P Finance remplace l'ancienne application et retrouve vos données.
+7. Le **pare-feu Windows** peut demander d'autoriser l'application sur les réseaux privés : c'est le serveur interne du moteur ; accepter. Aucune donnée ne quitte le poste.
 
-Le menu **AI-Finance DAF** de macOS s'appelle **Fichier** sur Windows ; on y trouve les mêmes commandes (mises à jour, dossier des données, journal, À propos).
+Le menu **E2P Finance** de macOS s'appelle **Fichier** sur Windows ; on y trouve les mêmes commandes (mises à jour, dossier des données, journal, À propos).
 
 Ce qui diffère de macOS :
 
 - **Liasses scannées** : la reconnaissance de texte est intégrée à l'installeur, rien à installer.
 - **Assistant local** : LM Studio existe pour Windows et fonctionne de la même façon ; un processeur graphique récent ou 16 Go de mémoire sont recommandés.
-- **Sauvegardes** : destination par défaut `OneDrive/AI-Finance/sauvegardes` si OneDrive est présent, sinon un dossier à côté de la data room.
+- **Sauvegardes** : destination par défaut `OneDrive/E2P Finance/sauvegardes` si OneDrive est présent, sinon un dossier à côté de la data room.
 
 ## Rendez-vous d'accompagnement
 

@@ -33,7 +33,7 @@ L'application détecte LM Studio automatiquement. Un Mac avec 16 Go de mémoire 
 ### API Claude (mode distant)
 
 1. Créer une clé sur `https://console.anthropic.com`.
-2. Ouvrir le dossier des données (menu **AI-Finance DAF > Ouvrir le dossier des données**) et y créer un fichier nommé `.env` contenant :
+2. Ouvrir le dossier des données (menu **E2P Finance > Ouvrir le dossier des données**) et y créer un fichier nommé `.env` contenant :
 
 ```
 ANTHROPIC_API_KEY=votre-clé

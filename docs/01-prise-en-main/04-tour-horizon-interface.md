@@ -30,7 +30,7 @@ L'interface est composée d'une **barre latérale gauche** (navigation, sélecte
 - **Recharger les données** : relit les documents de la data room et recalcule tout. Une barre de progression suit les six étapes (moteur, intragroupe, historique, vigilance, alertes, identité). Le rechargement complet prend une quinzaine de secondes.
 - **À traiter** porte le nombre d'éléments restant à traiter ; **Échéancier** porte le nombre d'obligations en retard, ou à échéance dans les 30 jours.
 
-## Le menu AI-Finance DAF
+## Le menu E2P Finance
 
 - **À propos** : numéro de version.
 - **Rechercher des mises à jour…**

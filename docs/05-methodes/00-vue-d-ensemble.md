@@ -7,7 +7,7 @@ title: Vue d'ensemble
 
 Les données circulent dans un seul sens, des documents du client vers les pages. Chaque couche ne fait qu'une chose et transmet à la suivante.
 
-![Fonctionnement d'AI-Finance DAF : des documents du client aux pages, en sept couches](/img/architecture-ai-finance.svg)
+![Fonctionnement d'E2P Finance : des documents du client aux pages, en sept couches](/img/architecture-ai-finance.svg)
 
 1. **Les documents** restent dans le dossier de documents du client, sur son poste. L'application les lit, elle ne les copie ni ne les modifie.
 2. **Les lecteurs**, un par format, extraient des valeurs avec leur niveau de confiance et leur provenance : la liasse par ses codes Cerfa, la balance par ses comptes, le fichier des écritures ligne à ligne, les procès-verbaux par leur texte, les scans par reconnaissance de texte.

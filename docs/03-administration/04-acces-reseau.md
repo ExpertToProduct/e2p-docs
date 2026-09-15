@@ -5,7 +5,7 @@ title: Accès depuis plusieurs postes
 
 # Accès depuis plusieurs postes
 
-Par défaut, AI-Finance DAF n'est joignable que depuis le poste qui l'héberge. **Paramètres > Accès réseau local** ouvre l'application aux autres postes du réseau local (cabinet, lecteur, second administrateur), dans un simple navigateur, sans rien installer.
+Par défaut, E2P Finance n'est joignable que depuis le poste qui l'héberge. **Paramètres > Accès réseau local** ouvre l'application aux autres postes du réseau local (cabinet, lecteur, second administrateur), dans un simple navigateur, sans rien installer.
 
 ## Prérequis
 
@@ -28,7 +28,7 @@ La liaison est chiffrée en HTTPS avec un **certificat auto-signé** généré s
 - accepter l'avertissement après avoir comparé l'**empreinte** affichée dans Paramètres avec celle que montre le navigateur ;
 - télécharger le certificat depuis Paramètres et l'installer comme certificat de confiance sur le poste (Trousseau d'accès sur Mac, magasin de certificats sur Windows), ce qui supprime l'avertissement.
 
-Si macOS demande d'autoriser les connexions entrantes pour AI-Finance DAF, accepter : c'est le pare-feu du poste hôte. Sur Windows, autoriser `ai-finance-backend.exe` sur les réseaux privés quand le pare-feu le demande.
+Si macOS demande d'autoriser les connexions entrantes pour E2P Finance, accepter : c'est le pare-feu du poste hôte. Sur Windows, autoriser `ai-finance-backend.exe` sur les réseaux privés quand le pare-feu le demande.
 
 ## Travailler à plusieurs
 
