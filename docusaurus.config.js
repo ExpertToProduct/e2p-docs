@@ -54,7 +54,7 @@ const config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'AI-Finance DAF',
+          label: 'E2P Finance',
         },
         {
           href: 'https://experttoproduct.com',
@@ -75,7 +75,7 @@ const config = {
           title: 'Produits',
           items: [
             {
-              label: 'AI-Finance DAF',
+              label: 'E2P Finance',
               to: '/prise-en-main/introduction',
             },
           ],

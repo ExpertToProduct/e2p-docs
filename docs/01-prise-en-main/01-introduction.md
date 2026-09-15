@@ -3,22 +3,22 @@ sidebar_position: 1
 title: Introduction
 ---
 
-# AI-Finance DAF — Introduction
+# E2P Finance — Introduction
 
-## Qu'est-ce qu'AI-Finance DAF
+## Qu'est-ce qu'E2P Finance
 
-AI-Finance DAF est une application de bureau destinée aux Directeurs Administratifs et Financiers (DAF) de groupes d'entreprises familiaux. À partir des documents que le cabinet produit déjà (liasses fiscales, balances générales, fichiers des écritures comptables), elle établit les comptes consolidés du groupe, rapproche les positions intragroupe, suit les ratios de vigilance, tient la liste de ce qui reste à traiter (écarts, contrôles, pièces manquantes), suit l'exercice en cours et répond aux questions en langage naturel.
+E2P Finance est une application de bureau destinée aux Directeurs Administratifs et Financiers (DAF) de groupes d'entreprises familiaux. À partir des documents que le cabinet produit déjà (liasses fiscales, balances générales, fichiers des écritures comptables), elle établit les comptes consolidés du groupe, rapproche les positions intragroupe, suit les ratios de vigilance, tient la liste de ce qui reste à traiter (écarts, contrôles, pièces manquantes), suit l'exercice en cours et répond aux questions en langage naturel.
 
 L'application fonctionne **intégralement en local sur le poste de l'utilisateur**. Le moteur de calcul, l'interface et les données restent sur le poste. Aucune donnée financière n'est transmise vers un serveur distant, sauf si l'utilisateur choisit explicitement d'interroger l'assistant via l'API Claude (voir le chapitre dédié).
 
-## À qui s'adresse AI-Finance DAF
+## À qui s'adresse E2P Finance
 
 - **Directeur Administratif et Financier** d'un groupe de plusieurs sociétés (holding, filiales opérationnelles, SCI patrimoniales)
 - **Directeur Général** pilotant un groupe familial et souhaitant disposer d'une vision consolidée sans recours systématique au cabinet d'expertise comptable
 - **Contrôleur de gestion** en charge du reporting annuel et du suivi de l'exercice en cours
 - **Cabinet d'expertise comptable** proposant à ses clients un outil de restitution pilotée
 
-AI-Finance DAF est particulièrement adapté aux structures implantées dans les Départements et Régions d'Outre-Mer, dont les particularités (régime fiscal, absence de TVA à Mayotte, conventions d'assistance intragroupe) ne sont pas toujours bien prises en charge par les outils génériques du marché.
+E2P Finance est particulièrement adapté aux structures implantées dans les Départements et Régions d'Outre-Mer, dont les particularités (régime fiscal, absence de TVA à Mayotte, conventions d'assistance intragroupe) ne sont pas toujours bien prises en charge par les outils génériques du marché.
 
 ## Ce que fait l'application
 
@@ -34,7 +34,7 @@ AI-Finance DAF est particulièrement adapté aux structures implantées dans les
 
 ## Ce qui est inclus dans la licence
 
-L'acquisition d'une licence AI-Finance DAF comprend :
+L'acquisition d'une licence E2P Finance comprend :
 
 - L'installeur de l'application pour macOS (Apple Silicon) et, à partir de la version 2.3.0, pour Windows 11 (x64)
 - L'assistance à l'installation initiale (30 minutes de visioconférence avec un membre de l'équipe)
@@ -46,7 +46,7 @@ La maintenance annuelle, souscrite au-delà de la première année, permet de co
 
 ## Ce qui n'est pas inclus
 
-- L'expertise comptable et fiscale : AI-Finance DAF est un outil de pilotage, non un logiciel de tenue de comptabilité. Le recours à un expert-comptable reste nécessaire pour l'établissement des liasses fiscales et la certification des comptes.
+- L'expertise comptable et fiscale : E2P Finance est un outil de pilotage, non un logiciel de tenue de comptabilité. Le recours à un expert-comptable reste nécessaire pour l'établissement des liasses fiscales et la certification des comptes.
 - Les développements spécifiques propres à un groupe : l'ajout de fonctionnalités sur mesure fait l'objet d'un devis distinct.
 - L'hébergement distant : l'application est exclusivement locale par conception.
 

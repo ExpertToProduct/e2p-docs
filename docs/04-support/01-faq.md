@@ -9,7 +9,7 @@ title: Foire aux questions
 
 ### Où sont stockées les données du groupe ?
 
-Sur le poste, à deux endroits : le **dossier des données** choisi au premier lancement (configuration, statuts, journaux ; menu **AI-Finance DAF > Ouvrir le dossier des données**) et la **data room**, le dossier de documents que vous désignez dans la configuration. Rien n'est transmis à un serveur distant, à l'exception du dossier structuré envoyé à Anthropic lorsque vous interrogez l'assistant en mode Claude.
+Sur le poste, à deux endroits : le **dossier des données** choisi au premier lancement (configuration, statuts, journaux ; menu **E2P Finance > Ouvrir le dossier des données**) et la **data room**, le dossier de documents que vous désignez dans la configuration. Rien n'est transmis à un serveur distant, à l'exception du dossier structuré envoyé à Anthropic lorsque vous interrogez l'assistant en mode Claude.
 
 ### Les données sont-elles chiffrées ?
 
@@ -23,7 +23,7 @@ Pas par l'application. Elles reposent sur le chiffrement du disque par **FileVau
 
 Oui, entièrement : lecture des documents, consolidation, vigilance, file à traiter, rapport PDF, assistant en mode local. Internet n'est nécessaire que pour la vérification des mises à jour et l'assistant en mode Claude.
 
-### Puis-je installer AI-Finance DAF sur plusieurs postes ?
+### Puis-je installer E2P Finance sur plusieurs postes ?
 
 Une licence couvre jusqu'à trois postes, Mac ou Windows, appartenant au même utilisateur ou à la même entreprise : installer l'image disque ou l'installeur sur chaque poste. Pour partager un même dossier de données et une même data room entre postes, les placer dans un dossier synchronisé (iCloud Drive, OneDrive) et ne les ouvrir que depuis un poste à la fois. Au-delà de trois postes, un tarif entreprise est disponible sur demande.
 
@@ -85,7 +85,7 @@ Voir [Résolution de problèmes](./02-resolution-problemes.md). Causes fréquent
 
 ### Comment réinitialiser l'application ?
 
-1. Quitter AI-Finance DAF.
+1. Quitter E2P Finance.
 2. Sauvegarder puis renommer le dossier des données.
 3. Supprimer `~/Library/Application Support/ai-finance/donnees.txt`.
 4. Relancer : la question du dossier est posée de nouveau et un groupe de démonstration est créé.
@@ -102,7 +102,7 @@ Trois causes. Le fichier ne porte pas le nom attendu (préfixe de l'entité et e
 
 Douze mois. Au-delà, une maintenance annuelle peut être souscrite pour bénéficier des mises à jour et du support. Son prix est de 15 % à 20 % du prix de la licence initiale.
 
-### Puis-je essayer AI-Finance DAF avant achat ?
+### Puis-je essayer E2P Finance avant achat ?
 
 Une version d'évaluation limitée est disponible sur demande, pour tester l'ensemble des fonctionnalités pendant 30 jours sur un groupe fictif. Une démonstration personnalisée de 45 minutes en visioconférence est également proposée gratuitement.
 

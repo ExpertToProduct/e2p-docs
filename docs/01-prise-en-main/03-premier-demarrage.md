@@ -9,7 +9,7 @@ Après l'installation, l'application affiche un groupe de démonstration fictif,
 
 ## Avant de commencer : le dossier de documents
 
-AI-Finance DAF lit les documents dans un dossier de votre choix, la **data room**, organisé par entité :
+E2P Finance lit les documents dans un dossier de votre choix, la **data room**, organisé par entité :
 
 ```
 <data room>/

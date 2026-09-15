@@ -7,18 +7,18 @@ title: Mises à jour du logiciel
 
 ## Numérotation
 
-AI-Finance DAF suit une numérotation **X.Y.Z** : X pour un changement majeur, Y pour des fonctionnalités nouvelles, Z pour des correctifs. Les versions Y et Z sont incluses dans la maintenance de l'année en cours.
+E2P Finance suit une numérotation **X.Y.Z** : X pour un changement majeur, Y pour des fonctionnalités nouvelles, Z pour des correctifs. Les versions Y et Z sont incluses dans la maintenance de l'année en cours.
 
 ## Vérification
 
-L'application vérifie au démarrage, silencieusement, si une version plus récente est publiée, en lisant la fiche de version publique du site (`docs.experttoproduct.com/ai-finance/version.json`). Aucun compte ni jeton n'est nécessaire. La fiche porte une entrée par plateforme : chaque poste ne voit que l'installeur qui le concerne. Le menu **AI-Finance DAF > Rechercher des mises à jour…** (**Fichier** sur Windows) lance la vérification à la demande et indique si la version installée est à jour.
+L'application vérifie au démarrage, silencieusement, si une version plus récente est publiée, en lisant la fiche de version publique du site (`docs.experttoproduct.com/ai-finance/version.json`). Aucun compte ni jeton n'est nécessaire. La fiche porte une entrée par plateforme : chaque poste ne voit que l'installeur qui le concerne. Le menu **E2P Finance > Rechercher des mises à jour…** (**Fichier** sur Windows) lance la vérification à la demande et indique si la version installée est à jour.
 
 Si une version plus récente existe, une fenêtre présente le numéro, les notes de version et un bouton **Télécharger**.
 
 ## Installer une mise à jour
 
 1. Cliquer sur **Télécharger** : l'image disque est enregistrée dans le dossier Téléchargements, la progression s'affiche sur l'icône du Dock, puis son **empreinte SHA-256** est comparée à celle publiée. Une image altérée ou incomplète est supprimée et signalée, jamais ouverte.
-2. Quitter AI-Finance DAF.
+2. Quitter E2P Finance.
 3. Ouvrir l'image disque (elle s'ouvre d'elle-même après vérification) et glisser l'application sur **Applications**, en acceptant le remplacement.
 4. Relancer l'application.
 
@@ -31,13 +31,13 @@ Le dossier des données, la data room et le choix du dossier ne sont pas touché
 Les images disque sont aussi disponibles sur [github.com/ExpertToProduct/ai-finance-releases](https://github.com/ExpertToProduct/ai-finance-releases/releases), avec l'empreinte de chaque version. Pour la vérifier soi-même :
 
 ```bash
-shasum -a 256 ~/Downloads/AI-Finance.DAF-2.1.0-arm64.dmg
+shasum -a 256 ~/Downloads/E2P Finance.DAF-2.1.0-arm64.dmg
 ```
 
 Sur Windows, dans PowerShell :
 
 ```powershell
-Get-FileHash "$env:USERPROFILE\Downloads\AI-Finance.DAF-2.3.0-x64.exe" -Algorithm SHA256
+Get-FileHash "$env:USERPROFILE\Downloads\E2P Finance.DAF-2.3.0-x64.exe" -Algorithm SHA256
 ```
 
 ## Si la vérification échoue
@@ -50,4 +50,4 @@ Réinstaller l'image disque, ou l'installeur Windows, de la version précédente
 
 ## LM Studio
 
-LM Studio et ses modèles ont leur propre cycle de mise à jour, indépendant d'AI-Finance DAF. Après une mise à jour de LM Studio, vérifier que le serveur local est toujours démarré sur le port 1234 avec un modèle chargé.
+LM Studio et ses modèles ont leur propre cycle de mise à jour, indépendant d'E2P Finance. Après une mise à jour de LM Studio, vérifier que le serveur local est toujours démarré sur le port 1234 avec un modèle chargé.

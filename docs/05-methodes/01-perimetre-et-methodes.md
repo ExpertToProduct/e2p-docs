@@ -18,7 +18,6 @@ Une méthode imposée s'applique telle quelle. Sinon, dans cet ordre :
 | Situation | Méthode |
 |---|---|
 | Holding de tête | Intégration globale |
-| Société immobilière | Mise en équivalence |
 | Case « inclure » décochée | Hors périmètre |
 | Détention supérieure à 50 % | Intégration globale |
 | Détention égale à 50 % | Intégration proportionnelle |
@@ -26,6 +25,8 @@ Une méthode imposée s'applique telle quelle. Sinon, dans cet ordre :
 | Détention inférieure à 20 % | Hors périmètre |
 
 La page **Groupe** affiche pour chaque société la méthode retenue et son origine, déduite ou imposée.
+
+Une société immobilière suit la même règle que les autres : détenue majoritairement, elle est sous contrôle exclusif au sens du Code de commerce, donc intégrée globalement, avec son immeuble, son emprunt et ses loyers intragroupe éliminés. Jusqu'à la version 2.5.0, une SCI partait en mise en équivalence par défaut ; depuis la 2.6.0 la Synthèse signale sur sa ligne qu'elle est désormais intégrée, et imposer « mise en équivalence » dans la Configuration rétablit l'ancien traitement.
 
 ## Détentions indirectes
 
@@ -38,6 +39,15 @@ Une entrée ou une sortie en cours d'exercice se traduit par un compte de résul
 ## Intégration proportionnelle
 
 Chaque poste est repris à la quote-part du groupe et les éliminations avec cette société sont faites au même prorata ; il n'y a pas d'intérêts minoritaires. C'est la pratique française pour le contrôle conjoint.
+
+## Référentiel
+
+Textes qui fondent les méthodes de cette page, tels qu'ils sont cités dans l'application (Paramètres, rapport PDF, classeur Excel). Un statut « convention » ou « approximation » signale un écart assumé avec le texte ; « usage » signale l'absence de référentiel national. « Vérifié » : citation relue sur Légifrance à la date indiquée.
+
+| Périmètre | Référentiel | Statut | Écart assumé | Vérifié |
+|---|---|---|---|---|
+| Périmètre et méthodes de consolidation | Code de commerce, art. L. 233-16 : contrôle exclusif (majorité des droits de vote ou désignation des dirigeants deux exercices de suite), contrôle conjoint, influence notable présumée à partir d'un cinquième des droits de vote ; Règlement ANC n° 2020-01 : périmètre et méthodes (intégration globale, intégration proportionnelle, mise en équivalence) | convention de gestion, écart assumé | Le périmètre est déduit du pourcentage de détention (contrôle de droit) : le contrôle de fait par désignation des dirigeants et le contrôle conjoint contractuel ne sont pas modélisés et se déclarent par une méthode imposée. L'intégration proportionnelle est déduite d'une détention exactement égale à 50 %. Une société immobilière suit la règle commune depuis la 2.6.0. | 2026-09-15 |
+| Intégration proportionnelle | Règlement ANC n° 2020-01 : intégration proportionnelle des sociétés sous contrôle conjoint | convention de gestion, écart assumé | Déduite d'une détention exactement égale à 50 % ; le contrôle conjoint est une notion contractuelle, pas un seuil. Une méthode imposée dans la configuration prime. | à confirmer |
 
 ## Ce que l'application ne fait pas
 

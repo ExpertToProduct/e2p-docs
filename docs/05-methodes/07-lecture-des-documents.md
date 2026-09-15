@@ -25,6 +25,18 @@ Un PDF sans couche texte est reconnu par le moteur de reconnaissance du poste, s
 
 Le texte des PV d'approbation est analysé pour la date d'assemblée, l'exercice, le résultat et le dividende voté ou l'absence de distribution, à partir des formulations usuelles. Un PV rédigé autrement donne des champs vides, et le contrôle des dividendes le dit « non vérifiable ».
 
+## Référentiel
+
+Textes qui fondent les méthodes de cette page, tels qu'ils sont cités dans l'application (Paramètres, rapport PDF, classeur Excel). Un statut « convention » ou « approximation » signale un écart assumé avec le texte ; « usage » signale l'absence de référentiel national. « Vérifié » : citation relue sur Légifrance à la date indiquée.
+
+| Périmètre | Référentiel | Statut | Écart assumé | Vérifié |
+|---|---|---|---|---|
+| Lecture des liasses fiscales | Formulaires Cerfa 2050 à 2059 (régime réel normal), 2033 (réel simplifié), 2065 (impôt sur les sociétés), 2072 (sociétés immobilières non soumises à l'IS) ; CGI art. 53 A (déclaration annuelle de résultats) et 223 (dans les trois mois de la clôture) ; clôture au 31 décembre : deuxième jour ouvré suivant le 1er mai, délai de télédéclaration compris | conforme au référentiel | Formats vérifiés sur les liasses d'un seul éditeur de logiciel comptable ; un montant lu sur un scan reste à relire. | 2026-09-15 |
+| Contrôle d'identité des liasses | Contrôle propre à l'application : SIREN (clé de contrôle du SIRET) et année de clôture lus sur la liasse, confrontés à la configuration | usage de place, pas de référentiel national | La raison sociale est lue et affichée, pas comparée ; balances et fichiers des écritures ne sont pas contrôlés ainsi. | à confirmer |
+| Lecture des balances | Plan comptable général (règlement ANC n° 2014-03) : classes et préfixes de comptes utilisés pour dériver les postes | conforme au référentiel | Pas de plan comptable personnalisé : les préfixes du plan comptable général sont fixes. | à confirmer |
+| Fichier des écritures comptables | Livre des procédures fiscales, art. L. 47 A-I : remise du fichier des écritures comptables ; LPF art. A. 47 A-1 : structure du fichier (dix-huit champs, formats) | conforme au référentiel | Aucun contrôle de conformité fiscale du fichier : seule la cohérence avec la balance est vérifiée. | 2026-09-15 |
+| Dividendes et procès-verbaux | Code de commerce, art. L. 232-11 (bénéfice distribuable) et L. 232-12 (décision de l'assemblée, acomptes sur bilan certifié) ; L. 232-13 : mise en paiement dans les neuf mois de la clôture | conforme au référentiel | Le délai de paiement de neuf mois n'est pas contrôlé ; les acomptes sur dividendes hors assemblée ne sont pas prévus. | 2026-09-15 |
+
 ## Ce qui est saisi, jamais lu
 
 Les détentions, les statuts, les registres, les conventions, les contrats de crédit-bail, les cours de change. Le plan comptable est celui du plan général : il n'y a pas de plan comptable personnalisé.
