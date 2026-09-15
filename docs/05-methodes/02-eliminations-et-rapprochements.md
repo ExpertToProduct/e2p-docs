@@ -20,7 +20,7 @@ Chaque flux est confronté à sa contrepartie : prestations facturées par la ho
 Au moment de la consolidation, pour les sociétés intégrées :
 
 - titres de participation contre capitaux propres de la filiale, la différence formant l'[écart d'acquisition](./03-ecart-acquisition-minoritaires-equivalence.md) ;
-- créances et dettes réciproques, comptes courants compris ;
+- créances et dettes réciproques à leur solde à la clôture : comptes courants, comptes clients et fournisseurs dont l'intitulé nomme la société en face, rapprochés dans les balances, ou avances déclarées à l'étape Flux ; le montant annuel d'une prestation ou d'un loyer n'est pas une créance et ne touche pas le bilan ;
 - produits et charges réciproques : prestations, loyers, ventes internes, retirés du chiffre d'affaires consolidé et des charges, sans effet sur le résultat consolidé ; la Synthèse montre le chiffre d'affaires cumulé des sociétés, les éliminations et le chiffre d'affaires consolidé, à la quote-part pour une société en intégration proportionnelle ;
 - dividendes reçus des filiales, retirés du résultat de la société bénéficiaire et remis en réserves ;
 - profits internes sur stocks : la marge sur les marchandises vendues à une autre société et encore en stock à la clôture, calculée à partir du taux de marge et de la part résiduelle déclarés à l'étape Flux, retirée du résultat et du stock puis reprise l'exercice suivant.
