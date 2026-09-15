@@ -18,3 +18,5 @@ Les données circulent dans un seul sens, des documents du client vers les pages
 7. **L'API locale** sert tout cela à l'interface, au rapport PDF et au classeur Excel, qui affichent sans recalculer et ne peuvent donc pas se contredire. En accès réseau local, le même serveur répond aux autres postes.
 
 L'intelligence artificielle n'intervient dans aucun calcul : elle sert à lire les scans et à répondre en langage courant, à partir des chiffres du moteur. Les pages suivantes détaillent chaque méthode.
+
+Chaque méthode porte son référentiel national et son statut (conforme, convention assumée, approximation, usage de place) : voir [Référentiels](./09-referentiels.md).

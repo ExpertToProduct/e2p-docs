@@ -31,6 +31,14 @@ En intégration proportionnelle, tout est fait au prorata. En mise en équivalen
 
 La **Synthèse** liste chaque écriture : exercice, sociétés, nature, montant, origine (balance, avec le compte et l'intitulé, ou configuration). Le classeur Excel reprend le journal. C'est ce qui explique l'écart entre la somme des sociétés et le consolidé.
 
+## Référentiel
+
+Textes qui fondent les méthodes de cette page, tels qu'ils sont cités dans l'application (Paramètres, rapport PDF, classeur Excel). Un statut « convention » ou « approximation » signale un écart assumé avec le texte ; « usage » signale l'absence de référentiel national. « Vérifié » : citation relue sur Légifrance à la date indiquée.
+
+| Périmètre | Référentiel | Statut | Écart assumé | Vérifié |
+|---|---|---|---|---|
+| Éliminations intragroupe | Règlement ANC n° 2020-01 : élimination des opérations réciproques, des dividendes internes et des résultats internes | conforme au référentiel | Un flux ni nommé dans les intitulés de comptes ni déclaré dans la configuration n'est pas éliminé et rien ne le signale ; les intérêts de comptes courants ne sont pas traités. | à confirmer |
+
 ## Limites
 
 Un flux qui n'est ni nommé dans un intitulé ni déclaré n'est pas éliminé, et son absence ne se voit que par un déséquilibre. Les intérêts de comptes courants ne sont pas traités. Demander au cabinet de nommer les comptes réciproques avec la société en face est ce qui rend le rapprochement automatique.

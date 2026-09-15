@@ -23,3 +23,12 @@ Chaque contrat se déclare pour sa société : libellé, valeur du bien, durée 
 - la différence cumulée est un retraitement de capitaux propres, net d'impôt différé au taux de la société.
 
 Les échéances sont calculées par exercice, au prorata des mois du contrat compris dans l'exercice. La valeur résiduelle et l'option d'achat ne sont pas modélisées. La page Vigilance juge chaque société sur ses comptes sociaux et le consolidé sur les comptes retraités.
+
+## Référentiel
+
+Textes qui fondent les méthodes de cette page, tels qu'ils sont cités dans l'application (Paramètres, rapport PDF, classeur Excel). Un statut « convention » ou « approximation » signale un écart assumé avec le texte ; « usage » signale l'absence de référentiel national. « Vérifié » : citation relue sur Légifrance à la date indiquée.
+
+| Périmètre | Référentiel | Statut | Écart assumé | Vérifié |
+|---|---|---|---|---|
+| Conversion des comptes en devises | Règlement ANC n° 2020-01 : méthode du cours de clôture (bilan au cours de clôture, résultat au cours moyen, écart de conversion en capitaux propres) | conforme au référentiel | Non traités : recyclage de l'écart de conversion à la cession, investissement net en devise, hyperinflation, rapprochement intragroupe entre deux devises. | à confirmer |
+| Retraitement du crédit-bail | Règlement ANC n° 2020-01 : retraitement des contrats de location-financement dans les comptes consolidés (bien immobilisé et amorti, dette financière, loyer remplacé par amortissement et intérêts) | conforme au référentiel | Option d'achat et valeur résiduelle non modélisées ; impôt différé au taux de la société. | à confirmer |

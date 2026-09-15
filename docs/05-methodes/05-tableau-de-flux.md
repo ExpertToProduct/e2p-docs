@@ -20,3 +20,11 @@ Quand le fichier des écritures comptables de l'exercice est déposé, les flux 
 Au niveau consolidé, le tableau est celui du groupe après élimination des flux internes ; les dividendes versés aux minoritaires sont isolés.
 
 Sans balance de l'exercice précédent, premier exercice, il n'y a pas de tableau. Avec la liasse seule, l'application se limite à l'approximation capacité d'autofinancement moins variation du besoin en fonds de roulement, et le dit.
+
+## Référentiel
+
+Textes qui fondent les méthodes de cette page, tels qu'ils sont cités dans l'application (Paramètres, rapport PDF, classeur Excel). Un statut « convention » ou « approximation » signale un écart assumé avec le texte ; « usage » signale l'absence de référentiel national. « Vérifié » : citation relue sur Légifrance à la date indiquée.
+
+| Périmètre | Référentiel | Statut | Écart assumé | Vérifié |
+|---|---|---|---|---|
+| Tableau des flux de trésorerie | Règlement ANC n° 2020-01 : tableau des flux de trésorerie de l'annexe consolidée (flux d'exploitation, d'investissement, de financement) | conforme au référentiel | Construit depuis deux balances successives par préfixes du plan comptable ; sans balance N-1, pas de tableau. | à confirmer |

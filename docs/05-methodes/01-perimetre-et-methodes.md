@@ -39,6 +39,15 @@ Une entrée ou une sortie en cours d'exercice se traduit par un compte de résul
 
 Chaque poste est repris à la quote-part du groupe et les éliminations avec cette société sont faites au même prorata ; il n'y a pas d'intérêts minoritaires. C'est la pratique française pour le contrôle conjoint.
 
+## Référentiel
+
+Textes qui fondent les méthodes de cette page, tels qu'ils sont cités dans l'application (Paramètres, rapport PDF, classeur Excel). Un statut « convention » ou « approximation » signale un écart assumé avec le texte ; « usage » signale l'absence de référentiel national. « Vérifié » : citation relue sur Légifrance à la date indiquée.
+
+| Périmètre | Référentiel | Statut | Écart assumé | Vérifié |
+|---|---|---|---|---|
+| Périmètre et méthodes de consolidation | Code de commerce, art. L. 233-16 : contrôle exclusif (majorité des droits de vote ou désignation des dirigeants deux exercices de suite), contrôle conjoint, influence notable présumée à partir d'un cinquième des droits de vote ; Règlement ANC n° 2020-01 : périmètre et méthodes (intégration globale, intégration proportionnelle, mise en équivalence) | convention de gestion, écart assumé | Le périmètre est déduit du pourcentage de détention et du type de société (société immobilière en mise en équivalence par défaut, intégration proportionnelle à 50 %). Le référentiel raisonne en contrôle exclusif, contrôle conjoint et influence notable : une société détenue à 100 % est sous contrôle exclusif quelle que soit sa forme. Une méthode imposée dans la configuration prime toujours. | 2026-09-15 |
+| Intégration proportionnelle | Règlement ANC n° 2020-01 : intégration proportionnelle des sociétés sous contrôle conjoint | convention de gestion, écart assumé | Déduite d'une détention exactement égale à 50 % ; le contrôle conjoint est une notion contractuelle, pas un seuil. Une méthode imposée dans la configuration prime. | à confirmer |
+
 ## Ce que l'application ne fait pas
 
 Elle ne lit pas les détentions dans les statuts ni dans les registres : un pourcentage saisi faux donne un périmètre faux sans alerte. Le seul contrôle indirect est le rapprochement des titres de participation lus dans la balance de la holding avec les filiales qu'ils nomment (voir [Éliminations et rapprochements](./02-eliminations-et-rapprochements.md)).
