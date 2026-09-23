@@ -1,0 +1,9 @@
+{
+  "label": "Dossiers et factures",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Dossiers et factures",
+    "description": "Créer un dossier, y déposer les factures, les retrouver et corriger une erreur."
+  }
+}

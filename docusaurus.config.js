@@ -41,6 +41,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'costing',
+        path: 'costing-docs',
+        routeBasePath: 'costing',
+        sidebarPath: require.resolve('./sidebarsCosting.js'),
+      }),
+    ],
+  ],
+
   themeConfig: ({
     image: 'img/brand/e2p-banner.png',
     navbar: {
@@ -55,6 +68,13 @@ const config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'E2P Finance',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'costingSidebar',
+          docsPluginId: 'costing',
+          position: 'left',
+          label: 'E2P Costing',
         },
         {
           href: 'https://experttoproduct.com',
@@ -77,6 +97,10 @@ const config = {
             {
               label: 'E2P Finance',
               to: '/prise-en-main/introduction',
+            },
+            {
+              label: 'E2P Costing',
+              to: '/costing/prise-en-main/introduction',
             },
           ],
         },

@@ -1,0 +1,9 @@
+{
+  "label": "Administration",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Administration",
+    "description": "Équipe, sauvegarde, apparence."
+  }
+}
