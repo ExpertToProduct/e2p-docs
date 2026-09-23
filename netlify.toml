@@ -4,4 +4,4 @@
 [build]
   command = "npm run build"
   publish = "build"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- docs static src docusaurus.config.js sidebars.js package.json package-lock.json"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- docs costing-docs static src docusaurus.config.js sidebars.js sidebarsCosting.js package.json package-lock.json"
