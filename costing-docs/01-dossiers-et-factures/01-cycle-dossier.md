@@ -92,6 +92,22 @@ Avant le stade « Flottant », ou pour tout document sans conteneur reconnaissab
 - Chaque conteneur a son dépôt et sa date de dépotage renseignés.
 - Le dossier passe en **Validé** : il n'est plus modifiable sans repasser d'abord en brouillon.
 
+## Facture reçue sur une provision (surestaries, stationnement au port)
+
+Les surestaries et le stationnement au port sont souvent **provisionnés** dans le prix de revient, et ce prix de revient, une fois enregistré en Gescom, ne bouge plus. Quand la facture arrive, la fiche ne réajuste donc pas la provision : sur ces deux lignes, le bouton **Facture reçue…** ouvre un petit formulaire (montant facturé, n° et date de facture) qui remplit la ligne selon la règle du service achats.
+
+| Cas | Dans le prix de revient | Hors Gescom (charges exceptionnelles) |
+|---|---|---|
+| Facture supérieure à la provision | la provision, inchangée | l'excédent (facture − provision), motif « dépassement de provision » |
+| Facture inférieure à la provision | la provision, inchangée | rien : l'écart est seulement signalé |
+| Case **Tout hors Gescom (décision de gérance)** | rien (0) | toute la facture, avec votre nom et la date |
+
+La ligne affiche ensuite « facture reçue X · dans le PR Y · hors Gescom Z · motif ». **Annuler** rend la saisie libre. Le récapitulatif porte un bloc **Hors Gescom** avec le total à passer en charges exceptionnelles, repris dans l'export du sommaire (colonnes HORS GESCOM et MOTIF), dans la fiche PDF et sur la page [Frais d'approche](../02-outils/03-frais-approche.md).
+
+:::info Dossier déjà validé
+Le formulaire reste disponible sur une fiche validée : l'enregistrement se fait sans repasser en brouillon et **refuse tout changement du prix de revient global**. Une décision de gérance n'y est donc possible que si la rubrique ne portait rien dans le prix de revient.
+:::
+
 ## Deux numérotations
 
 | | |
