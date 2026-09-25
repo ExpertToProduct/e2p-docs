@@ -92,16 +92,84 @@ ETA repoussée de plus de deux jours, transbordement, conteneur déchargé alors
 **Le portail my RDT du transitaire peut-il alimenter l'application ?**
 Non : c'est un espace client sans API. Ses courriels d'étape peuvent en revanche être lus par la boîte de veille si on la met en copie.
 
-## Prix de vente
+## Prix de vente (circuit du 25 septembre 2026)
 
 **Qui fixe les prix de vente et comment ?**
-La direction (profils direction d'exploitation et direction générale, DAF et administrateur aussi), depuis l'entrée « Prix de vente » du poste ou l'onglet du même nom sur l'iPhone. Les achats demandent depuis la fiche d'un dossier validé ; la direction confirme ou corrige la proposition de chaque ligne (dernier prix fixé de la référence, sinon PV proposé, sinon grille 1,89 sur le PR plus éco-participation), renvoie éventuellement une ligne à revoir, puis valide le dossier. Voir « Fixer les prix de vente ».
+La direction : profils direction d'exploitation et direction générale, le DAF et l'administrateur aussi. Depuis l'entrée « PRIX DE VENTE » du poste ou l'onglet du même nom sur l'iPhone. Les achats demandent depuis la fiche d'un dossier validé ; la direction confirme ou corrige la proposition de chaque ligne, renvoie éventuellement une ligne à revoir, puis valide le dossier. Voir « Fixer les prix de vente ».
+
+**Pourquoi le bouton « Demander les prix de vente » n'apparaît-il pas sur ma fiche ?**
+Trois raisons possibles : le dossier n'est pas validé (le prix de revient doit être figé avant que la direction fixe) ; votre profil n'est pas acheteur, assistant achat ou DAF ; ou une demande est déjà en cours pour ce dossier, auquel cas la carte affiche « à fixer depuis le… ».
+
+**Que voit la direction exactement ?**
+Par ligne : la référence, la désignation, le prix de revient unitaire et une case prix déjà remplie avec une proposition. Rien d'autre, volontairement. Le coefficient, la marge unitaire et le taux de marge s'affichent sous la case dès qu'un prix est saisi.
+
+**D'où vient la proposition préremplie ?**
+Dans l'ordre : le dernier prix que la direction a fixé pour la même référence (le dossier et la date sont indiqués), sinon le PV proposé par les achats sur la fiche, sinon la grille, soit 1,89 fois le prix de revient unitaire plus l'éco-participation. Elle se confirme d'un clic sur « Fixer ».
 
 **Peut-on saisir un coefficient au lieu d'un prix ?**
-Oui : « x2 » ou « ×2,1 » dans la case ; l'application calcule le prix (PR × coefficient + éco-participation) et affiche marge et taux.
+Oui : « x2 » ou « ×2,1 » dans la case ; sur l'iPhone, le bouton « × » à gauche de la case pose le préfixe. L'application calcule le prix (prix de revient × coefficient + éco-participation) et affiche marge et taux.
+
+**Le prix saisi est-il TTC ou hors taxe ?**
+C'est le prix affiché au client, éco-participation incluse. À Mayotte, sans TVA, il vaut le prix hors taxe. La marge se calcule sur le prix hors éco-participation face au prix de revient unitaire.
+
+**Que signifient « Vente à perte » et « Sous la grille » ?**
+« Vente à perte » : le prix hors éco-participation est inférieur au prix de revient unitaire. « Sous la grille » : le coefficient est inférieur à 1,89. Ce sont des signaux, jamais des blocages : la direction décide.
+
+**Une ligne est fausse, comment la renvoyer aux achats ?**
+Bouton « À revoir » sur la ligne, avec un mot (« PR à revoir, fret trop élevé »). Le dossier passe « à revoir » ; les achats voient le commentaire dans la carte Prix de vente de la fiche et dans le bloc « Retours de la direction » en tête de la page Dossiers. Ils repassent le dossier en brouillon, corrigent, valident et redemandent ; les lignes déjà fixées sont conservées.
+
+**Peut-on valider un dossier dont une ligne manque ?**
+Non. « Valider le dossier » n'est actif que lorsque toutes les lignes sont fixées, et sans ligne à revoir. Les totaux (chiffre d'affaires attendu, marge, taux moyen) s'affichent à ce moment.
+
+**Où retrouve-t-on les prix fixés ?**
+Dans la carte Prix de vente de la fiche (avec la date et l'auteur), dans la colonne « PV fixé » du tableau des articles, dans l'export Excel du dossier, et ligne par ligne dans l'historique du dossier.
+
+**Deux personnes fixent le même dossier en même temps ?**
+Le verrou de fiche joue : la seconde reçoit un message de conflit, recharge et voit ce que la première a fixé. Rien n'est écrasé en silence.
 
 **Le prix fixé va-t-il dans Gescom ?**
-Pas encore : il reste dans le dossier, visible sur la fiche et dans l'export Excel. Le lien avec le tarif Gescom est un chantier à part.
+Pas encore : il reste dans le dossier. Le lien avec le tarif Gescom est un chantier à part.
+
+**Comment les achats savent-ils que la direction a répondu ?**
+Pastille sur l'entrée DOSSIERS de la barre latérale et bloc « Retours de la direction » en tête de la page Dossiers, avec un bouton « Pris en compte » dans la fiche une fois le retour lu.
+
+## Application iPhone E2P
+
+**À quoi sert l'application iPhone ?**
+À la direction : tableau de bord, dossiers, conteneurs, règlements en lecture, et l'onglet Prix de vente pour fixer les prix demandés par les achats. Elle ne calcule rien : elle affiche ce que le serveur E2P Costing calcule, et n'écrit que les prix de vente.
+
+**Comment l'installer ?**
+Par TestFlight, l'outil de distribution d'Apple pour les applications d'entreprise en test. Installer l'app TestFlight depuis l'App Store, ouvrir le courriel d'invitation reçu de la part de l'administrateur, puis « Installer » E2P dans TestFlight. Les mises à jour arrivent ensuite d'elles-mêmes, avec une notification TestFlight. Une version TestFlight est valable 90 jours ; une nouvelle version est publiée bien avant.
+
+**Je n'ai pas reçu l'invitation.**
+Demander à l'administrateur de vérifier l'adresse saisie dans le groupe de testeurs : ce doit être celle de l'identifiant Apple utilisé sur l'iPhone. Vérifier aussi les indésirables. Un code d'invitation peut aussi être saisi dans TestFlight (« Utiliser un code »).
+
+**Avec quel identifiant se connecte-t-on ?**
+Le même que sur le poste : identifiant E2P Costing et mot de passe, créés par l'administrateur dans Équipe. Le mot de passe provisoire doit être changé à la première connexion, sur le poste. Cocher « Rester connecté » garde la session ouverte ; le mot de passe est alors dans le trousseau sécurisé de l'iPhone, jamais ailleurs.
+
+**Ça ne se connecte pas.**
+Le serveur est sur le réseau de l'entreprise, pas sur Internet. Il faut être sur le Wi-Fi du bureau, ou avoir activé le VPN de l'entreprise sur l'iPhone (profil fourni par l'informaticien). L'adresse du serveur se vérifie dans Réglages de l'app.
+
+**Que voit-on hors du bureau, sans VPN ?**
+Le dernier état synchronisé, avec la mention « Hors réseau · dernière mise à jour le … ». Tout reste lisible ; les boutons qui écrivent (Fixer, À revoir, Valider) sont désactivés jusqu'au retour du réseau.
+
+**L'onglet Prix de vente n'apparaît pas.**
+Il est réservé aux profils direction d'exploitation, direction générale, DAF et administrateur. Pour ces profils, Réglages se trouve derrière la roue dentée du tableau de bord.
+
+**Comment fonctionnent les notifications ?**
+À la première connexion, l'app demande l'autorisation. Ensuite : « Prix de vente à fixer » quand les achats font une demande (direction et DAF), « Prix fixés » ou « Prix à revoir » pour le demandeur. Toucher la notification ouvre le dossier concerné. Le chiffre sur l'icône est le nombre de dossiers à fixer ; il s'efface à l'ouverture de l'onglet Prix de vente. Autorisation refusée par erreur : Réglages iOS › Notifications › E2P.
+
+**Les notifications arrivent-elles hors du bureau ?**
+Oui : elles passent par les serveurs d'Apple, pas par le réseau de l'entreprise. Mais pour agir, il faut le Wi-Fi du bureau ou le VPN.
+
+**Que conserve l'iPhone ?**
+Le dernier état de chaque écran, l'adresse du serveur et l'identifiant. Jamais le mot de passe en clair (trousseau seulement si « Rester connecté »). Réglages › « Effacer les données conservées » vide tout ; la déconnexion aussi.
+
+**Je change de téléphone.**
+Installer TestFlight et E2P sur le nouveau, se connecter : l'iPhone se déclare de lui-même pour les notifications. L'ancien cesse d'en recevoir dès qu'on s'y déconnecte.
+
+**Qui administre tout cela ?**
+L'administrateur, dans E2P Costing › ADMIN › Équipe : comptes et profils, carte « Notifications iPhone » (état de la clé Apple, téléphones enregistrés par personne, bouton « M'envoyer une notification de test »). La clé Apple vit sur le serveur et n'est jamais transmise.
 
 ## Comptabilité (FEC)
 
