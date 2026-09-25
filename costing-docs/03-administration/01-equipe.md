@@ -7,7 +7,7 @@ title: Équipe
 
 Les personnes qui utilisent E2P Costing, leur profil métier, et — si vous l'activez — leurs identifiants de connexion.
 
-1. Cliquez **Ajouter une personne** : nom et profil (acheteur, assistant achat, contrôleur de gestion, DAF) suffisent.
+1. Cliquez **Ajouter une personne** : nom et profil (acheteur, assistant achat, contrôleur de gestion, DAF, direction d'exploitation, direction générale) suffisent.
 2. Pour lui donner un compte : renseignez un identifiant et un mot de passe provisoire (8 caractères au moins) — elle devra le changer à sa première connexion.
 3. Depuis sa ligne : changez son profil, rendez-la administratrice ou retirez-le-lui, désactivez-la ou réactivez-la.
 

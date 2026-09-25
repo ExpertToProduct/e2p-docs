@@ -92,6 +92,17 @@ ETA repoussée de plus de deux jours, transbordement, conteneur déchargé alors
 **Le portail my RDT du transitaire peut-il alimenter l'application ?**
 Non : c'est un espace client sans API. Ses courriels d'étape peuvent en revanche être lus par la boîte de veille si on la met en copie.
 
+## Prix de vente
+
+**Qui fixe les prix de vente et comment ?**
+La direction (profils direction d'exploitation et direction générale, DAF et administrateur aussi), depuis l'entrée « Prix de vente » du poste ou l'onglet du même nom sur l'iPhone. Les achats demandent depuis la fiche d'un dossier validé ; la direction confirme ou corrige la proposition de chaque ligne (dernier prix fixé de la référence, sinon PV proposé, sinon grille 1,89 sur le PR plus éco-participation), renvoie éventuellement une ligne à revoir, puis valide le dossier. Voir « Fixer les prix de vente ».
+
+**Peut-on saisir un coefficient au lieu d'un prix ?**
+Oui : « x2 » ou « ×2,1 » dans la case ; l'application calcule le prix (PR × coefficient + éco-participation) et affiche marge et taux.
+
+**Le prix fixé va-t-il dans Gescom ?**
+Pas encore : il reste dans le dossier, visible sur la fiche et dans l'export Excel. Le lien avec le tarif Gescom est un chantier à part.
+
 ## Comptabilité (FEC)
 
 **Où dépose-t-on le FEC ?**
