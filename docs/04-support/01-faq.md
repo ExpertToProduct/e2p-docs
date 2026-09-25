@@ -96,6 +96,18 @@ La data room n'est pas touchée.
 
 Trois causes. Le fichier ne porte pas le nom attendu (préfixe de l'entité et exercice) ou n'est pas dans le bon sous-dossier : la section Documents de la fiche indique le nom attendu. Le PDF est un **scan sans couche texte** : il est reconnu au rechargement par la reconnaissance de texte du système, et ses chiffres sont marqués « à relire » ; si la mention « scanné, non lu » persiste, voir Résolution de problèmes, et demander au cabinet l'export de son logiciel plutôt qu'un scan. Le format est inhabituel : les liasses des logiciels de cabinet courants (régime 2033 et 2050) et la déclaration 2072 des SCI à l'IR sont reconnues ; pour un autre format, transmettre un exemple au support.
 
+### Les thèmes « Clair » et « Système » donnent le même résultat, est-ce normal ?
+
+Oui sur un poste en mode clair : « Système » suit le réglage de macOS ou de Windows et ne diffère de « Clair » que si le système est en sombre ou en bascule automatique jour-nuit. Le bouton de Paramètres › Apparence affiche ce qu'il applique. Le réglage est propre au poste et n'a pas d'effet sur le PDF ni sur le classeur Excel.
+
+### L'application ne redemande pas le mot de passe à la réouverture.
+
+Depuis la 2.6.1, l'application de bureau efface la session à chaque lancement et redemande le mot de passe dès qu'un compte administrateur existe. Si ce n'est pas le cas, vérifier la version dans Paramètres et installer la 2.6.1 ou plus. Dans un navigateur, la session reste valable douze heures.
+
+### Les installeurs 2.6.0 ne s'ouvrent pas.
+
+Défaut connu de la 2.6.0, sur macOS et Windows : le lanceur s'arrêtait avant d'ouvrir la fenêtre. Installer la 2.6.1, disponible sur la page des téléchargements ; les données ne sont pas touchées.
+
 ## Questions commerciales
 
 ### Quelle est la durée de la maintenance incluse à l'achat ?
