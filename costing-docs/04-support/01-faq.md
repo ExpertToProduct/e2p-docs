@@ -69,6 +69,9 @@ Il attend dans le bloc « Opérations à affecter » de la page Règlements : on
 **Le FEC suffit-il à savoir ce qui a été payé ?**
 Pour le passé, oui : chaque virement à un fournisseur y est. Pour le présent, non : le FEC arrive du cabinet avec des semaines de retard, les virements en dollars y sont en euros au cours de la banque, et le libellé bancaire ne porte pas toujours le numéro de facture. Le bordereau, édité le jour du virement, est l'information à temps ; le FEC vient confirmer.
 
+**Le FEC est déposé, mais la plupart des lignes restent « à demander » : pourquoi ?**
+Parce que l'application ne confirme une ligne que si la comptabilité la désigne sans ambiguïté. Depuis le 25 septembre 2026, elle reconnaît un débit unique (2 % d'écart en euros, 5 % en dollars convertis), un acompte suivi d'un solde, et un virement groupé couvrant jusqu'à quatre lignes du même fournisseur. Mais le libellé des écritures de banque ne porte que le nom du fournisseur, sans numéro de facture ni montant par facture ; pour un fournisseur qui a vingt ou trente lignes ouvertes, un virement groupé s'explique de dizaines de façons, et l'application refuse de choisir. Ces lignes sont signalées « à rapprocher à la main », avec les écritures candidates dans l'alerte : on tranche à la fiche en marquant la ligne exécutée avec la date et la référence du virement, ou en déposant le bordereau de l'époque, qui porte la liste des factures réglées. Sur la durée, la voie sûre est le bordereau, saisi ou transféré le jour du virement.
+
 **Pourquoi tout est-il « à demander » au démarrage ?**
 Parce que personne n'a encore saisi ni déposé de bordereau. Déposer les bordereaux des dernières semaines, puis marquer exécutés les règlements plus anciens dont on a la preuve, assainit vite. Les dossiers arrivés et dépotés depuis plus de trente jours sans ligne saisie sont réputés réglés et sortent du suivi.
 
