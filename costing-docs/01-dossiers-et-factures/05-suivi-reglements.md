@@ -52,6 +52,16 @@ Un virement crédité passe la ligne **exécutée** à sa date, référence « S
 
 Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Proformas manquantes** de la page Règlements donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
 
+## Rapprochement par commande
+
+La trésorerie paie une **commande** (une proforma) par un acompte puis un ou plusieurs soldes ; Costing suit un dossier par conteneur. La vue **Par commande** de la page Règlements regroupe les virements du suivi en dollars et les dossiers qui portent le même numéro, et affiche pour chaque commande : commandé, acompte versé, solde versé, à faire, reste à payer, état. Les boutons **Simuler** et **Rapprocher par commande** montrent puis écrivent ce qui est certain.
+
+- **Soldée** : un solde versé, plus rien à faire, et les virements couvrent les dossiers. Les lignes passent exécutées à la date du dernier virement. Si les virements dépassent les dossiers de plus de 1 %, un signalement indique qu'un dossier de la commande manque ou porte un autre numéro.
+- **Acompte versé** : si le suivi porte aussi le solde à faire et que leur total égale celui des dossiers, l'acompte est inscrit sur chaque dossier au prorata, et la balance, ramenée au reste dû, passe demandée.
+- **À trancher** : tout le reste, avec la raison chiffrée. Rien n'est écrit : total de la commande inconnu, aucun dossier ne porte le numéro, virements inférieurs aux factures.
+
+La fiche, le prix de revient et le statut du dossier ne sont jamais modifiés ; seules les lignes de règlement et l'acompte le sont, avec une trace dans l'historique.
+
 ## Règlement global en tranches : importer un relevé
 
 Certains fournisseurs sont réglés par tranches (« SOLDE 1/3 », « SOLDE BIS 2/3 », parfois via l'affactureur) qui couvrent un lot de factures. Le lot n'est connu que par un **relevé**, préparé dans un classeur à une feuille et deux blocs : les débits de banque (mêmes colonnes que la feuille « Débits banque non rattachés » de l'export) et les factures du lot (N° Facture, date, échéance, montant). Page Règlements, bouton **Importer un relevé de règlement global**.
