@@ -52,12 +52,22 @@ Un virement crédité passe la ligne **exécutée** à sa date, référence « S
 
 Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Proformas manquantes** de la page Règlements donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
 
+## Règlement global en tranches : importer un relevé
+
+Certains fournisseurs sont réglés par tranches (« SOLDE 1/3 », « SOLDE BIS 2/3 », parfois via l'affactureur) qui couvrent un lot de factures. Le lot n'est connu que par un **relevé**, préparé dans un classeur à une feuille et deux blocs : les débits de banque (mêmes colonnes que la feuille « Débits banque non rattachés » de l'export) et les factures du lot (N° Facture, date, échéance, montant). Page Règlements, bouton **Importer un relevé de règlement global**.
+
+- Le relevé est **équilibré** si le total des débits égale le total des factures à 1 % près. Sinon rien n'est décidé et la raison est affichée.
+- Chaque facture du relevé cherche la ligne du dossier qui porte son numéro : trouvée, elle passe **confirmée** à la date de la dernière tranche, avec les pièces des débits ; inconnue de Costing, elle est listée pour que les achats la rattachent en saisissant le numéro de facture fournisseur dans la fiche.
+- Les débits du relevé sont **réservés** : ils ne servent plus à aucun autre rapprochement. L'administrateur peut libérer une réservation depuis la carte « Écritures réservées ».
+- Réimporter le même relevé ne refait rien.
+
 ## Confirmation par la comptabilité
 
 À chaque ouverture de l'écran et à chaque dépôt de FEC, les lignes à demander, demandées et exécutées sont rapprochées des écritures de banque du FEC (débits du compte fournisseur en journal de banque). Une ligne retrouvée passe **confirmé en banque** avec la date comptable et la pièce, une seule fois, au nom du système. Une ligne exécutée depuis plus de 15 jours ouvrés sans aucune écriture possible est signalée « non vu en banque » : à vérifier auprès de la banque ou de la comptabilité.
 
-Une écriture est retenue pour une ligne quand elle est au nom du même bénéficiaire, datée du jour de la facture (sinon de la commande) ou après, et pas déjà prise par une autre ligne. Le montant est comparé à **2 %** près pour une ligne en euros, à **5 %** près pour une ligne en dollars convertie au cours du bordereau s'il existe, sinon au cours du dossier. Trois formes de paiement sont reconnues, dans cet ordre :
+Une écriture est retenue pour une ligne quand elle est au nom du même bénéficiaire, datée du jour de la facture (sinon de la commande) ou après, et pas déjà prise par une autre ligne. Le montant est comparé à **2 %** près pour une ligne en euros, à **5 %** près pour une ligne en dollars convertie au cours du bordereau s'il existe, sinon au cours du dossier. Quatre formes de paiement sont reconnues, dans cet ordre :
 
+0. **Pièce comptable** : quand la pièce de l'écriture porte le numéro de facture de la ligne (le cabinet y met le numéro de facture du fournisseur, ou le numéro de proforma pour les dollars), la pièce fait foi : la ligne est confirmée sans condition de montant ni de date. Un écart de montant supérieur à la tolérance est signalé, pas refusé. Une facture payée en plusieurs fois sur la même pièce est reconnue si la somme des débits fait la ligne. C'est la voie la plus sûre : **saisir le numéro de facture fournisseur dans la fiche** rend le rapprochement certain.
 1. **Débit unique** : une écriture au montant de la ligne.
 2. **Acompte + solde** : une balance sans deposit saisi, qu'aucune écriture seule ne paie mais que deux débits du même bénéficiaire règlent ensemble. La balance devient alors deux lignes confirmées : un deposit au montant et à la date du premier débit, une balance au montant et à la date du second.
 3. **Virement groupé** : un débit qui règle d'un coup deux à quatre lignes du même bénéficiaire, dans la même devise, sur un ou plusieurs dossiers : toutes sont confirmées avec la date et la pièce de ce débit.

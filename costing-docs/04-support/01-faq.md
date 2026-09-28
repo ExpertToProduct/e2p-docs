@@ -69,6 +69,12 @@ Il attend dans le bloc « Opérations à affecter » de la page Règlements : on
 **Le FEC suffit-il à savoir ce qui a été payé ?**
 Pour le passé, oui : chaque virement à un fournisseur y est. Pour le présent, non : le FEC arrive du cabinet avec des semaines de retard, les virements en dollars y sont en euros au cours de la banque, et le libellé bancaire ne porte pas toujours le numéro de facture. Le bordereau, édité le jour du virement, est l'information à temps ; le FEC vient confirmer.
 
+**Un fournisseur est payé par tranches « SOLDE 1/3, 2/3… » qui couvrent plusieurs factures, comment le rapprocher ?**
+Avec un relevé de règlement global importé depuis la page Règlements : un classeur à deux blocs, les débits de banque et les factures du lot. Si les totaux sont égaux, les factures connues de Costing passent confirmées à la date de la dernière tranche, les débits sont réservés, et les factures inconnues sont listées pour être rattachées aux dossiers.
+
+**Comment rendre le rapprochement certain plutôt que probable ?**
+En saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Proformas manquantes » indique les dossiers à compléter.
+
 **Les virements en dollars ne sont pas dans les bordereaux, comment les suivre ?**
 Par le classeur de suivi des virements en dollars de la trésorerie, importé depuis la page Règlements (bouton « Importer le suivi des virements en dollars »). Chaque virement crédité passe la ligne exécutée à sa date ; les virements « à faire » passent les lignes demandées. Le rattachement se fait par le numéro de proforma, qui doit donc être saisi dans la fiche du dossier : la liste « Proformas manquantes » indique les dossiers à compléter, puis « Réessayer l'affectation » reprend les virements en attente.
 
