@@ -72,6 +72,9 @@ Pour le passé, oui : chaque virement à un fournisseur y est. Pour le présent,
 **Un fournisseur est payé par tranches « SOLDE 1/3, 2/3… » qui couvrent plusieurs factures, comment le rapprocher ?**
 Avec un relevé de règlement global importé depuis la page Règlements : un classeur à deux blocs, les débits de banque et les factures du lot. Si les totaux sont égaux, les factures connues de Costing passent confirmées à la date de la dernière tranche, les débits sont réservés, et les factures inconnues sont listées pour être rattachées aux dossiers.
 
+**Le relevé dit « facture inconnue » alors que le dossier existe, pourquoi ?**
+Le plus souvent la facture est une commission, dont la ligne n'a pas de numéro : ajouter une colonne « Dossier » au bloc des factures du relevé, y indiquer le dossier, puis « Reprendre ce relevé ». Si le dossier est indiqué et que le message persiste, c'est qu'aucune ligne du dossier ne fait ce montant : vérifier le montant de la facture ou de la commission dans la fiche.
+
 **Comment rendre le rapprochement certain plutôt que probable ?**
 En saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Proformas manquantes » indique les dossiers à compléter.
 

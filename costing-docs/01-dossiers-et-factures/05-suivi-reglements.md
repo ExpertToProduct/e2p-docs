@@ -59,7 +59,10 @@ Certains fournisseurs sont réglés par tranches (« SOLDE 1/3 », « SOLDE BIS 
 - Le relevé est **équilibré** si le total des débits égale le total des factures à 1 % près. Sinon rien n'est décidé et la raison est affichée.
 - Chaque facture du relevé cherche la ligne du dossier qui porte son numéro : trouvée, elle passe **confirmée** à la date de la dernière tranche, avec les pièces des débits ; inconnue de Costing, elle est listée pour que les achats la rattachent en saisissant le numéro de facture fournisseur dans la fiche.
 - Les débits du relevé sont **réservés** : ils ne servent plus à aucun autre rapprochement. L'administrateur peut libérer une réservation depuis la carte « Écritures réservées ».
-- Réimporter le même relevé ne refait rien.
+- Les dossiers **réputés réglés** (arrivés, dépotés depuis plus de trente jours sans ligne saisie, donc hors suivi) sont regardés aussi : si le relevé paie leur facture, la ligne est confirmée et le dossier rentre dans le suivi.
+- Un champ « N° facture fournisseur » peut porter **plusieurs numéros**, un par ligne ou séparés par « / » : la ligne est payée par la somme de ces factures.
+- Colonne facultative **« Dossier »** dans le bloc des factures : quand une facture n'a de numéro dans aucune fiche (une commission, par exemple), indiquer le dossier suffit. L'application rattache la facture à la ligne de ce dossier dont le montant correspond, seule ou en somme avec d'autres factures du même dossier, et la ligne reçoit le numéro. Deux lectures possibles : rien n'est décidé, la facture est « à trancher ».
+- Réimporter le même relevé ne refait rien. Après avoir complété le relevé ou les fiches, **Reprendre ce relevé** confirme ce qui ne l'était pas encore, sans réserver les débits une seconde fois.
 
 ## Confirmation par la comptabilité
 
