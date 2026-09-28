@@ -38,6 +38,20 @@ Le libellé à écrire sur le bordereau est donné par le bloc **À préparer po
 Le compte, l'IBAN et le BIC du bénéficiaire ne sortent pas du PDF : l'application n'en retient que le nom, le libellé, le montant et la devise.
 :::
 
+## Virements en dollars : importer le suivi de la trésorerie
+
+La trésorerie tient un classeur des virements en dollars de l'année, un onglet par entité, une ligne par virement : fournisseur, date, numéro de proforma, type (acompte ou solde), montant, banque, état (crédité, fait, à faire). Ce classeur est pour les dollars ce que le bordereau est pour les euros. Page Règlements, bouton **Importer le suivi des virements en dollars** : l'application lit l'onglet de son entité et les colonnes par leur titre, quel que soit leur ordre.
+
+Pour chaque virement, l'application cherche la ligne attendue, sans jamais choisir au hasard :
+
+1. **Commissions** : un numéro « COM 0425 » ou « COM 04-05 2025 » désigne un ou plusieurs mois ; les commissions du bénéficiaire facturées dans ces mois sont rattachées ensemble si leur somme fait le montant.
+2. **Numéro de proforma** : le numéro du virement retrouve les dossiers qui le portent (« PIMYCF260105 » retrouve « CIMYCF260105-11 » et « CIMYCF260105-10 ») ; une proforma peut couvrir plusieurs dossiers si la somme de leurs balances fait le virement.
+3. **Bénéficiaire et montant** à 1 % près.
+
+Un virement crédité passe la ligne **exécutée** à sa date, référence « Suivi USD · banque » ; un virement « à faire » passe la ligne **demandée**. Ce qui n'est pas rattaché attend dans **Opérations à affecter**, avec les lignes candidates et, quand la comptabilité est chargée, l'écriture de banque qui porte le même montant en dollars (« Vu au FEC le 04/08 : 40 000,00 € · pièce … »). Réimporter le même classeur le mois suivant ne refait rien pour les virements déjà traités.
+
+Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Proformas manquantes** de la page Règlements donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
+
 ## Confirmation par la comptabilité
 
 À chaque ouverture de l'écran et à chaque dépôt de FEC, les lignes à demander, demandées et exécutées sont rapprochées des écritures de banque du FEC (débits du compte fournisseur en journal de banque). Une ligne retrouvée passe **confirmé en banque** avec la date comptable et la pièce, une seule fois, au nom du système. Une ligne exécutée depuis plus de 15 jours ouvrés sans aucune écriture possible est signalée « non vu en banque » : à vérifier auprès de la banque ou de la comptabilité.
