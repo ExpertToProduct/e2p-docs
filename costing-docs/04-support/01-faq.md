@@ -75,6 +75,9 @@ Avec un relevé de règlement global importé depuis la page Règlements : un cl
 **Le relevé dit « facture inconnue » alors que le dossier existe, pourquoi ?**
 Le plus souvent la facture est une commission, dont la ligne n'a pas de numéro : ajouter une colonne « Dossier » au bloc des factures du relevé, y indiquer le dossier, puis « Reprendre ce relevé ». Si le dossier est indiqué et que le message persiste, c'est qu'aucune ligne du dossier ne fait ce montant : vérifier le montant de la facture ou de la commission dans la fiche.
 
+**Pourquoi la commission affichée dans Règlements diffère-t-elle de celle de la fiche ?**
+La fiche calcule une estimation ; Règlements affiche la commission réellement facturée, lue dans la comptabilité par le numéro Gescom ou le numéro du dossier. Les deux montants sont montrés côte à côte, avec leur écart. Seul le montant facturé est dû.
+
 **Que signifie « non lettrée en comptabilité » ?**
 La facture du dossier est bien comptabilisée, mais le cabinet ne l'a pas rapprochée d'un règlement à la date du dernier FEC déposé. Elle peut être impayée, ou payée par un règlement global en tranches ou par le compte d'un agent, que le cabinet ne lettre pas. L'application ne la rapproche plus par le montant ; elle reste confirmable par la pièce du règlement, par un relevé de règlement global ou par le rapprochement par commande.
 

@@ -54,6 +54,17 @@ Un virement crédité passe la ligne **exécutée** à sa date, référence « S
 
 Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Proformas manquantes** de la page Règlements donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
 
+## Commissions : le montant facturé
+
+La commission calculée dans la fiche est une **estimation** (taux appliqué à la facture, plus la manutention). La page Règlements affiche, elle, la commission **réellement facturée** par le commissionnaire, retrouvée dans la comptabilité par le numéro de facture Gescom du dossier ou par le numéro du dossier : « Facturée … € (… $, COM 01/2026) · estimée … € ». La fiche et le prix de revient ne changent pas.
+
+- Son état vient du lettrage : **confirmée** quand le règlement groupé du commissionnaire est lettré, sinon « non lettrée en comptabilité ».
+- « Pas encore comptabilisée » : dossier arrivé, aucune facture de commission trouvée.
+- « Écart avec l'estimation » : le facturé s'écarte de plus de 10 % de l'estimation de la fiche.
+- « Facture à vérifier » : montant invraisemblable, plus de trois fois l'estimation ; rien n'est retenu.
+
+Le lien **classeur des commissions** donne la liste complète, pour les achats et le cabinet comptable.
+
 ## Rapprochement par commande
 
 La trésorerie paie une **commande** (une proforma) par un acompte puis un ou plusieurs soldes ; Costing suit un dossier par conteneur. La vue **Par commande** de la page Règlements regroupe les virements du suivi en dollars et les dossiers qui portent le même numéro, et affiche pour chaque commande : commandé, acompte versé, solde versé, à faire, reste à payer, état. Les boutons **Simuler** et **Rapprocher par commande** montrent puis écrivent ce qui est certain.
