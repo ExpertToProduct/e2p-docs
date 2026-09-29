@@ -75,6 +75,9 @@ Avec un relevé de règlement global importé depuis la page Règlements : un cl
 **Le relevé dit « facture inconnue » alors que le dossier existe, pourquoi ?**
 Le plus souvent la facture est une commission, dont la ligne n'a pas de numéro : ajouter une colonne « Dossier » au bloc des factures du relevé, y indiquer le dossier, puis « Reprendre ce relevé ». Si le dossier est indiqué et que le message persiste, c'est qu'aucune ligne du dossier ne fait ce montant : vérifier le montant de la facture ou de la commission dans la fiche.
 
+**Le cabinet a lettré un règlement récent, mais le FEC déposé est plus ancien. Faut-il attendre le prochain FEC ?**
+Non. Exporter de Sage le grand livre du tiers au format Excel et l'importer depuis la page Règlements, en choisissant le tiers dans la liste. Le lettrage du grand livre complète celui du FEC, sans jamais le contredire, et les lignes concernées passent confirmées au passage suivant.
+
 **Pourquoi la commission affichée dans Règlements diffère-t-elle de celle de la fiche ?**
 La fiche calcule une estimation ; Règlements affiche la commission réellement facturée, lue dans la comptabilité par le numéro Gescom ou le numéro du dossier. Les deux montants sont montrés côte à côte, avec leur écart. Seul le montant facturé est dû.
 

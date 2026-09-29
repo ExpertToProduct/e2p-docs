@@ -54,6 +54,18 @@ Un virement crédité passe la ligne **exécutée** à sa date, référence « S
 
 Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Proformas manquantes** de la page Règlements donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
 
+## Grand livre lettré : compléter le FEC entre deux dépôts
+
+Le FEC s'arrête à sa date d'arrêté ; entre deux dépôts, le cabinet continue de lettrer. Le grand livre d'un tiers, exporté de Sage au format Excel, complète le FEC pour le lettrage. Page Règlements, bouton **Importer un grand livre lettré** :
+
+1. Choisir le **tiers** dans la liste : l'export ne dit pas de qui il s'agit.
+2. Déposer le classeur. Les colonnes sont reconnues par leur titre.
+3. Le bilan indique les écritures lues, celles déjà connues de la comptabilité, les nouvelles, les lettrages ajoutés et les lignes que le suivi va confirmer.
+
+Le grand livre **complète, il ne remplace jamais** : une lettre du FEC n'est pas modifiée, et un désaccord est seulement compté. Un groupe de lettrage ne confirme une ligne que s'il est équilibré au centime, règlement de banque compris. L'import n'écrit rien dans les dossiers ; la confirmation s'écrit au passage suivant du suivi, avec sa trace dans l'historique.
+
+Réimporter le même fichier ne fait rien. Un nouvel export du même tiers remplace le précédent. Quand un FEC plus récent couvre la période, la carte **Grands livres importés** affiche « couvert par le FEC ». L'administrateur peut retirer un grand livre ; ce qui a été confirmé le reste.
+
 ## Commissions : le montant facturé
 
 La commission calculée dans la fiche est une **estimation** (taux appliqué à la facture, plus la manutention). La page Règlements affiche, elle, la commission **réellement facturée** par le commissionnaire, retrouvée dans la comptabilité par le numéro de facture Gescom du dossier ou par le numéro du dossier : « Facturée … € (… $, COM 01/2026) · estimée … € ». La fiche et le prix de revient ne changent pas.
