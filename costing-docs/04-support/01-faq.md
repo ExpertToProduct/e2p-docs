@@ -75,6 +75,9 @@ Avec un relevé de règlement global importé depuis la page Règlements : un cl
 **Le relevé dit « facture inconnue » alors que le dossier existe, pourquoi ?**
 Le plus souvent la facture est une commission, dont la ligne n'a pas de numéro : ajouter une colonne « Dossier » au bloc des factures du relevé, y indiquer le dossier, puis « Reprendre ce relevé ». Si le dossier est indiqué et que le message persiste, c'est qu'aucune ligne du dossier ne fait ce montant : vérifier le montant de la facture ou de la commission dans la fiche.
 
+**Une ligne affiche « date de facture à saisir », que faire ?**
+Saisir la date de facture dans la fiche du dossier, ou à défaut la date de commande. Sans date, l'application refuse de rapprocher par le montant : un débit plus ancien de montant voisin pourrait être pris pour le paiement. Cette règle date du 29 septembre 2026, après la découverte de confirmations erronées sur des dossiers encore en mer ; les vingt confirmations concernées ont été annulées, chacune tracée dans l'historique du dossier.
+
 **Comment rendre le rapprochement certain plutôt que probable ?**
 En saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Proformas manquantes » indique les dossiers à compléter.
 
