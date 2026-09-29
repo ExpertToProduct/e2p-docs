@@ -75,11 +75,14 @@ Avec un relevé de règlement global importé depuis la page Règlements : un cl
 **Le relevé dit « facture inconnue » alors que le dossier existe, pourquoi ?**
 Le plus souvent la facture est une commission, dont la ligne n'a pas de numéro : ajouter une colonne « Dossier » au bloc des factures du relevé, y indiquer le dossier, puis « Reprendre ce relevé ». Si le dossier est indiqué et que le message persiste, c'est qu'aucune ligne du dossier ne fait ce montant : vérifier le montant de la facture ou de la commission dans la fiche.
 
+**Que signifie « non lettrée en comptabilité » ?**
+La facture du dossier est bien comptabilisée, mais le cabinet ne l'a pas rapprochée d'un règlement à la date du dernier FEC déposé. Elle peut être impayée, ou payée par un règlement global en tranches ou par le compte d'un agent, que le cabinet ne lettre pas. L'application ne la rapproche plus par le montant ; elle reste confirmable par la pièce du règlement, par un relevé de règlement global ou par le rapprochement par commande.
+
 **Une ligne affiche « date de facture à saisir », que faire ?**
 Saisir la date de facture dans la fiche du dossier, ou à défaut la date de commande. Sans date, l'application refuse de rapprocher par le montant : un débit plus ancien de montant voisin pourrait être pris pour le paiement. Cette règle date du 29 septembre 2026, après la découverte de confirmations erronées sur des dossiers encore en mer ; les vingt confirmations concernées ont été annulées, chacune tracée dans l'historique du dossier.
 
 **Comment rendre le rapprochement certain plutôt que probable ?**
-En saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Proformas manquantes » indique les dossiers à compléter.
+D'abord en saisissant le **numéro de facture Gescom** dans la fiche : la comptabilité l'utilise comme pièce de la facture, et son lettrage dit si elle est réglée. Ensuite en saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Proformas manquantes » indique les dossiers à compléter.
 
 **Les virements en dollars ne sont pas dans les bordereaux, comment les suivre ?**
 Par le classeur de suivi des virements en dollars de la trésorerie, importé depuis la page Règlements (bouton « Importer le suivi des virements en dollars »). Chaque virement crédité passe la ligne exécutée à sa date ; les virements « à faire » passent les lignes demandées. Le rattachement se fait par le numéro de proforma, qui doit donc être saisi dans la fiche du dossier : la liste « Proformas manquantes » indique les dossiers à compléter, puis « Réessayer l'affectation » reprend les virements en attente.
