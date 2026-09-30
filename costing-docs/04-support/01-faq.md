@@ -116,6 +116,9 @@ ETA repoussée de plus de deux jours, transbordement, conteneur déchargé alors
 **Le portail my RDT du transitaire peut-il alimenter l'application ?**
 Non : c'est un espace client sans API. Ses courriels d'étape peuvent en revanche être lus par la boîte de veille si on la met en copie.
 
+**La fiche affiche « Cours du dollar à saisir », que faire ?**
+La fiche est en euros mais porte des frais en dollars, la manutention du commissionnaire à 350 $ par conteneur, et son cours du dollar est resté à 1 : ces frais sont comptés 1 pour 1, soit une cinquantaine d'euros de trop par conteneur dans le prix de revient. Saisir le cours du dollar dans la carte Facture. Le contrôle est une vigilance, il ne bloque ni le calcul ni la validation. Un dossier validé et déjà comptabilisé se laisse tel quel.
+
 ## Prix de vente (circuit du 25 septembre 2026)
 
 **Qui fixe les prix de vente et comment ?**
