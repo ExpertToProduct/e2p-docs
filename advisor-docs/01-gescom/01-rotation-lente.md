@@ -49,13 +49,7 @@ L'arrêt de réachat est repris dans E2P Costing : les articles concernés ne so
 
 ## Mettre les données à jour
 
-La vue lit un fichier préparé à partir des exports Sage (inventaire, mouvements de stock, statistiques articles). À chaque nouvel inventaire, relancer la préparation sur le poste de la direction :
-
-```bash
-cd ~/ExpertToProduct/data/KALO/gescom/stock && ~/ExpertToProduct/Software/E2P-ENGINE/venv/bin/python preparer_rotation.py --appeler http://127.0.0.1:8002
-```
-
-Puis redéposer la prévision d'achat dans E2P Costing, pour que l'arrêt de réachat y suive.
+La vue lit les exports Sage (inventaire, mouvements de stock, statistiques articles). Elle est recalculée par l'administrateur à chaque nouvel inventaire ; la prévision d'achat d'E2P Costing est redéposée ensuite, pour que l'arrêt de réachat y suive. La date du stock utilisée s'affiche dans la tuile « Valeur immobilisée ».
 
 ## Limites connues
 
