@@ -125,6 +125,14 @@ La fiche est en euros mais porte des frais en dollars, la manutention du commiss
 **La commission ou le fret est facturé à un autre cours que la facture fournisseur, comment le saisir ?**
 Saisissez ce cours sur la ligne : colonne **Cours** de la commission, ou **Montant $** et **Cours** sur la ligne de fret. Le montant en euros se recalcule, et la ligne de règlement suit. Laissé vide, c'est le cours de la facture fournisseur qui s'applique. Voir [Commissions et fret à leur propre cours](../01-dossiers-et-factures/01-cycle-dossier.md#commissions-et-fret-à-leur-propre-cours).
 
+## Prévision d'achat et rotation lente
+
+**Pourquoi un article n'est-il plus proposé dans la commande d'un fournisseur ?**
+Il est peut-être en arrêt de réachat : rotation lente, très lente ou dormant (W52). Il apparaît alors dans « Voir les articles vendus écartés », avec le motif. Dans la préparation par segment, une quantité peut toujours être saisie à la main. Voir [Rotation lente et arrêt de réachat](../02-outils/05-rotation-lente.md).
+
+**Le badge « stock lent » change-t-il le besoin du segment ?**
+Non. Il signale le stock des articles en arrêt de réachat que contient le segment, à écouler avant de recommander. Le besoin ne change pas.
+
 ## Prix de vente (circuit du 25 septembre 2026)
 
 **Qui fixe les prix de vente et comment ?**

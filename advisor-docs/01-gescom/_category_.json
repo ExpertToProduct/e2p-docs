@@ -1,0 +1,9 @@
+{
+  "label": "Gestion commerciale",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Gestion commerciale",
+    "description": "Ce que l'onglet GESCOM d'E2P Advisor tire des données de la gestion commerciale Sage."
+  }
+}

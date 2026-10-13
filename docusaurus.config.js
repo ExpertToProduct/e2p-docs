@@ -52,6 +52,16 @@ const config = {
         sidebarPath: require.resolve('./sidebarsCosting.js'),
       }),
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'advisor',
+        path: 'advisor-docs',
+        routeBasePath: 'advisor',
+        sidebarPath: require.resolve('./sidebarsAdvisor.js'),
+      }),
+    ],
   ],
 
   themeConfig: ({
@@ -75,6 +85,13 @@ const config = {
           docsPluginId: 'costing',
           position: 'left',
           label: 'E2P Costing',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'advisorSidebar',
+          docsPluginId: 'advisor',
+          position: 'left',
+          label: 'E2P Advisor',
         },
         {
           href: 'https://experttoproduct.com',
@@ -101,6 +118,10 @@ const config = {
             {
               label: 'E2P Costing',
               to: '/costing/prise-en-main/introduction',
+            },
+            {
+              label: 'E2P Advisor',
+              to: '/advisor/prise-en-main/introduction',
             },
           ],
         },

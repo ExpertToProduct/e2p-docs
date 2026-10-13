@@ -4,6 +4,6 @@
   "link": {
     "type": "generated-index",
     "title": "Simulateur et lecture comptable",
-    "description": "Simulateur, coefficients d'approche, frais d'approche, indicateurs."
+    "description": "Simulateur, coefficients d'approche, frais d'approche, indicateurs, rotation lente et arrêt de réachat."
   }
 }
