@@ -23,10 +23,27 @@ Le suivi propose l'étape **flottant** dès que le navire est parti, mais jamais
 
 ShipsGo fonctionne par crédits : **un crédit par conteneur** (ou par connaissement), jusqu'à la fin du voyage, sans remboursement. Aucun suivi ne se crée donc tout seul : sur la fiche d'un dossier commandé ou flottant qui porte un numéro de conteneur (ou de connaissement), cliquez **Suivre ce conteneur…**, lisez le nombre de crédits annoncé, puis **Confirmer et suivre**. Le suivi commence aussitôt ; la compagnie est reconnue d'après la fiche (MSC, CMA) ou détectée par ShipsGo d'après le numéro.
 
-Ensuite, le serveur relit chaque voyage **toutes les six heures** et écrit dans la fiche ce qui a changé. **Actualiser** force une relecture immédiate (aucun crédit). Quand le conteneur est sorti du port, le suivi est terminé et n'est plus relu.
+Ensuite, le serveur relit chaque voyage **toutes les six heures** et écrit dans la fiche ce qui a changé. **Actualiser** force une relecture immédiate (aucun crédit). Le suivi continue après la sortie du port, jusqu'au **retour du conteneur vide** (90 jours au plus après le déchargement) : c'est ce qui permet de compter les surestaries.
 
-:::caution Compte d'essai
-Le compte ShipsGo de l'entreprise commence avec trois crédits : choisissez les trois dossiers à suivre avec le fondateur. L'administrateur peut activer, dans ADMIN › Sauvegarde, la création automatique des suivis manquants — elle consomme alors un crédit par conteneur commandé ou flottant.
+:::info Création automatique
+L'administrateur peut cocher, dans ADMIN › Sauvegarde, carte « Suivi des conteneurs (ShipsGo) », la création automatique des suivis manquants : elle consomme un crédit par conteneur commandé ou flottant, et ignore les dossiers dont l'ETA est dépassée de plus de quinze jours (sans doute déjà dépotés).
+:::
+
+## L'onglet « Au port » et l'alerte du matin
+
+Page Dossiers, onglet **Au port** : chaque conteneur débarqué et pas encore rendu vide, avec ce que coûte son attente. Les coûts suivent les mêmes barèmes que la fiche de prix de revient.
+
+| Coût | Compté à partir de | Jusqu'à |
+|---|---|---|
+| Stationnement | l'entrée sur le terminal, après 5 jours de franchise | la sortie du port |
+| Surestaries | l'arrivée du navire (MSC) ou le débarquement (CMA), après la franchise du dossier ou de la compagnie | le retour du conteneur vide |
+
+Pour chaque conteneur : jours écoulés, franchise restante, coût déjà engagé, coût d'un jour de plus et projection à 7 jours. Les frais fixes de sortie, dus quoi qu'il arrive, ne comptent pas comme coût d'attente. Trois niveaux : **dans la franchise**, **franchise épuisée dans 3 jours ou moins**, **coûte déjà**. Une compagnie sans barème connu affiche la raison, jamais un montant inventé.
+
+Chaque jour à partir de 7 h, une alerte part avec les conteneurs au port et leur coût, vers les personnes dont le profil a la case « Recevoir l'alerte conteneurs au port ». Rien n'est envoyé quand aucun conteneur n'est au port.
+
+:::tip Quand ShipsGo ne voit plus un conteneur
+Sans sortie connue, l'onglet prend la date de dépotage saisie sur la fiche ; sans retour du vide connu, la date de retour des surestaries saisie sur la fiche. Saisir ces dates fait sortir le conteneur de la liste.
 :::
 
 ## Si la carte dit « non configuré »

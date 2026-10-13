@@ -38,8 +38,8 @@ Elle reste déposée et consultable, mais sans recherche par contenu ni extracti
 **Deux personnes ouvrent la même fiche en même temps, qui gagne ?**
 La fiche prévient qu'une autre personne l'a ouverte. Si les deux enregistrent, la seconde reçoit un message précis disant qui a écrit quoi entre-temps : rien n'est perdu en silence.
 
-**Qui a le droit de valider un dossier — seulement le contrôleur de gestion ou le DAF ?**
-Le système ne l'impose pas : n'importe quel compte peut valider. Le profil (acheteur, assistant achat…) sert seulement au tableau de bord, pas à des permissions.
+**Qui a le droit de valider un dossier ?**
+Les personnes dont le profil a la case « Valider une fiche ou la repasser en brouillon ». Depuis le 8 octobre 2026, chaque profil est une liste de cases (écrans visibles et actions permises) réglée par l'administrateur dans ADMIN › Profils. Par défaut, les six profils d'origine peuvent valider ; comptabiliser est réservé au contrôle de gestion, au DAF et à la direction, rouvrir un dossier comptabilisé au DAF et à la direction. Un administrateur a tous les droits. Une action sans la case est refusée par le serveur. Voir [Équipe](../03-administration/01-equipe.md).
 
 ## Surestaries et stationnement hors Gescom
 
@@ -108,10 +108,13 @@ Un prestataire, ShipsGo, interroge les compagnies maritimes ; le serveur relit c
 Fiche, carte « Suivi du conteneur », bouton « Suivre ce conteneur… ». L'action consomme un crédit ShipsGo, un par conteneur, ou un seul par connaissement quand le dossier en a plusieurs.
 
 **Comment rendre le suivi automatique ?**
-Acheter des crédits chez ShipsGo (un crédit vaut un conteneur ou un connaissement jusqu'à la fin du voyage, valable un an), puis activer la création automatique dans Paramètres, réglage « Suivi des conteneurs ». Le sondage crée alors les suivis des dossiers commandés et flottants, en ignorant ceux dont l'ETA est dépassée de plus de quinze jours, sans doute déjà dépotés : les passer à l'étape arrivé avant d'activer.
+Acheter des crédits chez ShipsGo (un crédit vaut un conteneur ou un connaissement jusqu'à la fin du voyage, valable un an), puis cocher la création automatique dans ADMIN › Sauvegarde, carte « Suivi des conteneurs (ShipsGo) » (administrateur). Le sondage crée alors les suivis des dossiers commandés et flottants, en ignorant ceux dont l'ETA est dépassée de plus de quinze jours, sans doute déjà dépotés : les passer à l'étape arrivé avant d'activer.
 
 **Quelles alertes le suivi produit-il ?**
-ETA repoussée de plus de deux jours, transbordement, conteneur déchargé alors que le fret GCCOI ou INDIGO n'est pas payé, suivi sans réponse de la compagnie après sept jours, suivi non relu depuis trois jours. Le suivi s'arrête de lui-même à la sortie du port, ou dix jours après le déchargement.
+ETA repoussée de plus de deux jours, transbordement, conteneur déchargé alors que le fret GCCOI ou INDIGO n'est pas payé, suivi sans réponse de la compagnie après sept jours, suivi non relu depuis trois jours. Le suivi s'arrête de lui-même quand le conteneur est rendu vide, ou 90 jours après le déchargement.
+
+**Un conteneur reste dans l'onglet « Au port » alors qu'il est rendu, pourquoi ?**
+ShipsGo n'a pas vu son retour à vide. Saisissez la date de retour du conteneur vide dans le bloc Surestaries de la fiche : l'onglet la prend en compte. Voir [Suivre un conteneur](../01-dossiers-et-factures/06-suivi-conteneurs.md#longlet--au-port--et-lalerte-du-matin).
 
 **Le portail my RDT du transitaire peut-il alimenter l'application ?**
 Non : c'est un espace client sans API. Ses courriels d'étape peuvent en revanche être lus par la boîte de veille si on la met en copie.
