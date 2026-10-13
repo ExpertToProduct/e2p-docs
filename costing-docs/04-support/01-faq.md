@@ -172,18 +172,18 @@ Pastille sur l'entrée DOSSIERS de la barre latérale et bloc « Retours de la d
 À la direction : tableau de bord, dossiers, conteneurs, règlements en lecture, et l'onglet Prix de vente pour fixer les prix demandés par les achats. Elle ne calcule rien : elle affiche ce que le serveur E2P Costing calcule, et n'écrit que les prix de vente.
 
 **Comment l'installer ?**
-Par TestFlight, l'outil de distribution d'Apple pour les applications d'entreprise en test. Installer l'app TestFlight depuis l'App Store, ouvrir le courriel d'invitation reçu de la part de l'administrateur, puis « Installer » E2P dans TestFlight. Les mises à jour arrivent ensuite d'elles-mêmes, avec une notification TestFlight. Une version TestFlight est valable 90 jours ; une nouvelle version est publiée bien avant.
+Par TestFlight, en testeur interne : l'administrateur vous invite d'abord dans App Store Connect (invitation à accepter avec votre identifiant Apple) et vous ajoute au groupe Direction. Installer ensuite TestFlight depuis l'App Store, puis « Installer » E2P dans TestFlight. Les mises à jour arrivent ensuite d'elles-mêmes, avec une notification TestFlight. Une version TestFlight est valable 90 jours ; une nouvelle version est publiée bien avant.
 
 **Je n'ai pas reçu l'invitation.**
-Demander à l'administrateur de vérifier l'adresse saisie dans le groupe de testeurs : ce doit être celle de l'identifiant Apple utilisé sur l'iPhone. Vérifier aussi les indésirables. Un code d'invitation peut aussi être saisi dans TestFlight (« Utiliser un code »).
+Vérifier d'abord que l'invitation App Store Connect a été acceptée. Puis demander à l'administrateur de vérifier que vous êtes dans le groupe de testeurs internes Direction, avec l'adresse de l'identifiant Apple utilisé sur l'iPhone. Vérifier aussi les indésirables.
 
 **Avec quel identifiant se connecte-t-on ?**
 Le même que sur le poste : identifiant E2P Costing et mot de passe, créés par l'administrateur dans Équipe. Le mot de passe provisoire doit être changé à la première connexion, sur le poste. Cocher « Rester connecté » garde la session ouverte ; le mot de passe est alors dans le trousseau sécurisé de l'iPhone, jamais ailleurs.
 
 **Ça ne se connecte pas.**
-Le serveur est sur le réseau de l'entreprise, pas sur Internet. Il faut être sur le Wi-Fi du bureau, ou avoir activé le VPN de l'entreprise sur l'iPhone (profil fourni par l'informaticien). L'adresse du serveur se vérifie dans Réglages de l'app.
+Le serveur est sur le réseau de l'entreprise, pas sur Internet. Il faut être sur le Wi-Fi du bureau, ou avoir connecté l'app Cloudflare One (équipe experttoproduct, adresse e-mail autorisée par l'administrateur). L'adresse du serveur se vérifie dans Réglages de l'app.
 
-**Que voit-on hors du bureau, sans VPN ?**
+**Que voit-on hors du bureau, sans Cloudflare One ?**
 Le dernier état synchronisé, avec la mention « Hors réseau · dernière mise à jour le … ». Tout reste lisible ; les boutons qui écrivent (Fixer, À revoir, Valider) sont désactivés jusqu'au retour du réseau.
 
 **L'onglet Prix de vente n'apparaît pas.**
@@ -193,13 +193,13 @@ Il est réservé aux profils direction d'exploitation, direction générale, DAF
 À la première connexion, l'app demande l'autorisation. Ensuite : « Prix de vente à fixer » quand les achats font une demande (direction et DAF), « Prix fixés » ou « Prix à revoir » pour le demandeur. Toucher la notification ouvre le dossier concerné. Le chiffre sur l'icône est le nombre de dossiers à fixer ; il s'efface à l'ouverture de l'onglet Prix de vente. Autorisation refusée par erreur : Réglages iOS › Notifications › E2P.
 
 **Les notifications arrivent-elles hors du bureau ?**
-Oui : elles passent par les serveurs d'Apple, pas par le réseau de l'entreprise. Mais pour agir, il faut le Wi-Fi du bureau ou le VPN.
+Oui : elles passent par les serveurs d'Apple, pas par le réseau de l'entreprise. Mais pour agir, il faut le Wi-Fi du bureau ou Cloudflare One connecté.
 
 **Que conserve l'iPhone ?**
 Le dernier état de chaque écran, l'adresse du serveur et l'identifiant. Jamais le mot de passe en clair (trousseau seulement si « Rester connecté »). Réglages › « Effacer les données conservées » vide tout ; la déconnexion aussi.
 
 **Je change de téléphone.**
-Installer TestFlight et E2P sur le nouveau, se connecter : l'iPhone se déclare de lui-même pour les notifications. L'ancien cesse d'en recevoir dès qu'on s'y déconnecte.
+Installer TestFlight, E2P et Cloudflare One sur le nouveau, se connecter : l'iPhone se déclare de lui-même pour les notifications. L'ancien cesse d'en recevoir dès qu'on s'y déconnecte.
 
 **Qui administre tout cela ?**
 L'administrateur, dans E2P Costing › ADMIN › Équipe : comptes et profils, carte « Notifications iPhone » (état de la clé Apple, téléphones enregistrés par personne, bouton « M'envoyer une notification de test »). La clé Apple vit sur le serveur et n'est jamais transmise.

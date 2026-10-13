@@ -17,7 +17,7 @@ title: Notifications
 
 Toucher la notification ouvre l'onglet Prix de vente sur le dossier concerné. Le chiffre sur l'icône est le nombre de dossiers à fixer ; il s'efface à l'ouverture de l'onglet.
 
-Les notifications passent par les serveurs d'Apple : elles arrivent partout, même hors du bureau. Pour agir ensuite, il faut le Wi-Fi du bureau ou le VPN.
+Les notifications passent par les serveurs d'Apple : elles arrivent partout, même hors du bureau. Pour agir ensuite, il faut le Wi-Fi du bureau ou Cloudflare One connecté.
 
 ## Si rien n'arrive
 
@@ -27,7 +27,7 @@ Les notifications passent par les serveurs d'Apple : elles arrivent partout, mê
 
 ## Changement de téléphone
 
-Installer TestFlight et E2P sur le nouveau, se connecter : il se déclare de lui-même. Se déconnecter sur l'ancien pour qu'il cesse de recevoir.
+Installer TestFlight, E2P et Cloudflare One sur le nouveau, se connecter : il se déclare de lui-même. Se déconnecter sur l'ancien pour qu'il cesse de recevoir.
 
 ## Côté administrateur
 

@@ -37,6 +37,6 @@ Le lien « Voir la fiche du dossier » ouvre la fiche complète en lecture. Chaq
 
 ![Hors réseau](/img/costing/iphone/hors-reseau.png)
 
-Chaque écran s'ouvre aussitôt sur le dernier état synchronisé, avec un bandeau « Mis à jour il y a 12 min ». Sans Wi-Fi du bureau ni VPN, le bandeau passe en « Hors réseau · dernière mise à jour le … » ; tout reste lisible, et les boutons qui écrivent sont désactivés avec l'explication. Au retour du réseau, l'app se remet à jour d'elle-même.
+Chaque écran s'ouvre aussitôt sur le dernier état synchronisé, avec un bandeau « Mis à jour il y a 12 min ». Sans Wi-Fi du bureau ni Cloudflare One connecté, le bandeau passe en « Hors réseau · dernière mise à jour le … » ; tout reste lisible, et les boutons qui écrivent sont désactivés avec l'explication. Au retour du réseau, l'app se remet à jour d'elle-même.
 
 Ce que conserve l'iPhone : le dernier état des écrans, l'adresse du serveur et l'identifiant. Réglages › **Effacer les données conservées** vide tout ; la déconnexion aussi.
