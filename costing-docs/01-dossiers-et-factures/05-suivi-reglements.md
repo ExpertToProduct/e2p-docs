@@ -11,7 +11,7 @@ Quand un conteneur arrive, une question bloque la relâche des documents : la ba
 |---|---|
 | **À payer** | les virements à préparer pour la banque, les échéances et les retards (la pastille rouge compte les retards) |
 | **Rapprochement** | relier chaque virement à son dossier et suivre sa confirmation par la comptabilité, en quatre sous-onglets ; ventiler un virement, gérer les avances (la pastille compte les opérations à affecter) |
-| **Imports** | déposer les bordereaux de la banque, le suivi des virements en dollars, les relevés de règlement global et les grands livres lettrés |
+| **Imports** | déposer les bordereaux de la banque, le suivi des virements en dollars, les Summaries des commissionnaires, les relevés de règlement global et les grands livres lettrés |
 | **Trésorerie** | ce qui reste à régler, les avances disponibles et les sorties prévues sur huit semaines |
 
 Les quatre entrées relèvent d'un même droit d'écran, « Règlements » (ADMIN › Profils). Ventiler un virement et utiliser une avance demandent en plus la case **Saisir un règlement**.
@@ -35,7 +35,7 @@ Sur la fiche et dans les onglets Flottants et Arrivés, le voyant **Documents li
 
 ## À payer
 
-- **À préparer pour la banque** : les virements dont l'échéance tombe dans les 7 prochains jours, ou est dépassée, et qui ne sont pas encore exécutés, regroupés par bénéficiaire. Le libellé à écrire sur le bordereau (« NATURE-numéro de facture ») y est donné : **Copier tout** met bénéficiaire, libellé, montant, devise et dossier dans le presse-papiers, une ligne par virement, à coller dans un tableur ou un mail.
+- **À préparer pour la banque** : les virements dont l'échéance tombe dans les 7 prochains jours, ou est dépassée, et qui ne sont pas encore exécutés, regroupés par bénéficiaire. Les commissions d'un même Summary de commissionnaire n'y font qu'**une ligne** : son total, avec le libellé `COMMISSION-SUMMARY-aaaammjj` (par exemple `COMMISSION-SUMMARY-20260831`), puisqu'un seul virement le paie. Le libellé à écrire sur le bordereau (« NATURE-numéro de facture ») y est donné : **Copier tout** met bénéficiaire, libellé, montant, devise et dossier dans le presse-papiers, une ligne par virement, à coller dans un tableur ou un mail.
 - Trois onglets : **Par échéance** (une semaine par groupe, pour préparer les virements), **Par bénéficiaire** (ce qui reste dû à chaque fournisseur, transitaire ou commissionnaire), **Par dossier** (les lignes d'un dossier et son voyant de documents).
 - Sur chaque ligne : **Demandé** quand la demande de virement est partie, **Exécuté…** (date et référence du bordereau) si le bordereau ne peut pas être déposé.
 
@@ -69,6 +69,41 @@ Le numéro seul ne suffit jamais : le montant du virement doit faire celui de la
 Un virement crédité passe la ligne **exécutée** à sa date, référence « Suivi USD · banque » ; un virement « à faire » passe la ligne **demandée**. Ce qui n'est pas rattaché attend dans **Opérations à affecter**, avec les lignes candidates et, quand la comptabilité est chargée, l'écriture de banque qui porte le même montant en dollars (« Vu au FEC le 04/08 : 40 000,00 € · pièce … »). Réimporter le même classeur le mois suivant ne refait rien pour les virements déjà traités.
 
 Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Dossiers en dollars sans n° de proforma** (Imports, et Rapprochement › Opérations à affecter) donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
+
+### Summary d'un commissionnaire
+
+Chaque mois, le commissionnaire (GCCOI, et de même WWI ou YAJING) envoie un **Summary** : une ligne par dossier, désigné par sa référence (`D084`) ou par l'un de ses numéros de facture Gescom (`FC15964`, parfois deux : `FC15813/FC15814`), avec son montant, puis le total. Le PDF porte ensuite une facture par dossier (prospection, manutention de 350 $ par conteneur).
+
+**Règlements › Imports › Lire un Summary** : déposez le PDF, ou une photo prise à l'iPhone. Le tableau est lu (texte du PDF, ou reconnaissance du texte de la photo par le serveur), puis présenté **à relire** avant tout import : commissionnaire, date, devise, total et lignes se corrigent à la main. Quand le document ne porte pas de date, la fin du mois du nom du fichier (`2026.03.pdf`) est proposée, à vérifier.
+
+Pour chaque ligne, l'application indique le dossier retrouvé, l'estimation de la fiche, le montant facturé en euros (au cours propre de la commission s'il est saisi, sinon au cours du dossier), l'écart, et un état :
+
+| État | Ce que cela veut dire |
+|---|---|
+| à écrire | la commission du dossier à ce commissionnaire est trouvée, pas encore réglée |
+| déjà réglée | la commission est exécutée ou confirmée : elle n'est pas touchée |
+| cours à saisir | Summary en dollars sur un dossier en euros : saisir d'abord le cours de la commission sur la fiche |
+| dossier écarté | le dossier est hors du suivi des règlements (incohérence de la fiche à corriger) |
+| inconnu, ambigu, sans commission | aucun dossier, ou plusieurs, ou pas de commission de ce commissionnaire sur le dossier |
+
+Les lignes doivent faire le total au centime, sinon l'import est refusé. Deux lignes pour le même dossier s'additionnent.
+
+**Importer** écrit les lignes « à écrire » :
+- la commission prend le **montant du Summary**, dans sa devise : c'est le montant dû. L'estimation de la fiche reste affichée à côté, avec l'écart. **Le prix de revient ne change pas** ;
+- son échéance devient la date du Summary + 30 jours ;
+- un dossier **réputé réglé** (arrivé depuis plus de 30 jours sans ligne saisie) que le Summary facture rentre dans le suivi avec cette commission ;
+- le document est gardé avec le Summary (lien « document » dans la carte).
+
+La carte **Summaries des commissionnaires** (Imports, et Rapprochement › Factures de commissions) suit chaque Summary :
+- **à payer** : toutes ses lignes sont écrites ; **Ventiler le paiement…** prépare la ventilation de son virement ;
+- **incomplet** : des lignes attendent (cours à saisir, dossier à corriger, numéro inconnu) ; après correction, **Reprendre** les repasse. Un Summary incomplet ne se ventile pas : le montant des lignes en attente resterait en avance chez le commissionnaire, alors qu'il paie ces dossiers ;
+- **paiement ventilé** ; **Annuler** remet les commissions dans leur état d'avant, tant qu'aucune n'est réglée et que le paiement n'est pas ventilé.
+
+Quand le virement arrive (bordereau, suivi des virements en dollars), il attend dans les opérations à affecter : le bouton **Ventiler selon le Summary du …** apparaît quand son bénéficiaire et son montant sont ceux du Summary, ou que son libellé porte `SUMMARY-aaaammjj`. La ventilation est pré-remplie, une part par dossier, et se valide à la main ; le débit du virement au FEC confirme ensuite toutes les commissions d'un coup (*virement ventilé*).
+
+:::info Ce que le Summary apprend
+L'écart entre le Summary et l'estimation de la fiche est un contrôle : un écart d'environ 350 $ par conteneur signale un nombre de conteneurs GCCOI faux sur la fiche ; un écart égal aux frais « divers » signale des frais que le commissionnaire ne facture pas.
+:::
 
 ### Règlement global en tranches : importer un relevé
 

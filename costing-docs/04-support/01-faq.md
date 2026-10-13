@@ -105,6 +105,12 @@ Une avance fournisseur, visible dans Rapprochement › Factures diverses et dans
 **Peut-on annuler une ventilation ?**
 Oui, tant qu'aucune de ses lignes n'est confirmée en banque ni modifiée depuis : les lignes reviennent dans leur état d'avant. Si un deposit a été pris sur son solde, retirez-le d'abord (carte Avances fournisseurs). Une fois le débit vu au FEC, la ventilation est définitive.
 
+**GCCOI envoie un Summary mensuel : comment l'enregistrer ?**
+Règlements › Imports › « Lire un Summary », avec le PDF ou une photo. Après relecture, chaque commission prend le montant du Summary (le montant dû), l'estimation restant affichée avec l'écart ; un dossier réputé réglé rentre dans le suivi. À payer montre alors un seul virement `COMMISSION-SUMMARY-date` ; à son arrivée, la ventilation est proposée pré-remplie. Il faut la case « Importer » du profil.
+
+**Une ligne du Summary reste « cours à saisir », que faire ?**
+Le dossier est en euros et la commission est facturée en dollars : saisir le cours de la commission sur la fiche (colonne Cours de la carte Commissions), puis « Reprendre » sur le Summary.
+
 **Pourquoi tout est-il « à demander » au démarrage ?**
 Parce que personne n'a encore saisi ni déposé de bordereau. Déposer les bordereaux des dernières semaines, puis marquer exécutés les règlements plus anciens dont on a la preuve, assainit vite. Les dossiers arrivés et dépotés depuis plus de trente jours sans ligne saisie sont réputés réglés et sortent du suivi.
 
