@@ -67,7 +67,7 @@ Le projet devient un achat ferme : il entre dans les engagements. Le numéro `C0
 
 **Bouton : Passer en flottant.** Champs : n° des conteneurs, compagnie maritime, cubage, ETD, ETA, n° facture fournisseur.
 
-La marchandise a quitté le fournisseur. C'est ici que le **numéro de conteneur** entre dans la fiche — et c'est ce numéro qui permet à une facture reçue par mail de se déposer d'elle-même sur le bon dossier (voir [Déposer un document](02-deposer-document.md)).
+La marchandise a quitté le fournisseur. C'est ici que le **numéro de conteneur** entre dans la fiche : c'est lui qui relie ensuite les factures du transitaire et le suivi du conteneur au bon dossier.
 
 :::info Si une partie seulement de la commande part
 Le dossier se scinde : ce qui part devient un nouveau dossier flottant `C014-1`, le reste demeure en commande sous `C014`. Les montants estimés sont partagés au prorata de la valeur expédiée.
@@ -79,11 +79,13 @@ Le dossier se scinde : ce qui part devient un nouveau dossier flottant `C014-1`,
 
 Chaque conteneur (quatre au plus) reçoit son dépôt et sa date. Le dossier prend alors son numéro `D081`, dans l'ordre des dépotages — comme dans le classeur papier. Le numéro de commande `C014` reste visible dans la fiche et dans l'historique.
 
-## Les factures se déposent seules, dès le stade « Flottant »
+## Déposer les factures
 
-Une facture reçue sur la boîte mail dédiée aux achats (fret, douane…) est relevée toutes les 5 minutes. Si son numéro de conteneur correspond à un seul dossier — par exemple `MSBU7958143` — elle s'y dépose directement, avec ses indices repérés (numéro de facture, date, fournisseur) proposés dans la fiche, jamais écrits sans clic sur « Enregistrer ». Sans correspondance claire, elle attend sagement une pose à la main, avec une alerte pour le signaler.
+Les factures (fret, douane, transitaire…) se déposent à la main depuis la fiche du dossier, bouton « Déposer une facture » ; voir [Déposer un document](02-deposer-document.md).
 
-Avant le stade « Flottant », ou pour tout document sans conteneur reconnaissable (bon de commande, devis…), le dépôt se fait comme toujours à la main depuis la fiche.
+:::note Dépôt automatique suspendu
+Le dépôt automatique des factures reçues par mail a été suspendu le 12 octobre 2026 : la messagerie de l'entreprise bloque leur transfert vers la boîte relevée par l'application.
+:::
 
 ## Compléter et valider le dossier arrivé
 

@@ -9,7 +9,7 @@ title: Introduction
 
 E2P Costing calcule le **prix de revient** des marchandises importées par conteneur : à partir du prix payé au fournisseur, du fret, de la douane et des autres frais d'approche, il établit le coût réel rendu de chaque article, et propose un prix de vente. Un dossier correspond à un connaissement (jusqu'à quatre conteneurs), et traverse un cycle en quatre étapes — projet, commande, flottant, arrivé — de la première estimation jusqu'à la marchandise dépotée.
 
-Les factures fournisseurs (fret, douane, transitaire…) se déposent sur le dossier concerné, à la main ou automatiquement depuis une boîte mail dédiée. Une fois déposées, elles sont retrouvables par leur contenu, et leurs indices (numéro de facture, date, montant, fournisseur) sont proposés pour préremplir la fiche — jamais imposés.
+Les factures fournisseurs (fret, douane, transitaire…) se déposent à la main sur le dossier concerné. Une fois déposées, elles sont retrouvables par leur contenu, et leurs indices (numéro de facture, date, montant, fournisseur) sont proposés pour préremplir la fiche — jamais imposés.
 
 ## À qui s'adresse ce guide
 

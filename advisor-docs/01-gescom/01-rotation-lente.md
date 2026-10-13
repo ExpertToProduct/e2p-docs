@@ -47,12 +47,15 @@ L'arrêt de réachat est repris dans E2P Costing : les articles concernés ne so
 - **Détail d'un article** : cliquer sa référence. On voit chaque action avec son motif et son chiffrage, le stock et les ventes de chaque dépôt, le rythme retenu et les ventes des années précédentes.
 - **Par famille** : la valeur immobilisée par famille ; un clic filtre la liste.
 
-## Mettre les données à jour
+## Mise à jour automatique
 
-La vue lit les exports Sage (inventaire, mouvements de stock, statistiques articles). Elle est recalculée par l'administrateur à chaque nouvel inventaire ; la prévision d'achat d'E2P Costing est redéposée ensuite, pour que l'arrêt de réachat y suive. La date du stock utilisée s'affiche dans la tuile « Valeur immobilisée ».
+La vue est recalculée **chaque soir à 21 h 30**, à partir des exports quotidiens de Sage (stock par dépôt avec le coût moyen pondéré, ventes de la veille, dates de dernière vente et de dernier achat), arrivés vers 20 h. La date du stock utilisée s'affiche dans la tuile « Valeur immobilisée ». Juste après, l'arrêt de réachat et le stock lent sont mis à jour dans la prévision d'achat d'E2P Costing.
+
+Si le poste de la direction est en veille à 21 h 30, la mise à jour se fait à son réveil. Si elle n'a pas pu se faire, la vue garde le calcul de la veille.
 
 ## Limites connues
 
-- Une vente datée n'est connue que pour l'année en cours. Pour un article sans vente cette année, la dernière vente est estimée au plus tard (« avant 2025 » veut dire : vendu pour la dernière fois en 2024 ou avant).
+- La date de dernière vente vient de Sage. Seul un article sans aucune vente enregistrée garde une date estimée au plus tard (« avant 2023 »).
+- Entre le 22 septembre et le 7 octobre 2026, les ventes jour par jour ne sont pas disponibles : ces 16 jours sont retirés du calcul de la vitesse de vente, au lieu d'être comptés comme des jours sans vente.
 - Les articles hors nomenclature (matériaux, articles divers) sont classés sous « Hors nomenclature ».
 - Les seuils et les remises sont ceux décidés le 13/10/2026 ; ils se règlent dans le moteur.

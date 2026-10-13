@@ -20,6 +20,6 @@ Si le fichier contient du texte reconnaissable :
 
 Un document sans texte (photo, scan image) reste déposé et consultable, mais sans ces deux services.
 
-:::tip Depuis le stade « Flottant »
-Une facture reçue sur la boîte mail dédiée se dépose désormais toute seule si son numéro de conteneur correspond à un seul dossier (voir [Cycle d'un dossier](01-cycle-dossier.md)). Le dépôt manuel reste la solution pour tout le reste : bons de commande, devis, ou documents sans conteneur reconnaissable.
+:::note Dépôt automatique suspendu
+Le dépôt automatique des factures reçues par mail est suspendu depuis le 12 octobre 2026 (la messagerie de l'entreprise bloque leur transfert) : toutes les pièces, factures comprises, se déposent à la main depuis la fiche.
 :::

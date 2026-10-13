@@ -12,7 +12,7 @@ Le FEC (fichier des écritures comptables) est ce que le moteur lit pour rapproc
 3. Le fichier est contrôlé (format FEC à 18 colonnes, au moins une écriture, dates lisibles), rangé sous son nom normé, et le moteur le prend aussitôt. Le message indique l'entité, la date, le nombre d'écritures et le nombre de virements confirmés en banque grâce aux nouvelles écritures.
 4. **Recharger** demande au moteur de relire son dossier sans nouveau fichier — utile si un FEC a été posé à la main sur le serveur.
 
-Le FEC peut aussi être envoyé **par courriel** à la boîte de veille des factures : une pièce jointe `.txt` reconnue comme FEC est déposée de la même façon, et une notification le confirme.
+L'envoi du FEC **par courriel** à la boîte de veille des factures est suspendu depuis le 12 octobre 2026 (le relevé de cette boîte est arrêté) ; quand il fonctionne, une pièce jointe `.txt` reconnue comme FEC est déposée de la même façon, et une notification le confirme.
 
 :::caution Ce qui est refusé, et pourquoi
 Un fichier qui n'est pas un FEC (mauvais en-tête, aucune écriture, dates illisibles) est refusé avec la raison. Un FEC **plus ancien** que celui en service pour le même exercice est refusé par défaut : l'écran propose « Déposer quand même » si c'est voulu (le moteur continuera de servir le plus récent). Un FEC **identique** à un fichier déjà présent est signalé « déjà déposé ». Le FEC précédent n'est jamais supprimé.

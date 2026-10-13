@@ -32,4 +32,4 @@ Les articles en arrêt de réachat ne sont jamais proposés. Ils apparaissent da
 
 ## Mise à jour
 
-La liste suit le dernier inventaire Sage traité. Après chaque nouvel inventaire, la direction recalcule la rotation dans E2P Advisor, puis redépose la prévision d'achat : c'est seulement alors que la prévision d'E2P Costing en tient compte.
+La liste est mise à jour **chaque soir à 21 h 30**, à partir des exports Sage de la journée : un article vendu dans la journée peut sortir de l'arrêt de réachat dès le lendemain. Seuls l'arrêt de réachat et le stock lent changent ; le reste de la prévision d'achat garde le dernier dépôt complet. Voir [Tâches automatiques](../03-administration/05-taches-automatiques.md).

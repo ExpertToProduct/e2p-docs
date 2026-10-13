@@ -21,11 +21,11 @@ Le passage en flottant échoue franchement, puisque c'est le moteur qui calcule 
 
 ## Pièces jointes et factures
 
-**Une facture arrive par mail avant que le dossier existe dans E2P Costing, que devient-elle ?**
-Elle est gardée en attente sur le disque du serveur avec une alerte, jamais perdue. À déposer à la main une fois le dossier créé.
+**Les factures reçues par mail se déposent-elles seules ?**
+Plus pour l'instant : le relevé de la boîte de veille est suspendu depuis le 12 octobre 2026, la messagerie de l'entreprise bloquant le transfert des factures vers cette boîte. Les factures, bordereaux et FEC se déposent à la main.
 
 **La même facture est déposée deux fois, y a-t-il un doublon ?**
-Non : un second dépôt du même fichier (même contenu) sur le même dossier est refusé, avec un message clair — qu'il vienne d'un double clic ou du watcher relisant un mail déjà traité. Le même fichier sur un **autre** dossier reste accepté, ce n'est pas un doublon dans ce cas.
+Non : un second dépôt du même fichier (même contenu) sur le même dossier est refusé, avec un message clair — qu'il vienne d'un double clic ou d'un second dépôt. Le même fichier sur un **autre** dossier reste accepté, ce n'est pas un doublon dans ce cas.
 
 **Une facture est déposée sur le mauvais dossier, peut-on la déplacer ?**
 Oui, voir [Corriger une erreur](../01-dossiers-et-factures/04-corriger-erreur.md) — bouton « Déplacer » à côté de la pièce.
@@ -58,7 +58,7 @@ Récapitulatif de la fiche (bloc « Hors Gescom »), page Frais d'approche (tuil
 ## Suivi des règlements
 
 **Comment le suivi des règlements se met-il à jour ?**
-De quatre façons. Par les bordereaux de remise de virement, transférés ou mis en copie à la boîte de veille : chaque opération est rattachée au dossier par le numéro de facture du libellé, sinon par bénéficiaire et montant, et la ligne passe en « exécuté ». En déposant un bordereau à la main sur la page Règlements ou dans les pièces d'un dossier. À la main, ligne par ligne, sur la page Règlements ou dans le bloc Paiements de la fiche : demandé, exécuté avec date et référence, annulé. Par le FEC, à chaque dépôt : les lignes exécutées retrouvées en banque passent en « confirmé ».
+De trois façons. Par les bordereaux de remise de virement, déposés sur la page Règlements ou dans les pièces d'un dossier (l'envoi à la boîte de veille est suspendu depuis le 12 octobre 2026) : chaque opération est rattachée au dossier par le numéro de facture du libellé, sinon par bénéficiaire et montant, et la ligne passe en « exécuté ». À la main, ligne par ligne, sur la page Règlements ou dans le bloc Paiements de la fiche : demandé, exécuté avec date et référence, annulé. Par le FEC, à chaque dépôt : les lignes exécutées retrouvées en banque passent en « confirmé ».
 
 **Quel libellé mettre sur un virement pour qu'il soit reconnu ?**
 « NATURE-numéro de facture », par exemple BALANCE-XXX ou FRET-XXX (natures : DEPOSIT, ACOMPTE, BALANCE, SOLDE, FRET, COMMISSION). Le bloc « À préparer pour la banque » de la page Règlements donne ce libellé tout prêt.
@@ -117,7 +117,7 @@ ETA repoussée de plus de deux jours, transbordement, conteneur déchargé alors
 ShipsGo n'a pas vu son retour à vide. Saisissez la date de retour du conteneur vide dans le bloc Surestaries de la fiche : l'onglet la prend en compte. Voir [Suivre un conteneur](../01-dossiers-et-factures/06-suivi-conteneurs.md#longlet--au-port--et-lalerte-du-matin).
 
 **Le portail my RDT du transitaire peut-il alimenter l'application ?**
-Non : c'est un espace client sans API. Ses courriels d'étape peuvent en revanche être lus par la boîte de veille si on la met en copie.
+Non : c'est un espace client sans API, et le relevé de la boîte de veille est suspendu depuis le 12 octobre 2026.
 
 **La fiche affiche « Cours du dollar à saisir », que faire ?**
 La fiche est en euros mais porte des frais en dollars, la manutention du commissionnaire à 350 $ par conteneur, et son cours du dollar est resté à 1 : ces frais sont comptés 1 pour 1, soit une cinquantaine d'euros de trop par conteneur dans le prix de revient. Saisir le cours du dollar dans la carte Facture. Le contrôle est une vigilance, il ne bloque ni le calcul ni la validation. Un dossier validé et déjà comptabilisé se laisse tel quel.
