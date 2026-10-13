@@ -5,7 +5,16 @@ title: Suivre les règlements
 
 # Suivre les règlements
 
-Quand un conteneur arrive, une question bloque la relâche des documents : la balance du fournisseur et le fret ont-ils été virés ? L'entrée **Règlements** de la barre latérale répond dossier par dossier, sans rien saisir de plus que ce que la fiche porte déjà.
+Quand un conteneur arrive, une question bloque la relâche des documents : la balance du fournisseur et le fret ont-ils été virés ? La section **RÈGLEMENTS** de la barre latérale répond dossier par dossier, sans rien saisir de plus que ce que la fiche porte déjà. Elle compte quatre entrées :
+
+| Entrée | À quoi elle sert |
+|---|---|
+| **À payer** | les virements à préparer pour la banque, les échéances et les retards (la pastille rouge compte les retards) |
+| **Rapprochement** | relier chaque virement à son dossier et suivre sa confirmation par la comptabilité, en quatre sous-onglets ; ventiler un virement, gérer les avances (la pastille compte les opérations à affecter) |
+| **Imports** | déposer les bordereaux de la banque, le suivi des virements en dollars, les relevés de règlement global et les grands livres lettrés |
+| **Trésorerie** | ce qui reste à régler, les avances disponibles et les sorties prévues sur huit semaines |
+
+Les quatre entrées relèvent d'un même droit d'écran, « Règlements » (ADMIN › Profils). Ventiler un virement et utiliser une avance demandent en plus la case **Saisir un règlement**.
 
 ## Ce que l'application attend de chaque dossier
 
@@ -24,23 +33,30 @@ Chaque ligne suit quatre états : **à demander** → **demandé** (la demande d
 Sur la fiche et dans les onglets Flottants et Arrivés, le voyant **Documents libérables** passe au vert quand la balance et le fret sont exécutés ou confirmés ; sinon il dit ce qui manque.
 :::
 
-## Le bordereau de la banque fait le travail
+## À payer
 
-Les demandes de virement passent par un **bordereau de remise de virements** édité par le portail de la banque le jour de l'exécution. Déposez-le dans Règlements (bouton ou glisser-déposer), ou laissez-le arriver par la boîte mail des factures :
+- **À préparer pour la banque** : les virements dont l'échéance tombe dans les 7 prochains jours, ou est dépassée, et qui ne sont pas encore exécutés, regroupés par bénéficiaire. Le libellé à écrire sur le bordereau (« NATURE-numéro de facture ») y est donné : **Copier tout** met bénéficiaire, libellé, montant, devise et dossier dans le presse-papiers, une ligne par virement, à coller dans un tableur ou un mail.
+- Trois onglets : **Par échéance** (une semaine par groupe, pour préparer les virements), **Par bénéficiaire** (ce qui reste dû à chaque fournisseur, transitaire ou commissionnaire), **Par dossier** (les lignes d'un dossier et son voyant de documents).
+- Sur chaque ligne : **Demandé** quand la demande de virement est partie, **Exécuté…** (date et référence du bordereau) si le bordereau ne peut pas être déposé.
+
+## Imports
+
+### Le bordereau de la banque fait le travail
+
+Les demandes de virement passent par un **bordereau de remise de virements** édité par le portail de la banque le jour de l'exécution. Déposez-le dans **Règlements › Imports** (glisser-déposer ou bouton). Le dépôt automatique par la boîte mail des factures est suspendu depuis le 12/10/2026.
 
 - chaque opération dont le libellé est « NATURE-numéro de facture » (par exemple `BALANCE-INV-55`, `FRET-FR-9`) passe la ligne du dossier à **exécuté**, à la date du bordereau ;
 - le PDF est classé sur le dossier, en pièce jointe « Bordereau » ;
-- une opération que l'application ne peut pas rattacher sans risque (numéro inconnu, deux dossiers possibles) attend dans **Opérations à affecter** : choisissez le dossier, ou écartez-la.
+- une opération que l'application ne peut pas rattacher sans risque (numéro inconnu, deux dossiers possibles) attend dans **Rapprochement › Opérations à affecter** : choisissez le dossier, ventilez-la entre plusieurs dossiers, ou écartez-la.
 
-Le libellé à écrire sur le bordereau est donné par le bloc **À préparer pour la banque** (échéances des 7 prochains jours et retards) : copiez-le tel quel, bénéficiaire, libellé, montant, devise.
 
 :::caution Ce qui n'est jamais gardé
 Le compte, l'IBAN et le BIC du bénéficiaire ne sortent pas du PDF : l'application n'en retient que le nom, le libellé, le montant et la devise.
 :::
 
-## Virements en dollars : importer le suivi de la trésorerie
+### Virements en dollars : importer le suivi de la trésorerie
 
-La trésorerie tient un classeur des virements en dollars de l'année, un onglet par entité, une ligne par virement : fournisseur, date, numéro de proforma, type (acompte ou solde), montant, banque, état (crédité, fait, à faire). Ce classeur est pour les dollars ce que le bordereau est pour les euros. Page Règlements, bouton **Importer le suivi des virements en dollars** : l'application lit l'onglet de son entité et les colonnes par leur titre, quel que soit leur ordre.
+La trésorerie tient un classeur des virements en dollars de l'année, un onglet par entité, une ligne par virement : fournisseur, date, numéro de proforma, type (acompte ou solde), montant, banque, état (crédité, fait, à faire). Ce classeur est pour les dollars ce que le bordereau est pour les euros. **Règlements › Imports**, bouton **Importer le suivi des virements en dollars** : l'application lit l'onglet de son entité et les colonnes par leur titre, quel que soit leur ordre.
 
 Pour chaque virement, l'application cherche la ligne attendue, sans jamais choisir au hasard :
 
@@ -52,44 +68,11 @@ Le numéro seul ne suffit jamais : le montant du virement doit faire celui de la
 
 Un virement crédité passe la ligne **exécutée** à sa date, référence « Suivi USD · banque » ; un virement « à faire » passe la ligne **demandée**. Ce qui n'est pas rattaché attend dans **Opérations à affecter**, avec les lignes candidates et, quand la comptabilité est chargée, l'écriture de banque qui porte le même montant en dollars (« Vu au FEC le 04/08 : 40 000,00 € · pièce … »). Réimporter le même classeur le mois suivant ne refait rien pour les virements déjà traités.
 
-Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Proformas manquantes** de la page Règlements donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
+Pour que le rattachement fonctionne, **le numéro de proforma doit être saisi dans la fiche du dossier** (champ « N° facture fournisseur »). Le lien **Dossiers en dollars sans n° de proforma** (Imports, et Rapprochement › Opérations à affecter) donne la liste des dossiers en dollars qui en sont dépourvus, avec une colonne à remplir ; une fois les fiches complétées, **Réessayer l'affectation** dans le bloc des opérations à affecter reprend les virements en attente.
 
-## Grand livre lettré : compléter le FEC entre deux dépôts
+### Règlement global en tranches : importer un relevé
 
-Le FEC s'arrête à sa date d'arrêté ; entre deux dépôts, le cabinet continue de lettrer. Le grand livre d'un tiers, exporté de Sage au format Excel, complète le FEC pour le lettrage. Page Règlements, bouton **Importer un grand livre lettré** :
-
-1. Choisir le **tiers** dans la liste : l'export ne dit pas de qui il s'agit.
-2. Déposer le classeur. Les colonnes sont reconnues par leur titre.
-3. Le bilan indique les écritures lues, celles déjà connues de la comptabilité, les nouvelles, les lettrages ajoutés et les lignes que le suivi va confirmer.
-
-Le grand livre **complète, il ne remplace jamais** : une lettre du FEC n'est pas modifiée, et un désaccord est seulement compté. Un groupe de lettrage ne confirme une ligne que s'il est équilibré au centime, règlement de banque compris. L'import n'écrit rien dans les dossiers ; la confirmation s'écrit au passage suivant du suivi, avec sa trace dans l'historique.
-
-Réimporter le même fichier ne fait rien. Un nouvel export du même tiers remplace le précédent. Quand un FEC plus récent couvre la période, la carte **Grands livres importés** affiche « couvert par le FEC ». L'administrateur peut retirer un grand livre ; ce qui a été confirmé le reste.
-
-## Commissions : le montant facturé
-
-La commission calculée dans la fiche est une **estimation** (taux appliqué à la facture, plus la manutention). La page Règlements affiche, elle, la commission **réellement facturée** par le commissionnaire, retrouvée dans la comptabilité par le numéro de facture Gescom du dossier ou par le numéro du dossier : « Facturée … € (… $, COM 01/2026) · estimée … € ». La fiche et le prix de revient ne changent pas.
-
-- Son état vient du lettrage : **confirmée** quand le règlement groupé du commissionnaire est lettré, sinon « non lettrée en comptabilité ».
-- « Pas encore comptabilisée » : dossier arrivé, aucune facture de commission trouvée.
-- « Écart avec l'estimation » : le facturé s'écarte de plus de 10 % de l'estimation de la fiche.
-- « Facture à vérifier » : montant invraisemblable, plus de trois fois l'estimation ; rien n'est retenu.
-
-Le lien **classeur des commissions** donne la liste complète, pour les achats et le cabinet comptable.
-
-## Rapprochement par commande
-
-La trésorerie paie une **commande** (une proforma) par un acompte puis un ou plusieurs soldes ; Costing suit un dossier par conteneur. La vue **Par commande** de la page Règlements regroupe les virements du suivi en dollars et les dossiers qui portent le même numéro, et affiche pour chaque commande : commandé, acompte versé, solde versé, à faire, reste à payer, état. Les boutons **Simuler** et **Rapprocher par commande** montrent puis écrivent ce qui est certain.
-
-- **Soldée** : un solde versé, plus rien à faire, et les virements couvrent les dossiers. Les lignes passent exécutées à la date du dernier virement. Si les virements dépassent les dossiers de plus de 1 %, un signalement indique qu'un dossier de la commande manque ou porte un autre numéro.
-- **Acompte versé** : si le suivi porte aussi le solde à faire et que leur total égale celui des dossiers, l'acompte est inscrit sur chaque dossier au prorata, et la balance, ramenée au reste dû, passe demandée.
-- **À trancher** : tout le reste, avec la raison chiffrée. Rien n'est écrit : total de la commande inconnu, aucun dossier ne porte le numéro, virements inférieurs aux factures.
-
-La fiche, le prix de revient et le statut du dossier ne sont jamais modifiés ; seules les lignes de règlement et l'acompte le sont, avec une trace dans l'historique.
-
-## Règlement global en tranches : importer un relevé
-
-Certains fournisseurs sont réglés par tranches (« SOLDE 1/3 », « SOLDE BIS 2/3 », parfois via l'affactureur) qui couvrent un lot de factures. Le lot n'est connu que par un **relevé**, préparé dans un classeur à une feuille et deux blocs : les débits de banque (mêmes colonnes que la feuille « Débits banque non rattachés » de l'export) et les factures du lot (N° Facture, date, échéance, montant). Page Règlements, bouton **Importer un relevé de règlement global**.
+Certains fournisseurs sont réglés par tranches (« SOLDE 1/3 », « SOLDE BIS 2/3 », parfois via l'affactureur) qui couvrent un lot de factures. Le lot n'est connu que par un **relevé**, préparé dans un classeur à une feuille et deux blocs : les débits de banque (mêmes colonnes que la feuille « Débits banque non rattachés » de l'export) et les factures du lot (N° Facture, date, échéance, montant). **Règlements › Imports**, bouton **Importer un relevé de règlement global**.
 
 - Le relevé est **équilibré** si le total des débits égale le total des factures à 1 % près. Sinon rien n'est décidé et la raison est affichée.
 - Chaque facture du relevé cherche la ligne du dossier qui porte son numéro : trouvée, elle passe **confirmée** à la date de la dernière tranche, avec les pièces des débits ; inconnue de Costing, elle est listée pour que les achats la rattachent en saisissant le numéro de facture fournisseur dans la fiche.
@@ -99,29 +82,104 @@ Certains fournisseurs sont réglés par tranches (« SOLDE 1/3 », « SOLDE BIS 
 - Colonne facultative **« Dossier »** dans le bloc des factures : quand une facture n'a de numéro dans aucune fiche (une commission, par exemple), indiquer le dossier suffit. L'application rattache la facture à la ligne de ce dossier dont le montant correspond, seule ou en somme avec d'autres factures du même dossier, et la ligne reçoit le numéro. Deux lectures possibles : rien n'est décidé, la facture est « à trancher ».
 - Réimporter le même relevé ne refait rien. Après avoir complété le relevé ou les fiches, **Reprendre ce relevé** confirme ce qui ne l'était pas encore, sans réserver les débits une seconde fois.
 
+### Grand livre lettré : compléter le FEC entre deux dépôts
+
+Le FEC s'arrête à sa date d'arrêté ; entre deux dépôts, le cabinet continue de lettrer. Le grand livre d'un tiers, exporté de Sage au format Excel, complète le FEC pour le lettrage. **Règlements › Imports**, bouton **Importer un grand livre lettré** :
+
+1. Choisir le **tiers** dans la liste : l'export ne dit pas de qui il s'agit.
+2. Déposer le classeur. Les colonnes sont reconnues par leur titre.
+3. Le bilan indique les écritures lues, celles déjà connues de la comptabilité, les nouvelles, les lettrages ajoutés et les lignes que le suivi va confirmer.
+
+Le grand livre **complète, il ne remplace jamais** : une lettre du FEC n'est pas modifiée, et un désaccord est seulement compté. Un groupe de lettrage ne confirme une ligne que s'il est équilibré au centime, règlement de banque compris. L'import n'écrit rien dans les dossiers ; la confirmation s'écrit au passage suivant du suivi, avec sa trace dans l'historique.
+
+Réimporter le même fichier ne fait rien. Un nouvel export du même tiers remplace le précédent. Quand un FEC plus récent couvre la période, la carte **Grands livres importés** affiche « couvert par le FEC ». L'administrateur peut retirer un grand livre ; ce qui a été confirmé le reste.
+
+## Rapprochement
+
+L'écran s'ouvre sur l'encadré **Comment une ligne passe à « confirmé »** : les étapes, ce qu'il faut sur la fiche pour chacune, et le compte des lignes confirmées par type de preuve. Les lignes sont ensuite réparties en **quatre sous-onglets** :
+
+1. **Factures d'achats** : deposit et balance des fournisseurs, avec la carte **Par commande**.
+2. **Factures de fret** : les lignes de fret GCCOI et INDIGO, avec l'alerte « conteneur déchargé, fret non payé ».
+3. **Factures de commissions** : estimé, facturé, écarts, factures refusées, et le classeur des commissions.
+4. **Factures diverses** : ce qui n'entre nulle part ailleurs (virements à affecter sans nature, virements ventilés, avances fournisseurs, virements écartés, lignes saisies à la main).
+
+Les trois premiers suivent la même trame :
+- quatre tuiles : lignes, exécutées à confirmer, confirmées, reste à régler ;
+- **À compléter pour que la comptabilité confirme** : ce qui bloque chaque ligne (numéro de facture Gescom, numéro de facture fournisseur, date de facture) et quoi faire ;
+- **Opérations à affecter** : les virements que l'application n'a pas pu rattacher sans risque, avec leurs lignes candidates. On choisit le dossier (**Affecter**), on le répartit entre plusieurs dossiers (**Ventiler…**), ou on l'écarte. **Réessayer l'affectation** reprend ces virements après que des fiches ont été complétées ;
+- **Confirmées récemment** : les 40 dernières lignes confirmées, avec leur preuve.
+
+Un virement en attente est classé par son libellé (« COM… », « FRET… »), sinon par sa nature.
+
+### Rapprochement par commande
+
+La trésorerie paie une **commande** (une proforma) par un acompte puis un ou plusieurs soldes ; Costing suit un dossier par conteneur. La carte **Par commande** du sous-onglet **Factures d'achats** regroupe les virements du suivi en dollars et les dossiers qui portent le même numéro, et affiche pour chaque commande : commandé, acompte versé, solde versé, à faire, reste à payer, état. Les boutons **Simuler** et **Rapprocher par commande** montrent puis écrivent ce qui est certain.
+
+- **Soldée** : un solde versé, plus rien à faire, et les virements couvrent les dossiers. Les lignes passent exécutées à la date du dernier virement. Si les virements dépassent les dossiers de plus de 1 %, un signalement indique qu'un dossier de la commande manque ou porte un autre numéro.
+- **Acompte versé** : si le suivi porte aussi le solde à faire et que leur total égale celui des dossiers, l'acompte est inscrit sur chaque dossier au prorata, et la balance, ramenée au reste dû, passe demandée.
+- **À trancher** : tout le reste, avec la raison chiffrée. Rien n'est écrit : total de la commande inconnu, aucun dossier ne porte le numéro, virements inférieurs aux factures.
+
+La fiche, le prix de revient et le statut du dossier ne sont jamais modifiés ; seules les lignes de règlement et l'acompte le sont, avec une trace dans l'historique.
+
+### Commissions : le montant facturé
+
+La commission calculée dans la fiche est une **estimation** (taux appliqué à la facture, plus la manutention). Le sous-onglet **Factures de commissions** du Rapprochement affiche, lui, la commission **réellement facturée** par le commissionnaire, retrouvée dans la comptabilité par le numéro de facture Gescom du dossier ou par le numéro du dossier : « Facturée … € (… $, COM 01/2026) · estimée … € ». La fiche et le prix de revient ne changent pas.
+
+- Son état vient du lettrage : **confirmée** quand le règlement groupé du commissionnaire est lettré, sinon « non lettrée en comptabilité ».
+- « Pas encore comptabilisée » : dossier arrivé, aucune facture de commission trouvée.
+- « Écart avec l'estimation » : le facturé s'écarte de plus de 10 % de l'estimation de la fiche.
+- « Facture à vérifier » : montant invraisemblable, plus de trois fois l'estimation ; rien n'est retenu.
+
+Le lien **classeur des commissions** donne la liste complète, pour les achats et le cabinet comptable.
+
+## Ventiler un virement entre plusieurs dossiers
+
+Il arrive qu'un seul virement règle plusieurs dossiers, voire plus que ce qui est dû aujourd'hui. Le surplus correspond alors à l'acompte d'une commande future. **Ventiler** répartit ce virement entre les dossiers et garde le solde en mémoire.
+
+- **D'où partir** : une opération en attente, avec **Ventiler…** sur sa ligne dans les opérations à affecter ; ou un virement vu en banque ou au FEC, avec **Ventiler un virement saisi à la main** (montant, devise, bénéficiaire, date, référence).
+- **Répartir** : pour chaque part, choisissez le dossier, puis la ligne (balance, deposit, fret, commission) ou **Nouvel acompte**, et le montant dans la devise du virement. L'application vérifie au fur et à mesure et affiche l'effet de chaque part :
+  - une part qui couvre la ligne à 1 % près la **solde** ;
+  - une part plus petite sur une balance ou un deposit devient un **acompte** : une ligne deposit est créée et la balance baisse d'autant ;
+  - un fret ou une commission ne se paie pas en partie : la part est refusée, comme une part qui dépasse ce qui est dû ou une ligne déjà réglée.
+- **Devise** : une part sur une ligne d'une autre devise (un virement en dollars pour un fret en euros) est convertie au **cours du bordereau**, à saisir dans la ventilation (dollars pour 1 €).
+- **Ventiler** : chaque part passe sa ligne « exécuté » à la date du virement, avec la référence « Ventilation V… ». L'opération d'origine passe « ventilée ». Le solde est gardé : c'est une **avance** chez le fournisseur.
+- **Annuler** : dans Factures diverses › **Virements ventilés**. Les lignes reviennent dans leur état d'avant. L'annulation est refusée dès qu'une ligne a été confirmée en banque ou modifiée, ou tant qu'un deposit a été pris sur le solde (le retirer d'abord).
+
+La fiche et le prix de revient ne changent pas. Chaque écriture est tracée dans l'historique du dossier.
+
+## Avances fournisseurs
+
+Le solde d'un virement ventilé est une **avance** : de l'argent déjà versé au fournisseur et pas encore affecté à un dossier. Elle sert de deposit à la commande suivante, toujours **validée à la main**.
+
+- **Sur la fiche** d'un dossier du même fournisseur, un bandeau s'affiche au-dessus des paiements : « Avance disponible chez … ». Le montant proposé est modifiable. **Utiliser comme deposit** l'applique, **Ignorer** masque le bandeau.
+- **Dans Rapprochement › Factures diverses › Avances fournisseurs** : pour chaque avance, le solde, les deposits déjà pris (chacun annulable) et le disponible. **Imputer…** applique l'avance à n'importe quel dossier.
+- **Ce qui s'écrit** : un deposit exécuté à la date du virement, avec la référence « Avance V… ». Il couvre le deposit attendu du dossier, ou prend sa propre ligne « AVANCE V… ». La balance baisse d'autant ; le prix de revient ne change pas. On ne peut pas prendre plus que le disponible.
+- **Confirmation** : le débit du virement d'origine au FEC confirme aussi ces deposits (voir *Confirmation par la comptabilité*, forme 2). Un deposit confirmé ne s'annule plus.
+
 ## Confirmation par la comptabilité
 
-À chaque ouverture de l'écran et à chaque dépôt de FEC, les lignes à demander, demandées et exécutées sont rapprochées des écritures de banque du FEC (débits du compte fournisseur en journal de banque). Une ligne retrouvée passe **confirmé en banque** avec la date comptable et la pièce, une seule fois, au nom du système. Une ligne exécutée depuis plus de 15 jours ouvrés sans aucune écriture possible est signalée « non vu en banque » : à vérifier auprès de la banque ou de la comptabilité.
+À chaque ouverture des écrans Règlements et à chaque dépôt de FEC, les lignes à demander, demandées et exécutées sont rapprochées des écritures de banque du FEC (débits du compte fournisseur en journal de banque). Une ligne retrouvée passe **confirmé en banque** avec la date comptable et la pièce, une seule fois, au nom du système. Une ligne exécutée depuis plus de 15 jours ouvrés sans aucune écriture possible est signalée « non vu en banque » : à vérifier auprès de la banque ou de la comptabilité.
 
-Une écriture est retenue pour une ligne quand elle est au nom du même bénéficiaire, datée du jour de la facture (sinon de la commande) ou après, et pas déjà prise par une autre ligne. Le montant est comparé à **2 %** près pour une ligne en euros, à **5 %** près pour une ligne en dollars convertie au cours du bordereau s'il existe, sinon au cours du dossier. Cinq formes de preuve ou de paiement sont reconnues, dans cet ordre :
+Une écriture est retenue pour une ligne quand elle est au nom du même bénéficiaire, datée du jour de la facture (sinon de la commande) ou après, et pas déjà prise par une autre ligne. Le montant est comparé à **2 %** près pour une ligne en euros, à **5 %** près pour une ligne en dollars convertie au cours du bordereau s'il existe, sinon au cours du dossier. Six formes de preuve ou de paiement sont reconnues, dans cet ordre :
 
-0. **Lettrage de la comptabilité** : c'est la preuve la plus forte. Les factures d'un dossier se retrouvent dans la comptabilité par son **numéro de facture Gescom** (champ de la fiche, un ou plusieurs numéros). Quand la facture est lettrée, soldée au centime et réglée par la banque, la ligne est confirmée à la date du règlement, même sans date de facture. Une facture présente mais non lettrée affiche « non lettrée en comptabilité » : ce n'est pas une preuve de non-paiement (un règlement en tranches ou passé par le compte d'un agent n'est pas lettré), mais la ligne ne sera plus rapprochée par le montant. **Saisir le numéro de facture Gescom dans la fiche est donc ce qui rend le suivi certain.**
-0. **Pièce comptable** : quand la pièce de l'écriture porte le numéro de facture de la ligne (le cabinet y met le numéro de facture du fournisseur, ou le numéro de proforma pour les dollars), la pièce fait foi : la ligne est confirmée sans condition de montant ni de date. Un écart de montant supérieur à la tolérance est signalé, pas refusé. Une facture payée en plusieurs fois sur la même pièce est reconnue si la somme des débits fait la ligne. C'est la voie la plus sûre : **saisir le numéro de facture fournisseur dans la fiche** rend le rapprochement certain.
+1. **Lettrage de la comptabilité** : c'est la preuve la plus forte. Les factures d'un dossier se retrouvent dans la comptabilité par son **numéro de facture Gescom** (champ de la fiche, un ou plusieurs numéros). Quand la facture est lettrée, soldée au centime et réglée par la banque, la ligne est confirmée à la date du règlement, même sans date de facture. Une facture présente mais non lettrée affiche « non lettrée en comptabilité » : ce n'est pas une preuve de non-paiement (un règlement en tranches ou passé par le compte d'un agent n'est pas lettré), mais la ligne ne sera plus rapprochée par le montant. **Saisir le numéro de facture Gescom dans la fiche est donc ce qui rend le suivi certain.**
+2. **Virement ventilé** : un virement réparti entre plusieurs dossiers (voir *Ventiler un virement*) est **un seul débit** en banque. Le débit du bénéficiaire au montant du virement (2 % en euros ; en dollars, contre-valeur au cours du bordereau, à 5 %), daté de 3 jours avant à 30 jours après l'exécution, confirme d'un coup toutes ses parts, y compris les deposits pris sur son avance. Deux débits possibles : rien n'est décidé, chaque part est « à rapprocher à la main ».
+3. **Pièce comptable** : quand la pièce de l'écriture porte le numéro de facture de la ligne (le cabinet y met le numéro de facture du fournisseur, ou le numéro de proforma pour les dollars), la pièce fait foi : la ligne est confirmée sans condition de montant ni de date. Un écart de montant supérieur à la tolérance est signalé, pas refusé. Une facture payée en plusieurs fois sur la même pièce est reconnue si la somme des débits fait la ligne. C'est la voie la plus sûre : **saisir le numéro de facture fournisseur dans la fiche** rend le rapprochement certain.
+
 Les trois formes suivantes rapprochent par le **montant** : elles ne s'appliquent qu'à un dossier qui porte une **date de facture**, à défaut une date de commande. Sans date, rien n'est confirmé par le montant, car un débit plus ancien de montant voisin pourrait être pris pour le paiement ; la ligne affiche alors « date de facture à saisir », et le compteur « lignes sans date de facture » de la page permet de les retrouver.
 
-1. **Débit unique** : une écriture au montant de la ligne.
-2. **Acompte + solde** : une balance sans deposit saisi, qu'aucune écriture seule ne paie mais que deux débits du même bénéficiaire règlent ensemble. La balance devient alors deux lignes confirmées : un deposit au montant et à la date du premier débit, une balance au montant et à la date du second.
-3. **Virement groupé** : un débit qui règle d'un coup deux à quatre lignes du même bénéficiaire, dans la même devise, sur un ou plusieurs dossiers : toutes sont confirmées avec la date et la pièce de ce débit.
+4. **Débit unique** : une écriture au montant de la ligne.
+5. **Acompte + solde** : une balance sans deposit saisi, qu'aucune écriture seule ne paie mais que deux débits du même bénéficiaire règlent ensemble. La balance devient alors deux lignes confirmées : un deposit au montant et à la date du premier débit, une balance au montant et à la date du second.
+6. **Virement groupé** : un débit qui règle d'un coup deux à quatre lignes du même bénéficiaire, dans la même devise, sur un ou plusieurs dossiers : toutes sont confirmées avec la date et la pièce de ce débit.
 
 L'application ne choisit **jamais au hasard** : s'il existe plusieurs écritures, plusieurs paires ou plusieurs combinaisons possibles, rien n'est décidé et la ligne est signalée « à rapprocher à la main », avec la liste des candidats dans l'alerte. C'est fréquent pour les fournisseurs qui ont beaucoup de lignes ouvertes et sont réglés par virements groupés : le libellé bancaire ne porte que le nom du fournisseur, seul le bordereau de virement dit quelles factures un virement couvre. Déposer les bordereaux reste donc la voie sûre ; le FEC vient confirmer.
 
-## Les trois vues et la prévision
+Chaque ligne confirmée garde **sa preuve**, affichée à côté de la date (« vu en banque le … ») et dans la carte **Confirmées récemment** : par lettrage, par la pièce, par le montant, acompte + solde, virement groupé, virement ventilé, relevé en tranches ou par commande, avec la pièce comptable. Les lignes confirmées avant le 13/10/2026 n'ont que leur pièce.
 
-- **Par échéance** : une semaine par groupe, pour préparer les virements.
-- **Par bénéficiaire** : ce qui reste dû à chaque fournisseur, transitaire ou commissionnaire.
-- **Par dossier** : les lignes d'un dossier et son voyant de documents.
+## Trésorerie
 
-En bas de page, la **prévision de sortie de trésorerie** cumule sur huit semaines, par devise, les lignes non exécutées ; le retard sort la semaine en cours.
+- **Tuiles** : reste à régler (contre-valeur des lignes non exécutées, par devise), retards, demandées, exécutées ce mois, **avances disponibles** (total par devise et fournisseurs concernés).
+- **Prévision de sortie de trésorerie** : sur huit semaines glissantes, par devise, les lignes non exécutées ; le retard sort la semaine en cours. Contre-valeur au cours de chaque dossier.
 
 :::tip Dossiers anciens
 Un dossier arrivé depuis plus de 30 jours sans aucune ligne saisie est réputé réglé (sa marchandise a été relâchée) : il n'apparaît pas dans le suivi. Pour le suivre quand même, marquez une de ses lignes depuis la carte Paiements de sa fiche.

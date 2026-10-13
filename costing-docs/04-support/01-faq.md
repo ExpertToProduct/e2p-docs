@@ -58,25 +58,25 @@ Récapitulatif de la fiche (bloc « Hors Gescom »), page Frais d'approche (tuil
 ## Suivi des règlements
 
 **Comment le suivi des règlements se met-il à jour ?**
-De trois façons. Par les bordereaux de remise de virement, déposés sur la page Règlements ou dans les pièces d'un dossier (l'envoi à la boîte de veille est suspendu depuis le 12 octobre 2026) : chaque opération est rattachée au dossier par le numéro de facture du libellé, sinon par bénéficiaire et montant, et la ligne passe en « exécuté ». À la main, ligne par ligne, sur la page Règlements ou dans le bloc Paiements de la fiche : demandé, exécuté avec date et référence, annulé. Par le FEC, à chaque dépôt : les lignes exécutées retrouvées en banque passent en « confirmé ».
+De trois façons. Par les bordereaux de remise de virement, déposés dans Règlements › Imports ou dans les pièces d'un dossier (l'envoi à la boîte de veille est suspendu depuis le 12 octobre 2026) : chaque opération est rattachée au dossier par le numéro de facture du libellé, sinon par bénéficiaire et montant, et la ligne passe en « exécuté ». À la main, ligne par ligne, dans Règlements › À payer ou dans le bloc Paiements de la fiche : demandé, exécuté avec date et référence, annulé. Par le FEC, à chaque dépôt : les lignes exécutées retrouvées en banque passent en « confirmé ».
 
 **Quel libellé mettre sur un virement pour qu'il soit reconnu ?**
-« NATURE-numéro de facture », par exemple BALANCE-XXX ou FRET-XXX (natures : DEPOSIT, ACOMPTE, BALANCE, SOLDE, FRET, COMMISSION). Le bloc « À préparer pour la banque » de la page Règlements donne ce libellé tout prêt.
+« NATURE-numéro de facture », par exemple BALANCE-XXX ou FRET-XXX (natures : DEPOSIT, ACOMPTE, BALANCE, SOLDE, FRET, COMMISSION). Le bloc « À préparer pour la banque » de Règlements › À payer donne ce libellé tout prêt.
 
 **Un bordereau n'est rattaché à aucun dossier, que devient-il ?**
-Il attend dans le bloc « Opérations à affecter » de la page Règlements : on l'affecte à un dossier en un clic, ou on l'écarte. L'application ne choisit jamais au hasard entre plusieurs dossiers possibles.
+Il attend dans le bloc « Opérations à affecter » de Règlements › Rapprochement : on l'affecte à un dossier en un clic, on le ventile entre plusieurs dossiers, ou on l'écarte. L'application ne choisit jamais au hasard entre plusieurs dossiers possibles.
 
 **Le FEC suffit-il à savoir ce qui a été payé ?**
 Pour le passé, oui : chaque virement à un fournisseur y est. Pour le présent, non : le FEC arrive du cabinet avec des semaines de retard, les virements en dollars y sont en euros au cours de la banque, et le libellé bancaire ne porte pas toujours le numéro de facture. Le bordereau, édité le jour du virement, est l'information à temps ; le FEC vient confirmer.
 
 **Un fournisseur est payé par tranches « SOLDE 1/3, 2/3… » qui couvrent plusieurs factures, comment le rapprocher ?**
-Avec un relevé de règlement global importé depuis la page Règlements : un classeur à deux blocs, les débits de banque et les factures du lot. Si les totaux sont égaux, les factures connues de Costing passent confirmées à la date de la dernière tranche, les débits sont réservés, et les factures inconnues sont listées pour être rattachées aux dossiers.
+Avec un relevé de règlement global importé depuis Règlements › Imports : un classeur à deux blocs, les débits de banque et les factures du lot. Si les totaux sont égaux, les factures connues de Costing passent confirmées à la date de la dernière tranche, les débits sont réservés, et les factures inconnues sont listées pour être rattachées aux dossiers.
 
 **Le relevé dit « facture inconnue » alors que le dossier existe, pourquoi ?**
 Le plus souvent la facture est une commission, dont la ligne n'a pas de numéro : ajouter une colonne « Dossier » au bloc des factures du relevé, y indiquer le dossier, puis « Reprendre ce relevé ». Si le dossier est indiqué et que le message persiste, c'est qu'aucune ligne du dossier ne fait ce montant : vérifier le montant de la facture ou de la commission dans la fiche.
 
 **Le cabinet a lettré un règlement récent, mais le FEC déposé est plus ancien. Faut-il attendre le prochain FEC ?**
-Non. Exporter de Sage le grand livre du tiers au format Excel et l'importer depuis la page Règlements, en choisissant le tiers dans la liste. Le lettrage du grand livre complète celui du FEC, sans jamais le contredire, et les lignes concernées passent confirmées au passage suivant.
+Non. Exporter de Sage le grand livre du tiers au format Excel et l'importer depuis Règlements › Imports, en choisissant le tiers dans la liste. Le lettrage du grand livre complète celui du FEC, sans jamais le contredire, et les lignes concernées passent confirmées au passage suivant.
 
 **Pourquoi la commission affichée dans Règlements diffère-t-elle de celle de la fiche ?**
 La fiche calcule une estimation ; Règlements affiche la commission réellement facturée, lue dans la comptabilité par le numéro Gescom ou le numéro du dossier. Les deux montants sont montrés côte à côte, avec leur écart. Seul le montant facturé est dû.
@@ -88,13 +88,22 @@ La facture du dossier est bien comptabilisée, mais le cabinet ne l'a pas rappro
 Saisir la date de facture dans la fiche du dossier, ou à défaut la date de commande. Sans date, l'application refuse de rapprocher par le montant : un débit plus ancien de montant voisin pourrait être pris pour le paiement. Cette règle date du 29 septembre 2026, après la découverte de confirmations erronées sur des dossiers encore en mer ; les vingt confirmations concernées ont été annulées, chacune tracée dans l'historique du dossier.
 
 **Comment rendre le rapprochement certain plutôt que probable ?**
-D'abord en saisissant le **numéro de facture Gescom** dans la fiche : la comptabilité l'utilise comme pièce de la facture, et son lettrage dit si elle est réglée. Ensuite en saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Proformas manquantes » indique les dossiers à compléter.
+D'abord en saisissant le **numéro de facture Gescom** dans la fiche : la comptabilité l'utilise comme pièce de la facture, et son lettrage dit si elle est réglée. Ensuite en saisissant le numéro de facture fournisseur, ou de proforma pour les dollars, dans la fiche du dossier : le cabinet met ce numéro dans la pièce de l'écriture de banque, et la pièce fait foi, sans tolérance de montant ni ambiguïté. La liste « Dossiers en dollars sans n° de proforma » indique les dossiers à compléter.
 
 **Les virements en dollars ne sont pas dans les bordereaux, comment les suivre ?**
-Par le classeur de suivi des virements en dollars de la trésorerie, importé depuis la page Règlements (bouton « Importer le suivi des virements en dollars »). Chaque virement crédité passe la ligne exécutée à sa date ; les virements « à faire » passent les lignes demandées. Le rattachement se fait par le numéro de proforma, qui doit donc être saisi dans la fiche du dossier : la liste « Proformas manquantes » indique les dossiers à compléter, puis « Réessayer l'affectation » reprend les virements en attente.
+Par le classeur de suivi des virements en dollars de la trésorerie, importé depuis Règlements › Imports (bouton « Importer le suivi des virements en dollars »). Chaque virement crédité passe la ligne exécutée à sa date ; les virements « à faire » passent les lignes demandées. Le rattachement se fait par le numéro de proforma, qui doit donc être saisi dans la fiche du dossier : la liste « Dossiers en dollars sans n° de proforma » indique les dossiers à compléter, puis « Réessayer l'affectation » reprend les virements en attente.
 
 **Le FEC est déposé, mais la plupart des lignes restent « à demander » : pourquoi ?**
 Parce que l'application ne confirme une ligne que si la comptabilité la désigne sans ambiguïté. Depuis le 25 septembre 2026, elle reconnaît un débit unique (2 % d'écart en euros, 5 % en dollars convertis), un acompte suivi d'un solde, et un virement groupé couvrant jusqu'à quatre lignes du même fournisseur. Mais le libellé des écritures de banque ne porte que le nom du fournisseur, sans numéro de facture ni montant par facture ; pour un fournisseur qui a vingt ou trente lignes ouvertes, un virement groupé s'explique de dizaines de façons, et l'application refuse de choisir. Ces lignes sont signalées « à rapprocher à la main », avec les écritures candidates dans l'alerte : on tranche à la fiche en marquant la ligne exécutée avec la date et la référence du virement, ou en déposant le bordereau de l'époque, qui porte la liste des factures réglées. Sur la durée, la voie sûre est le bordereau, saisi ou transféré le jour du virement.
+
+**Un seul virement a réglé plusieurs dossiers, et un peu plus : comment l'enregistrer ?**
+En le **ventilant** (Règlements › Rapprochement) : « Ventiler… » sur l'opération en attente, ou « Ventiler un virement saisi à la main ». On répartit le montant entre les dossiers ; une part qui couvre une ligne la solde, une part plus petite sur une balance devient un acompte. Ce qui reste est gardé comme **avance** chez le fournisseur. Il faut la case « Saisir un règlement ».
+
+**Que devient le solde d'un virement ventilé ?**
+Une avance fournisseur, visible dans Rapprochement › Factures diverses et dans la tuile « Avances disponibles » de Trésorerie. La fiche du dossier suivant chez ce fournisseur la propose en deposit ; rien ne s'applique sans le clic « Utiliser comme deposit ». Le débit du virement d'origine, quand il arrive au FEC, confirme d'un coup toutes les parts et les deposits pris sur l'avance (preuve « virement ventilé »).
+
+**Peut-on annuler une ventilation ?**
+Oui, tant qu'aucune de ses lignes n'est confirmée en banque ni modifiée depuis : les lignes reviennent dans leur état d'avant. Si un deposit a été pris sur son solde, retirez-le d'abord (carte Avances fournisseurs). Une fois le débit vu au FEC, la ventilation est définitive.
 
 **Pourquoi tout est-il « à demander » au démarrage ?**
 Parce que personne n'a encore saisi ni déposé de bordereau. Déposer les bordereaux des dernières semaines, puis marquer exécutés les règlements plus anciens dont on a la preuve, assainit vite. Les dossiers arrivés et dépotés depuis plus de trente jours sans ligne saisie sont réputés réglés et sortent du suivi.
