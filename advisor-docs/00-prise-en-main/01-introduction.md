@@ -21,4 +21,4 @@ Comme les autres produits de la gamme, E2P Advisor ne calcule rien lui-même : c
 
 ## Où il tourne
 
-E2P Advisor fonctionne sur le poste de la direction, à l'adresse `http://localhost:5173` une fois lancé. La connexion se fait par adresse e-mail et mot de passe.
+E2P Advisor fonctionne sur le poste de la direction. La connexion se fait par adresse e-mail et mot de passe.
