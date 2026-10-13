@@ -92,6 +92,23 @@ Avant le stade « Flottant », ou pour tout document sans conteneur reconnaissab
 - Chaque conteneur a son dépôt et sa date de dépotage renseignés.
 - Le dossier passe en **Validé** : il n'est plus modifiable sans repasser d'abord en brouillon.
 
+## Commissions et fret à leur propre cours
+
+Une facture de commission ou de fret se règle souvent à un autre cours du dollar que la facture du fournisseur. Chacune peut donc porter **son propre cours** ; le prix de revient et les règlements le prennent en compte.
+
+| Où | Ce qu'on saisit | Ce que calcule la fiche |
+|---|---|---|
+| Carte **Commissions**, colonne **Cours** (visible quand la facture fournisseur est en dollars) | le cours de la facture de commission | commission = taux × facture en dollars ÷ ce cours ; pour GCCOI, la manutention (350 $ par conteneur) suit le même cours |
+| Carte **Fret soumis aux droits de douane**, colonnes **Montant $** et **Cours** (lignes GCCOI et Fret) | le montant facturé en dollars et le cours de cette facture | montant en euros = dollars ÷ cours, affiché en lecture seule dans la colonne Montant € |
+
+**Cours laissé vide** : c'est le cours de la facture fournisseur qui s'applique, comme avant. Un fret facturé en euros se saisit toujours directement dans la colonne Montant €.
+
+Exemple : facture fournisseur de 24 696 $ au cours de 1,1408, commission de 3 % facturée au cours de 1,15. Sans cours propre, la commission vaut 649,44 € ; avec 1,15 saisi sur sa ligne, elle vaut 644,24 €, le montant de la facture de commission.
+
+:::info Dossier déjà validé
+Saisir un cours propre change le prix de revient : repassez d'abord la fiche en brouillon, puis validez-la de nouveau. Un dossier comptabilisé ne se modifie plus sans être rouvert par la direction ou le DAF.
+:::
+
 ## Facture reçue sur une provision (surestaries, stationnement au port)
 
 Les surestaries et le stationnement au port sont souvent **provisionnés** dans le prix de revient, et ce prix de revient, une fois enregistré en Gescom, ne bouge plus. Quand la facture arrive, la fiche ne réajuste donc pas la provision : sur ces deux lignes, le bouton **Facture reçue…** ouvre un petit formulaire (montant facturé, n° et date de facture) qui remplit la ligne selon la règle du service achats.

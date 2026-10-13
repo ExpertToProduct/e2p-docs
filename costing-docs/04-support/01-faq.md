@@ -119,6 +119,9 @@ Non : c'est un espace client sans API. Ses courriels d'étape peuvent en revanch
 **La fiche affiche « Cours du dollar à saisir », que faire ?**
 La fiche est en euros mais porte des frais en dollars, la manutention du commissionnaire à 350 $ par conteneur, et son cours du dollar est resté à 1 : ces frais sont comptés 1 pour 1, soit une cinquantaine d'euros de trop par conteneur dans le prix de revient. Saisir le cours du dollar dans la carte Facture. Le contrôle est une vigilance, il ne bloque ni le calcul ni la validation. Un dossier validé et déjà comptabilisé se laisse tel quel.
 
+**La commission ou le fret est facturé à un autre cours que la facture fournisseur, comment le saisir ?**
+Saisissez ce cours sur la ligne : colonne **Cours** de la commission, ou **Montant $** et **Cours** sur la ligne de fret. Le montant en euros se recalcule, et la ligne de règlement suit. Laissé vide, c'est le cours de la facture fournisseur qui s'applique. Voir [Commissions et fret à leur propre cours](../01-dossiers-et-factures/01-cycle-dossier.md#commissions-et-fret-à-leur-propre-cours).
+
 ## Prix de vente (circuit du 25 septembre 2026)
 
 **Qui fixe les prix de vente et comment ?**

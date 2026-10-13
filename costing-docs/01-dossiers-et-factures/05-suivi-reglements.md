@@ -15,8 +15,8 @@ Dès qu'un dossier est en **commande**, l'application déduit les virements à f
 |---|---|---|
 | Deposit | le pourcentage ou le montant saisi sur la fiche (carte Facture) — rien n'est pré-rempli, les conditions changent d'un fournisseur à l'autre | date de commande, sinon date de facture |
 | Balance | facture − deposit, dans la devise de la facture | ETD (départ du navire), sinon ETA − 30 jours |
-| Fret | la ligne Fret quand elle porte GCCOI ou INDIGO | ETA − 5 jours |
-| Commission | la commission du dossier (commissionnaire choisi) | date de la facture de commission + 30 jours |
+| Fret | la ligne Fret quand elle porte GCCOI ou INDIGO ; en dollars, à son propre cours, quand le montant est saisi en dollars | ETA − 5 jours |
+| Commission | la commission du dossier, une ligne par commissionnaire, au cours de sa facture s'il est saisi | date de la facture de commission + 30 jours |
 
 Chaque ligne suit quatre états : **à demander** → **demandé** (la demande de virement est partie) → **exécuté** (la banque a édité le bordereau) → **confirmé en banque** (l'écriture est passée en comptabilité). Une échéance dépassée sans exécution est **en retard** : c'est le nombre affiché sur la pastille de la barre latérale.
 
