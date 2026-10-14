@@ -16,7 +16,7 @@ Les personnes qui utilisent E2P Costing, leur profil métier, et — si vous l'a
 Depuis le 8 octobre 2026, un profil est une liste de cases, réglée par l'administrateur dans **ADMIN › Profils** :
 
 - **Écrans** visibles : Dossiers, Règlements (ses quatre entrées : À payer, Rapprochement, Imports, Trésorerie), Prix de vente, Prévision d'achat, Indicateurs, Simulateur, Frais d'approche, Coefficients, Documents, Sauvegarde.
-- **Actions** permises : créer et modifier une fiche, valider ou repasser en brouillon, comptabiliser, rouvrir un dossier comptabilisé, fusionner et supprimer, saisir un règlement (marquer une ligne, ventiler un virement, utiliser une avance), importer (suivi des virements en dollars, grands livres, relevés, Summaries des commissionnaires), déposer le FEC, préparer ou valider une commande, demander ou fixer les prix…
+- **Actions** permises : créer et modifier une fiche, valider ou repasser en brouillon, comptabiliser, rouvrir un dossier comptabilisé, fusionner et supprimer, saisir un règlement (marquer une ligne, ventiler un virement, utiliser une avance), importer (suivi des virements en dollars, grands livres, relevés, Summaries des commissionnaires), rapprocher les virements (cocher les factures qu'un virement paie, défaire), déposer le FEC, préparer ou valider une commande, demander ou fixer les prix…
 - **Alertes** reçues : trésorerie, réouverture d'un dossier comptabilisé, conteneurs au port.
 
 Les six profils d'origine gardent les droits qu'ils avaient avant ; on peut les modifier ou créer d'autres profils. Le serveur refuse toute action dont la case n'est pas cochée. Un administrateur a tous les droits, quel que soit son profil. Tant que personne n'a de mot de passe, tout reste libre.

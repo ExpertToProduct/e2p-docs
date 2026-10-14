@@ -135,7 +135,7 @@ L'écran s'ouvre sur l'encadré **Comment une ligne passe à « confirmé »** :
 
 1. **Factures d'achats** : deposit et balance des fournisseurs, avec la carte **Par commande**.
 2. **Factures de fret** : les lignes de fret GCCOI et INDIGO, avec l'alerte « conteneur déchargé, fret non payé ».
-3. **Factures de commissions** : estimé, facturé, écarts, factures refusées, et le classeur des commissions.
+3. **Factures de commissions** : estimé, facturé, écarts, factures refusées, le classeur des commissions, et le **rapprochement à la main** (voir plus bas).
 4. **Factures diverses** : ce qui n'entre nulle part ailleurs (virements à affecter sans nature, virements ventilés, avances fournisseurs, virements écartés, lignes saisies à la main).
 
 Les trois premiers suivent la même trame :
@@ -166,6 +166,25 @@ La commission calculée dans la fiche est une **estimation** (taux appliqué à 
 - « Facture à vérifier » : montant invraisemblable, plus de trois fois l'estimation ; rien n'est retenu.
 
 Le lien **classeur des commissions** donne la liste complète, pour les achats et le cabinet comptable.
+
+## Rapprocher à la main les commissions d'un commissionnaire
+
+Le libellé d'un virement à un commissionnaire ne dit pas quelles commissions il paie (« VIRT GLOBAL COMPTOIR COM 0525 », « BALANCE-COM 02 »). Le service qui lettre les virements le sait : il le dit ici en cochant, au lieu de le reconstituer. **Rapprochement › Factures de commissions › Rapprocher à la main** :
+
+1. **Choisir le commissionnaire** (GCCOI, WWI, SOFAREM…). Toutes ses commissions s'affichent, dossier par dossier : montant, montant facturé, échéance, statut, preuve. Les commissions déjà confirmées sont masquées ; une case les montre.
+2. **Choisir le virement** dans le bandeau :
+   - **débit du FEC** : un débit de banque au nom du commissionnaire qu'aucune ligne ne porte encore (date, montant en euros, dollars lus dans le libellé, pièce). Les règlements de commissions GCCOI passent par le compte FGCCOI, reconnu même si son libellé s'écrit « GCC0.I CO LTD » ;
+   - **virement en attente** : un virement des bordereaux ou du suivi des virements en dollars, à son nom, pas encore affecté.
+
+   Le commissionnaire étant souvent aussi fournisseur, seuls les virements dont le libellé dit « COM » sont montrés d'abord ; un lien affiche les autres (balances, deposits).
+3. **Cocher les commissions** que ce virement paie. La barre du bas donne le total coché, le montant du virement, l'écart et la tolérance : **2 %** dans une seule devise, **5 %** quand des lignes ont été converties (dollars au cours du bordereau, sinon du dossier). Au-delà de la tolérance, le rapprochement n'est possible qu'avec un **motif** écrit (frais bancaires, écart de change, ligne manquante), gardé avec lui.
+4. **Rapprocher** :
+   - avec un **débit du FEC**, les commissions cochées passent **confirmé en banque**, preuve « rapproché à la main », à la date et à la pièce du débit ; le débit est réservé, il ne confirme plus rien d'autre ;
+   - avec un **virement en attente**, elles passent **exécuté**, le virement est affecté ; quand son débit arrive au FEC, il confirme toutes ces commissions d'un coup (comme un virement ventilé).
+
+Chaque rapprochement est listé sous le tableau (numéro R…, virement, dossiers, écart, motif) et tracé dans l'historique de chaque dossier. **Défaire** remet les lignes dans leur état d'avant, et le virement en attente revient à affecter ; c'est refusé si une ligne a changé depuis (autre confirmation, nouvelle saisie).
+
+Il faut la case **Rapprocher les virements** du profil (Admin › Profils), donnée d'office au contrôle de gestion et au DAF ; sans elle, la carte reste en consultation.
 
 ## Ventiler un virement entre plusieurs dossiers
 
@@ -209,7 +228,7 @@ Les trois formes suivantes rapprochent par le **montant** : elles ne s'appliquen
 
 L'application ne choisit **jamais au hasard** : s'il existe plusieurs écritures, plusieurs paires ou plusieurs combinaisons possibles, rien n'est décidé et la ligne est signalée « à rapprocher à la main », avec la liste des candidats dans l'alerte. C'est fréquent pour les fournisseurs qui ont beaucoup de lignes ouvertes et sont réglés par virements groupés : le libellé bancaire ne porte que le nom du fournisseur, seul le bordereau de virement dit quelles factures un virement couvre. Déposer les bordereaux reste donc la voie sûre ; le FEC vient confirmer.
 
-Chaque ligne confirmée garde **sa preuve**, affichée à côté de la date (« vu en banque le … ») et dans la carte **Confirmées récemment** : par lettrage, par la pièce, par le montant, acompte + solde, virement groupé, virement ventilé, relevé en tranches ou par commande, avec la pièce comptable. Les lignes confirmées avant le 13/10/2026 n'ont que leur pièce.
+Chaque ligne confirmée garde **sa preuve**, affichée à côté de la date (« vu en banque le … ») et dans la carte **Confirmées récemment** : par lettrage, par la pièce, par le montant, acompte + solde, virement groupé, virement ventilé, rapproché à la main, relevé en tranches ou par commande, avec la pièce comptable. Les lignes confirmées avant le 13/10/2026 n'ont que leur pièce.
 
 ## Trésorerie
 

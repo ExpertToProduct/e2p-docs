@@ -111,6 +111,9 @@ Règlements › Imports › « Lire un Summary », avec le PDF ou une photo. Apr
 **Une ligne du Summary reste « cours à saisir », que faire ?**
 Le dossier est en euros et la commission est facturée en dollars : saisir le cours de la commission sur la fiche (colonne Cours de la carte Commissions), puis « Reprendre » sur le Summary.
 
+**Un virement à GCCOI paie plusieurs commissions sans les nommer : comment le lettrer ?**
+Rapprochement › Factures de commissions › « Rapprocher à la main » : choisir GCCOI, choisir le débit du FEC (ou le virement en attente) dans le bandeau, cocher les commissions qu'il paie, « Rapprocher ». Dans la tolérance (2 %, 5 % au change), c'est immédiat ; au-delà, un motif est demandé. « Défaire » revient en arrière. Il faut la case « Rapprocher les virements ».
+
 **Pourquoi tout est-il « à demander » au démarrage ?**
 Parce que personne n'a encore saisi ni déposé de bordereau. Déposer les bordereaux des dernières semaines, puis marquer exécutés les règlements plus anciens dont on a la preuve, assainit vite. Les dossiers arrivés et dépotés depuis plus de trente jours sans ligne saisie sont réputés réglés et sortent du suivi.
 
