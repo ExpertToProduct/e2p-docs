@@ -24,7 +24,7 @@ Dès qu'un dossier est en **commande**, l'application déduit les virements à f
 |---|---|---|
 | Deposit | le pourcentage ou le montant saisi sur la fiche (carte Facture) — rien n'est pré-rempli, les conditions changent d'un fournisseur à l'autre | date de commande, sinon date de facture |
 | Balance | facture − deposit, dans la devise de la facture | ETD (départ du navire), sinon ETA − 30 jours |
-| Fret | la ligne Fret quand elle porte GCCOI ou INDIGO ; en dollars, à son propre cours, quand le montant est saisi en dollars | ETA − 5 jours |
+| Fret | la ligne Fret quand elle porte GCCOI ou INDIGO, ou, sans prestataire, quand son n° de facture est un job H&J « HJ… » (à payer à **ROY**) ; en dollars, à son propre cours, quand le montant est saisi en dollars | ETA − 5 jours |
 | Commission | la commission du dossier, une ligne par commissionnaire, au cours de sa facture s'il est saisi | date de la facture de commission + 30 jours |
 
 Chaque ligne suit quatre états : **à demander** → **demandé** (la demande de virement est partie) → **exécuté** (la banque a édité le bordereau) → **confirmé en banque** (l'écriture est passée en comptabilité). Une échéance dépassée sans exécution est **en retard** : c'est le nombre affiché sur la pastille de la barre latérale.
@@ -134,7 +134,7 @@ Réimporter le même fichier ne fait rien. Un nouvel export du même tiers rempl
 L'écran s'ouvre sur l'encadré **Comment une ligne passe à « confirmé »** : les étapes, ce qu'il faut sur la fiche pour chacune, et le compte des lignes confirmées par type de preuve. Les lignes sont ensuite réparties en **quatre sous-onglets** :
 
 1. **Factures d'achats** : deposit et balance des fournisseurs, avec la carte **Par commande**.
-2. **Factures de fret** : les lignes de fret GCCOI et INDIGO, avec l'alerte « conteneur déchargé, fret non payé ».
+2. **Factures de fret** : les lignes de fret GCCOI, INDIGO et ROY (jobs H&J), avec l'alerte « conteneur déchargé, fret non payé », et le **rapprochement à la main** (voir plus bas).
 3. **Factures de commissions** : estimé, facturé, écarts, factures refusées, le classeur des commissions, et le **rapprochement à la main** (voir plus bas).
 4. **Factures diverses** : ce qui n'entre nulle part ailleurs (virements à affecter sans nature, virements ventilés, avances fournisseurs, virements écartés, lignes saisies à la main).
 
@@ -167,16 +167,16 @@ La commission calculée dans la fiche est une **estimation** (taux appliqué à 
 
 Le lien **classeur des commissions** donne la liste complète, pour les achats et le cabinet comptable.
 
-## Rapprocher à la main les commissions d'un commissionnaire
+## Rapprocher à la main les commissions ou les frets
 
-Le libellé d'un virement à un commissionnaire ne dit pas quelles commissions il paie (« VIRT GLOBAL COMPTOIR COM 0525 », « BALANCE-COM 02 »). Le service qui lettre les virements le sait : il le dit ici en cochant, au lieu de le reconstituer. **Rapprochement › Factures de commissions › Rapprocher à la main** :
+Le libellé d'un virement à un commissionnaire ou à un transitaire ne dit pas ce qu'il paie (« VIRT GLOBAL COMPTOIR COM 0525 », « BALANCE-COM 02 », « KALOROY20260810 »). Le service qui lettre les virements le sait : il le dit ici en cochant, au lieu de le reconstituer. **Rapprochement › Factures de commissions** (ou **Factures de fret**) **› Rapprocher à la main** — la même carte dans les deux onglets :
 
-1. **Choisir le commissionnaire** (GCCOI, WWI, SOFAREM…). Toutes ses commissions s'affichent, dossier par dossier : montant, montant facturé, échéance, statut, preuve. Les commissions déjà confirmées sont masquées ; une case les montre.
+1. **Choisir le commissionnaire** (GCCOI, WWI, SOFAREM…) ou le **prestataire de fret** (GCCOI, INDIGO, ROY pour les jobs H&J). Toutes ses commissions, ou tous ses frets, s'affichent, dossier par dossier : montant, montant facturé, échéance, statut, preuve. Les commissions déjà confirmées sont masquées ; une case les montre.
 2. **Choisir le virement** dans le bandeau :
    - **débit du FEC** : un débit de banque au nom du commissionnaire qu'aucune ligne ne porte encore (date, montant en euros, dollars lus dans le libellé, pièce). Les règlements de commissions GCCOI passent par le compte FGCCOI, reconnu même si son libellé s'écrit « GCC0.I CO LTD » ;
-   - **virement en attente** : un virement des bordereaux ou du suivi des virements en dollars, à son nom, pas encore affecté.
+   - **virement en attente** : un virement des bordereaux ou du suivi des virements en dollars, à son nom ou dont le libellé le nomme (« KALOROY… » pour ROY), pas encore affecté.
 
-   Le commissionnaire étant souvent aussi fournisseur, seuls les virements dont le libellé dit « COM » sont montrés d'abord ; un lien affiche les autres (balances, deposits).
+   Le commissionnaire ou le transitaire étant souvent aussi fournisseur, seuls les virements de la nature choisie sont montrés d'abord (« COM » pour les commissions ; « FRET », « ROY », « HJ » pour le fret) ; un lien affiche les autres (balances, deposits).
 3. **Cocher les commissions** que ce virement paie. La barre du bas donne le total coché, le montant du virement, l'écart et la tolérance : **2 %** dans une seule devise, **5 %** quand des lignes ont été converties (dollars au cours du bordereau, sinon du dossier). Au-delà de la tolérance, le rapprochement n'est possible qu'avec un **motif** écrit (frais bancaires, écart de change, ligne manquante), gardé avec lui.
 4. **Rapprocher** :
    - avec un **débit du FEC**, les commissions cochées passent **confirmé en banque**, preuve « rapproché à la main », à la date et à la pièce du débit ; le débit est réservé, il ne confirme plus rien d'autre ;
@@ -185,6 +185,10 @@ Le libellé d'un virement à un commissionnaire ne dit pas quelles commissions i
 Chaque rapprochement est listé sous le tableau (numéro R…, virement, dossiers, écart, motif) et tracé dans l'historique de chaque dossier. **Défaire** remet les lignes dans leur état d'avant, et le virement en attente revient à affecter ; c'est refusé si une ligne a changé depuis (autre confirmation, nouvelle saisie).
 
 Il faut la case **Rapprocher les virements** du profil (Admin › Profils), donnée d'office au contrôle de gestion et au DAF ; sans elle, la carte reste en consultation.
+
+:::info Fret H&J : confirmé par le lettrage
+Chaque job de fret H&J est une facture du fournisseur ROY sous son numéro « HJ… », payée par les virements mensuels KALOROY. Le numéro HJ saisi comme n° de facture du fret sur la fiche suffit : la facture est retrouvée au FEC par ce numéro, et quand le cabinet l'a lettrée sur un virement KALOROY, le fret passe **confirmé** de lui-même (preuve « par lettrage »). Le rapprochement à la main sert aux jobs que le cabinet n'a pas encore lettrés.
+:::
 
 ## Ventiler un virement entre plusieurs dossiers
 
