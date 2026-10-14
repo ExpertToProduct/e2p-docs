@@ -114,6 +114,9 @@ Le dossier est en euros et la commission est facturée en dollars : saisir le co
 **Un virement à GCCOI paie plusieurs commissions sans les nommer : comment le lettrer ?**
 Rapprochement › Factures de commissions › « Rapprocher à la main » : choisir GCCOI, choisir le débit du FEC (ou le virement en attente) dans le bandeau, cocher les commissions qu'il paie, « Rapprocher ». Dans la tolérance (2 %, 5 % au change), c'est immédiat ; au-delà, un motif est demandé. « Défaire » revient en arrière. Il faut la case « Rapprocher les virements ».
 
+**Un virement à un fournisseur paie plusieurs balances : comment le lettrer ?**
+Rapprochement › Factures d'achats › « Rapprocher à la main » : choisir le fournisseur, le débit du FEC ou le virement en attente, cocher les deposits et balances qu'il paie. Une balance payée en partie se ventile plutôt.
+
 **Le virement KALOROY du mois paie plusieurs frets H&J : faut-il les cocher ?**
 Seulement ceux que le cabinet n'a pas encore lettrés. Un fret dont la fiche porte le n° de job « HJ… » est confirmé de lui-même quand sa facture ROY est lettrée sur le virement. Pour les autres : Rapprochement › Factures de fret › « Rapprocher à la main », prestataire ROY, le virement KALOROY dans le bandeau, cocher les frets.
 
